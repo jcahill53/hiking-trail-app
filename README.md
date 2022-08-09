@@ -59,11 +59,6 @@ The goal of our project is to provide users a method to report on and find infor
             Id: letters/number charactor/special character like %, #
             Password: string
             Email: string
-            Message: Array type
-                Trail Id
-                Message body
-                Message Creation DateTIme
-                Message Update DateTime
 
         iii. Messages collection
             Id: letters/number charactor/special character like %, #
