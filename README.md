@@ -29,12 +29,14 @@ The goal of our project is to provide users a method to report on and find infor
     The team plans to develop a hiking app that will track the popularity of a given trailhead through the status of parking for the trailhead.  The app will allow users to look up information about a trailhead, whether any parking fees apply  and determine whether parking is available, full or overflowing.  Users will also be able to send updates to the site if they find that the parking availability has changed.  This will provide hikers a tool to better plan their day and encourage the use of car-pooling to trails that have a high level of activity and little parking. 
 
     b.  Databases to be built (Lead: Yuhong)
-        i.  Collections: We have only two MongoDB collections - 
+        i.  Collections: We have three MongoDB collections
+
             (1)  OR Hiking Trail
             (2)  Users
             (3)  Messages
 
     c.  Planned Schema 
+
         i.  OR Hiking Trails Collection
             Id: letters/number charactor/special character like %, #
             Trail Name: string
@@ -104,8 +106,8 @@ The goal of our project is to provide users a method to report on and find infor
 
     d.  The “my profile” is the page where users can see stats of their past usage on the site. As of now they will have 3 options to choose from 1) the trails that they have checked in and out from 2) Trails uses have posted messages on and 3) a log out 
 
-        i. The trails that they have checked in and out from page will just be a list of all the trails the specific user has checked in and out from 
-
+        i. The trails that they have checked in and out from page will just be a list of all the trails the specific user has checked in and out from
+        
         ii. Trails users have posted messages on page  will be a list of all the trails that the specific user  has posted comments to. The View will show what trail they posted on, on what date and what the message was with an option to delete that message 
 
     Mockups of planned pages can be found in the folder zDesign (Team D Mockups of FrontEnd WebPages.pdf).
