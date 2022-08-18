@@ -48,7 +48,7 @@ router.get("/:id/comments", async(req, res) => {
 })
 
 //GET ALL COMMENTS FOR A USER
-// curl -sS http://localhost:5000/Trails/#####/comments
+// curl -sS http://localhost:5000/Users/#####/comments
 
 router.get("/users/:id/comments", async(req, res) => {
   const comment = await commentData.getCommentsByUserId(req.params.id)
@@ -117,3 +117,5 @@ router.delete("/:trailId/comments/:commentId", async(req, res)=>{
   res.status(resultStatus).send(result);
 
 })
+
+module.exports = router;

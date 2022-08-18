@@ -14,5 +14,4 @@ const databaseName = 'hiking_db';
 const hikesCollName = 'Hikes';
 
 
-module.exports = {}
 
