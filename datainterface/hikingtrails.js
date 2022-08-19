@@ -4,7 +4,7 @@ const ObjectId = require('mongodb').ObjectId;
 require('dotenv').config()
 
 const uri =
-`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.qlff5yn.mongodb.net/?retryWrites=true&w=majority`
+`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.jymhgca.mongodb.net/?retryWrites=true&w=majority`
 
 
 
