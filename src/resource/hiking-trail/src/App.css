@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
+.header{
+  font-family: 'Oswald', sans-serif;
+  color: #1f5139;
+  font-weight: 500;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p{
+  font-family: 'Lato', sans-serif;
+  color: #515151;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.negative-comment{
+  color: #A00000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.icons{
+  color: #27A9AF
+}
+
+.main-boxing{
+  border: 1px solid #1f5139;
+}
+
+.main-boxing-reverse{
+  border: 1px solid white;
+}
+
+button .btn-standard{
+  border: 1px solid #1f5139;
+  background-color: none;
+  font-family: 'Oswald', sans-serif;
+  color: #1f5139;
+  padding: 2%;
+}
+
+button .btn-standard:active{
+  background-color:  #1f5139;
+  font-family: 'Oswald', sans-serif;
   color: white;
+  padding: 2%;
 }
 
-.App-link {
-  color: #61dafb;
+button .btn-reverse{
+  border: 1px solid white;
+  background-color: none;
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  padding: 2%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button .btn-reverse:active{
+  background-color:  white;
+  font-family: 'Oswald', sans-serif;
+  color: #1f5139;
+  padding: 2%;
 }
