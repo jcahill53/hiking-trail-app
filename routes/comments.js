@@ -22,15 +22,15 @@ router.get("/", async (req, res, next) => {
 });
 
 // GET A SINGLE COMMENT BY COMMENT ID
-// curl -sS http://localhost:5000/comments/####
+// curl -sS http://localhost:5000/comments/630033e6d869e7133ea861e8
 
-router.get("/comments/:id", async (req, res) => {
+router.get("/:id", async (req, res) => {
   let comment = await commentData.getCommentById(req.params.id)
 
   if (comment) {
       res.status(200).send(comment)
   } else {
-      res.status(404).send({ error: `no item found with title ${req.params.callLetters}` });
+      res.status(404).send({ error: `no item found with comment id ${req.params.id}` });
   }
 
 });
