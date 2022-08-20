@@ -20,6 +20,8 @@ Users need to know if parking is available at a hiking trail including:
     c.  Users need to know if any fees are associated with the hiking trail
     d.  Users need to arrange shared transportation to a hiking trail that has little parking availability
 
+The team researched hiking sites and found that although many provide useful information on trails none give hikers information needed to determine if parking will be available or the best times to access the trail.  Many current sites have user messages that bemoan the fact that they were unable to hike when they arrived because there was no parking available.
+
 The goal of our project is to provide users a method to report on and find information about parking availability at hiking trailheads.  This information can be useful not only to hikers but other individuals interested in trends in hiking activities and developing solutions for enhancing hikers’ access to the outdoors. 
 
 ---------------------------------------------------------------------------------
@@ -73,10 +75,19 @@ The goal of our project is to provide users a method to report on and find infor
 
 ---------------------------------------------------------------------------------
 
-4.  API ENDPOINTS -  Three API end points are planned:
-    a.  GET endpoint - users will be able to get information about a hiking trail and available parking for that trail
-    b.  POST endpoint  - users will be able to post a message about the parking status of a site
-    c.  PUSH endpoint - users will be able to update the parking availability that will show the status and time of day
+4.  API ENDPOINTS -  The following API end points are planned:
+    a.  GET endpoint - users will be able to get information about all hiking trails and available parking for those trails Arthur
+    b.  GET enpoint - users will be able to get information about a specific hiking trail and available parking for that trail Arthur 
+    Arthur
+    c.  PUT endpoint - users will be able to update the parking availability that will show the status and time of day Arthur
+    d.  POST endpoint  - users will be able to post a message about the parking status of a site Joann
+    e.  DELETE endpoint - users will be able to delete a message  Joann
+    f.  GET endpoint - all messages for a trail Joann
+    g.  GET endpoint - all messages for a user  Joann
+    h.  GET endpoint - all messages  Joann
+    i.  GET endpoint - one message based on message id  Joann
+
+
 
 ---------------------------------------------------------------------------------
 
