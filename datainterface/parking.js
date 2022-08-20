@@ -24,6 +24,8 @@ module.exports.getAll = async () => {
   
     const query = {};
     let parkingCursor = await parking.find(query);
-  
-    return parkingCursor.toArray();
+    if(!parkingCursor){
+      return parkingCursor.toArray();
+    }
+    
   }

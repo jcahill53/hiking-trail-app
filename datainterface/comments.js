@@ -45,9 +45,9 @@ module.exports.getCommentsByTrailId = async (trailId) => {
   let commentsCursor = await comments.findAll(query);
   if (commentsCursor) {
     return commentsCursor.toArray();
-  } else {
+  } 
     return { error: "Something went wrong. Please try again." }
-  }
+  
 }
 
 // GET ALL COMMENTS FOR A USER
@@ -59,9 +59,9 @@ module.exports.getCommentsByUserId = async (userId) => {
   let commentsCursor = await comments.findAll(query);
   if (commentsCursor) {
     return commentsCursor.toArray();
-  } else {
+  } 
     return { error: "Something went wrong. Please try again." }
-  }
+  
 }
 
 // GET ALL COMMENTS FOR A TRAIL AND USER
@@ -73,9 +73,9 @@ module.exports.getByTrailandUserId = async (trailId,userId) => {
   let commentsCursor = await comments.find(query) ;
   if (commentsCursor) {
     return commentsCursor.toArray();
-  } else {
+  } 
     return { error: "Something went wrong. Please try again." }
-  }
+  
 }
 
 // CREATE A NEW COMMENT
@@ -91,9 +91,9 @@ module.exports.create = async (newObj) => {
 
   if (result.acknowledged) {
     return { newObjectId: result.insertedId, message: `Item created! ID: ${result.insertedId}` }
-  } else {
+  } 
     return { error: "Something went wrong. Please try again." }
-  }
+  
 }
 
 // UPDATE A COMMENT BY ID
@@ -108,8 +108,9 @@ module.exports.updateCommentById = async (commentId, newObj) => {
   const result = await comments.updateOne(filter, updateRules);
 
   if (result.modifiedCount != 1) {
-    return { error: `Something went wrong. ${result.modifiedCount} comments were updated. Please try again.` }
+    return { error: `Something went wrong. Please try again.` }
   };
+  return {message: `${result.modifiedCount} comments has been updated`}
 }
 
 // DELETE A COMMENT BY ID
@@ -121,7 +122,7 @@ module.exports.deleteCommentById = async (commentId) => {
   const result = await comments.deleteOne(deletionRules);
 
   if (result.deletedCount != 1) {
-    return { error: `Something went wrong. ${result.deletedCount} comments were deleted. Please try again.` }
+    return { error: `Something went wrong. Please try again.` }
   };
 
   return { message: `Deleted ${result.deletedCount} comment.` };
