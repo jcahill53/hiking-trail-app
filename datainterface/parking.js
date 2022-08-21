@@ -19,13 +19,13 @@ module.exports = {}
 // GET ALL PARKING DATA
 
 module.exports.getAll = async () => {
-    const database = client.db(databaseName);
-    const parking = database.collection(parkingCollName);
-  
-    const query = {};
-    let parkingCursor = await parking.find(query);
-    if(parkingCursor){
-      return parkingCursor.toArray();
-    }
-    
+  const database = client.db(databaseName);
+  const parking = database.collection(parkingCollName);
+
+  const query = {};
+  let parkingCursor = await parking.find(query);
+  if(parkingCursor){
+    return parkingCursor.toArray();
   }
+  
+}
