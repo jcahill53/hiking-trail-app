@@ -14,7 +14,7 @@ const commCollName = 'comments';
 
 module.exports = {}
 
-// GET ALL COMMENTS
+// #14  GET ALL COMMENTS
 module.exports.getAllComments = async () => {
   const database = client.db(databaseName);
   const comments = database.collection(commCollName);
@@ -25,7 +25,7 @@ module.exports.getAllComments = async () => {
   return commentsCursor.toArray();
 }
 
-// GET A SINGLE COMMENT BY COMMENT ID
+// #15 GET A SINGLE COMMENT BY COMMENT ID
 module.exports.getCommentById = async (commentId) => {
   const database = client.db(databaseName);
   const comments = database.collection(commCollName);

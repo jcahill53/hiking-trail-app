@@ -14,7 +14,7 @@ const commCollName = 'comments';
 
 module.exports = {}
 
-// GET ALL HIKING TRAIL DATA
+// #2 GET ALL HIKING TRAIL DATA
 module.exports.getAll = async () => {
     const database = client.db(databaseName);
     const trails = database.collection(trailsCollName);
@@ -27,7 +27,7 @@ module.exports.getAll = async () => {
     
   }
 
-  // GET TRAILS BY ID
+  // #4 GET TRAILS BY ID
 module.exports.getTrailById = async (trailId) => {
   const database = client.db(databaseName);
   const trails = database.collection(trailsCollName);
@@ -38,7 +38,7 @@ module.exports.getTrailById = async (trailId) => {
   return trail;
 }
 
-  // GET ALL COMMENTS FOR A TRAIL
+  // #12 GET ALL COMMENTS FOR A TRAIL
 module.exports.getCommentsByTrailId = async (trailId) => {
   const database = client.db(databaseName);
   const comments = database.collection(commCollName);
@@ -50,7 +50,7 @@ module.exports.getCommentsByTrailId = async (trailId) => {
 }
   
   
-// CREATE A NEW COMMENT
+// #16 CREATE A NEW COMMENT
 module.exports.createComment = async (trailId, newObj) => {
 
   const database = client.db(databaseName);
@@ -92,7 +92,7 @@ module.exports.updateCommentById = async (commentId, newObj) => {
   return {message: `${result.modifiedCount} comments has been updated`}
 }
 
-// DELETE A COMMENT BY ID
+// #11 DELETE A COMMENT BY ID
 module.exports.deleteCommentById = async (commentId) => {
   const database = client.db(databaseName);
   const comments = database.collection(commCollName)
@@ -106,3 +106,17 @@ module.exports.deleteCommentById = async (commentId) => {
 
   return { message: `Deleted ${result.deletedCount} comment.` };
 }
+
+// #54 FIND HIKING TRAILS BY SEARCHING ON NAME
+module.exports.getTrailsByName = async (name) => {
+  const database = client.db(databaseName);
+  const trails = database.collection(trailsCollName);
+
+  // const query = {name:{'$regex' : '^name$', '$options' : 'i'}};
+  const query = {name: name};
+  let trailsCursor = await trails.find(query);
+
+  return trailsCursor.toArray();
+}
+
+ 

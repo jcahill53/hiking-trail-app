@@ -8,7 +8,7 @@ router.use(bodyParser.json());
 
 const trailsData = require('../datainterface/hikingtrails.js');
 
-// GET ALL TRAILS
+// #2 GET ALL TRAILS
 // curl -sS http://localhost:5000/hikingtrails
 router.get("/", async (req, res, next) => {
     let trailsList = await trailsData.getAll()
@@ -21,7 +21,7 @@ router.get("/", async (req, res, next) => {
     }
   });
 
-  // GET TRAILS BY TRAIL ID
+  // #4 GET TRAILS BY TRAIL ID
 // curl -sS http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a
 // curl -sS http://localhost:5000/hikingtrails/6301bd4862a5d14a1a780e35
 
@@ -38,7 +38,7 @@ console.log(result);
 
 });
 
-  //GET ALL COMMENTS FOR A TRAIL
+  //#12 GET ALL COMMENTS FOR A TRAIL
 // curl -sS http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments
 router.get("/:id/comments", async(req, res) => {
   const comment = await trailsData.getCommentsByTrailId(req.params.id)
@@ -51,7 +51,7 @@ router.get("/:id/comments", async(req, res) => {
 })
 
 
-//CREATE A NEW COMMENT
+//#16 CREATE A NEW COMMENT
 // curl -sS -X POST -H "Content-Type: application/json" -d '{"userId": "63002e7ef11bb0d6dee7272d","messageBody": "I enjoyed this trail2.  Parking was almost full.", "createDayTime": "07/12/2022", "updatedDayTime": "07/12/2022"}' http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments
 router.post("/:id/comments", async(req, res) => {
   const result = await trailsData.createComment(req.params.id, req.body)
@@ -83,7 +83,7 @@ router.put("/:trailId/comments/:commentId", async (req, res, next) => {
 });
 
 
-
+// #11 DELETE A COMMENT FOR A TRAIL
 // curl -sS -X DELETE http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments/63026fd2c854e92d1d95ee41
 router.delete("/:trailId/comments/:commentId", async(req, res)=>{
   const result = await trailsData.deleteCommentById(req.params.commentId)
@@ -96,5 +96,27 @@ router.delete("/:trailId/comments/:commentId", async(req, res)=>{
   res.status(resultStatus).send(result);
 
 })
+
+
+// #54 FIND HIKING TRAILS BY SEARCHING ON NAME
+// curl -sS "http://localhost:5000/hikingtrails/Rooster%20Rock%20Loop%20Hike"
+// curl -sS http://localhost:5000/hikingtrails/name/Rooster%20Rock%20Loop%20Hike
+router.get("/name/:name", async (req, res, next) => {
+  const result = await trailsData.getTrailsByName(req.params.name);
+
+  if (result) {
+    if (result.length > 0) {
+      res.status(200).send(result);
+    } else {
+      res.status(404).send({error: `No hike found for ${req.params.name} trail`});
+    }
+  } else {
+    res.status(500).send({error:"Something went wrong. Please try again."})
+  }
+});
+
+
+
+
 
 module.exports = router;
