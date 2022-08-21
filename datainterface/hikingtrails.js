@@ -6,8 +6,6 @@ require('dotenv').config()
 const uri =
 `mongodb+srv://d-team:Test12@cluster0.f4ghe7b.mongodb.net/?retryWrites=true&w=majority`
 
-
-
 const client = new MongoClient(uri);
 
 const databaseName = 'hiking_db';
@@ -17,7 +15,6 @@ const commCollName = 'comments';
 module.exports = {}
 
 // GET ALL HIKING TRAIL DATA
-
 module.exports.getAll = async () => {
     const database = client.db(databaseName);
     const trails = database.collection(trailsCollName);
@@ -31,7 +28,6 @@ module.exports.getAll = async () => {
   }
 
   // GET TRAILS BY ID
-
 module.exports.getTrailById = async (trailId) => {
   const database = client.db(databaseName);
   const trails = database.collection(trailsCollName);
