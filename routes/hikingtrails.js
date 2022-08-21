@@ -69,10 +69,11 @@ router.post("/:id/comments", async(req, res) => {
   
 })
 
-//jmc note:  update and delete are not working yet 
-// UPDATE A COMMENT 
-// curl -sS -X PUT -H "Content-Type: application/json" -d '{"messageBody":"Not favorite movie!"}' http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments/63025c449df58d8c409a4828
-router.put("/:id/comments/:commentId", async (req, res, next) => {
+//jmc note:  update is not working yet 
+// UPDATE A COMMENT TEXT
+// curl -sS http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments
+// curl -sS -X PUT -H "Content-Type: application/json" -d '{"messageBody":"Not one of my favorite trails."}' http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments/63025c449df58d8c409a4828
+router.put("/:trailId/comments/:commentId", async (req, res, next) => {
   let resultStatus;
   const result = await trailsData.updateCommentById(req.params.commentId, req.body)
 
@@ -86,24 +87,10 @@ router.put("/:id/comments/:commentId", async (req, res, next) => {
 });
 
 
-// UPDATE A TRAIL COMMENT
-// curl -sS -X PUT -H "Content-Type: application/json" -d '{"trailId":"", bodyMessage":"How cool was that?"}' http://localhost:5000/hikingtrails/62df1af940ac945c80be005e
-// router.put("/:id", async (req, res, next) => {
-//   let resultStatus;
-//   const result = await movieData.updateById(req.params.id, req.body)
 
-//   if(result.error){
-//     resultStatus = 400;
-//   } else {
-//     resultStatus = 200;
-//   }
-
-//   res.status(resultStatus).send(result);
-// });
-
-// curl -sS -X DELETE http://localhost:5000/trails/####/comments/####
+// curl -sS -X DELETE http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments/63025bc2e99f7c5af6f25c3d
 router.delete("/:trailId/comments/:commentId", async(req, res)=>{
-  const result = await commentData.deleteCommentById(req.params.commentId)
+  const result = await trailsData.deleteCommentById(req.params.commentId)
   if(result.error){
     resultStatus = 400;
   } else {

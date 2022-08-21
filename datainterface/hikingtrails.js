@@ -78,7 +78,7 @@ module.exports.createComment = async (trailId, newObj) => {
 
 }
 
-//jmc note:  update and delete are not working yet 
+//jmc note:  update is not working yet 
 // UPDATE A COMMENT BY ID
 module.exports.updateCommentById = async (commentId, newObj) => {
   const database = client.db(databaseName);
@@ -95,7 +95,6 @@ module.exports.updateCommentById = async (commentId, newObj) => {
   };
   return {message: `${result.modifiedCount} comments has been updated`}
 }
-
 
 // DELETE A COMMENT BY ID
 module.exports.deleteCommentById = async (commentId) => {
