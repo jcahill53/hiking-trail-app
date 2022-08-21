@@ -1,0 +1,33 @@
+[
+    {
+        "_id": "630032a40719308563783d4f",
+        "name": "Stevenson Parking",
+        "trailId": [
+            "4203b4a9-09b2-4a52-8a86-a51456d16e8c"
+        ],
+        "emptiestDayTime": "Wednesday 7:00pm",
+        "fullest_day_time": "Sunday 3:00pm",
+        "parkingLotStatus": "empty"
+    },
+    {
+        "_id": "630032a40719308563783d50",
+        "name": "parking lot East",
+        "trailId": [
+            "050efaf8-fa87-4592-a52d-018a1c8d824d"
+        ],
+        "emptiestDayTime": "Tuesday 8:00pm",
+        "fullest_day_time": "Sunday 12:00pm",
+        "parkingLotStatus": "half"
+    },
+    {
+        "_id": "630032a40719308563783d51",
+        "name": "parking lot 1",
+        "trailId": [
+            "442c890d-7b66-44e6-b646-2c8ff3b207e1",
+            "d6202b90-319f-4822-b198-2d071d0b13f6"
+        ],
+        "emptiestDayTime": "Monday 12:00pm",
+        "fullest_day_time": "Saturday 2:00pm",
+        "parkingLotStatus": "full"
+    }
+]

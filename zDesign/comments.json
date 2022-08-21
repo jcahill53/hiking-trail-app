@@ -1,0 +1,21 @@
+[
+    {
+        "_id": "630033e6d869e7133ea861e7",
+        "trailId": "d6202b90-319f-4822-b198-2d071d0b13f6",
+        "userId": "63002e7ef11bb0d6dee7272d",
+        "messageBody": "Blah blah blah blah",
+        "createDayTime": "08/12/2022",
+        "updatedDayTime": "08/123/2022"
+    },
+    {
+        "_id": "630033e6d869e7133ea861e8",
+        "trailId": "442c890d-7b66-44e6-b646-2c8ff3b207e1",
+        "userId": "63002e7ef11bb0d6dee7272d",
+        "messageBody": "Blah blah",
+        "createDayTime": "08/12/2022",
+        "updatedDayTime": "08/12/2022"
+    }
+]
+
+ 
+          
