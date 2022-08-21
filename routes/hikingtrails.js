@@ -50,9 +50,13 @@ router.get("/:id/comments", async(req, res) => {
   
 })
 
+
+
 //CREATE A NEW COMMENT
 // curl -sS -X POST -H "Content-Type: application/json" -d '{"bodyMessage":"Great Trail!"}' http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments
 // curl -sS -X POST -H "Content-Type: application/json" -d '{"messageBody": "I enjoyed this trail.  Parking was almost full.", "createDayTime": "07/12/2022", "updatedDayTime": "07/12/2022"}' http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments
+// curl -sS -X POST -H "Content-Type: application/json" -d '{"userId": "63002e7ef11bb0d6dee7272d","messageBody": "I enjoyed this trail.  Parking was almost full.", "createDayTime": "07/12/2022", "updatedDayTime": "07/12/2022"}' http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments
+
 
 router.post("/:id/comments", async(req, res) => {
   const result = await trailsData.createComment(req.params.id, req.body)
@@ -63,12 +67,11 @@ router.post("/:id/comments", async(req, res) => {
     resultStatus = 400;
   }
   
-  
 })
 
 //jmc note:  update and delete are not working yet 
 // UPDATE A COMMENT 
-// curl -sS -X PUT -H "Content-Type: application/json" -d '{"messageBody":"Not favorite movie!"}' http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments/6301c3a4a21505ac4795e2f4
+// curl -sS -X PUT -H "Content-Type: application/json" -d '{"messageBody":"Not favorite movie!"}' http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments/63025c449df58d8c409a4828
 router.put("/:id/comments/:commentId", async (req, res, next) => {
   let resultStatus;
   const result = await trailsData.updateCommentById(req.params.commentId, req.body)
