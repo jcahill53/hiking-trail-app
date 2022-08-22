@@ -15,6 +15,8 @@ const parkingCollName = 'parking';
 
 module.exports = {}
 
+// HIKING TRAIL ENDPOINTS
+
 // #2 GET ALL HIKING TRAIL DATA
 module.exports.getAll = async () => {
     const database = client.db(databaseName);
@@ -39,6 +41,20 @@ module.exports.getTrailById = async (trailId) => {
   return trail;
 }
 
+// #55 FIND HIKING TRAILS BY SEARCHING ON NAME
+module.exports.getTrailsByName = async (name) => {
+  const database = client.db(databaseName);
+  const trails = database.collection(trailsCollName);
+
+  // const query = {name:{'$regex' : '^name$', '$options' : 'i'}};
+  const query = {name: name};
+  let trailsCursor = await trails.find(query);
+
+  return trailsCursor.toArray();
+}
+
+// COMMENTS FOR A TRAIL ENDPOINT
+
   // #12 GET ALL COMMENTS FOR A TRAIL
 module.exports.getCommentsByTrailId = async (trailId) => {
   const database = client.db(databaseName);
@@ -50,16 +66,6 @@ module.exports.getCommentsByTrailId = async (trailId) => {
   return commentCursor.toArray();
 }
 
-  // #54 GET ALL PARKING FOR A TRAIL
-  module.exports.getParkingByTrailId = async (trailId) => {
-    const database = client.db(databaseName);
-    const parking = database.collection(parkingCollName);
-  
-    const query = { trailId: ObjectId(trailId) };
-  
-    let parkingCursor = await parking.find(query);
-    return parkingCursor.toArray();
-  }
   
 // #16 CREATE A NEW COMMENT
 module.exports.createComment = async (trailId, newObj) => {
@@ -85,7 +91,53 @@ module.exports.createComment = async (trailId, newObj) => {
 
 }
 
-// #56 CREATE A NEW PARKING AREA FOR A TRAIL
+// #11 DELETE A COMMENT BY ID
+module.exports.deleteCommentById = async (commentId) => {
+  const database = client.db(databaseName);
+  const comments = database.collection(commCollName)
+
+  const deletionRules = { _id: ObjectId(commentId) }
+  const result = await comments.deleteOne(deletionRules);
+
+  if (result.deletedCount != 1) {
+    return { error: `Something went wrong. Please try again.` }
+  };
+
+  return { message: `Deleted ${result.deletedCount} comment.` };
+}
+
+//jmc note:  update is not working yet 
+// UPDATE A COMMENT BY ID
+// module.exports.updateCommentById = async (commentId, newObj) => {
+//   const database = client.db(databaseName);
+//   const comments = database.collection(commCollName)
+
+//   const updateRules = {
+//     $set: { "messageBody": newObj.messageBody }
+//   };
+//   const filter = { _id: ObjectId(commentId) };
+//   const result = await comments.updateOne(filter, updateRules);
+
+//   if (result.modifiedCount != 1) {
+//     return { error: `Something went wrong. Please try again.` }
+//   };
+//   return {message: `${result.modifiedCount} comments has been updated`}
+// }
+
+// PARKING FOR A TRAIL ENDPOINT
+
+   // #54 GET ALL PARKING FOR A TRAIL
+   module.exports.getParkingByTrailId = async (trailId) => {
+    const database = client.db(databaseName);
+    const parking = database.collection(parkingCollName);
+  
+    const query = { trailId: ObjectId(trailId) };
+  
+    let parkingCursor = await parking.find(query);
+    return parkingCursor.toArray();
+  }
+
+  // #56 CREATE A NEW PARKING AREA FOR A TRAIL
 module.exports.createParking = async (trailId, newObj) => {
 
   const database = client.db(databaseName);
@@ -108,50 +160,3 @@ module.exports.createParking = async (trailId, newObj) => {
   }
 
 }
-
-//jmc note:  update is not working yet 
-// UPDATE A COMMENT BY ID
-// module.exports.updateCommentById = async (commentId, newObj) => {
-//   const database = client.db(databaseName);
-//   const comments = database.collection(commCollName)
-
-//   const updateRules = {
-//     $set: { "messageBody": newObj.messageBody }
-//   };
-//   const filter = { _id: ObjectId(commentId) };
-//   const result = await comments.updateOne(filter, updateRules);
-
-//   if (result.modifiedCount != 1) {
-//     return { error: `Something went wrong. Please try again.` }
-//   };
-//   return {message: `${result.modifiedCount} comments has been updated`}
-// }
-
-// #11 DELETE A COMMENT BY ID
-module.exports.deleteCommentById = async (commentId) => {
-  const database = client.db(databaseName);
-  const comments = database.collection(commCollName)
-
-  const deletionRules = { _id: ObjectId(commentId) }
-  const result = await comments.deleteOne(deletionRules);
-
-  if (result.deletedCount != 1) {
-    return { error: `Something went wrong. Please try again.` }
-  };
-
-  return { message: `Deleted ${result.deletedCount} comment.` };
-}
-
-// #55 FIND HIKING TRAILS BY SEARCHING ON NAME
-module.exports.getTrailsByName = async (name) => {
-  const database = client.db(databaseName);
-  const trails = database.collection(trailsCollName);
-
-  // const query = {name:{'$regex' : '^name$', '$options' : 'i'}};
-  const query = {name: name};
-  let trailsCursor = await trails.find(query);
-
-  return trailsCursor.toArray();
-}
-
- 

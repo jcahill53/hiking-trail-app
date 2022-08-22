@@ -8,6 +8,8 @@ router.use(bodyParser.json());
 
 const trailsData = require('../datainterface/hikingtrails.js');
 
+// HIKING TRAIL ENDPOINTS
+
 // #2 GET ALL TRAILS
 // curl -sS http://localhost:5000/hikingtrails
 router.get("/", async (req, res, next) => {
@@ -38,6 +40,23 @@ console.log(result);
 
 });
 
+// #55 FIND HIKING TRAILS BY SEARCHING ON NAME
+// curl -sS "http://localhost:5000/hikingtrails/name/Rooster%20Rock%20Loop%20Hike"
+router.get("/name/:name", async (req, res, next) => {
+  const result = await trailsData.getTrailsByName(req.params.name);
+
+  if (result) {
+    if (result.length > 0) {
+      res.status(200).send(result);
+    } else {
+      res.status(404).send({error: `No hike found for ${req.params.name} trail`});
+    }
+  } else {
+    res.status(500).send({error:"Something went wrong. Please try again."})
+  }
+});
+
+// COMMENTS FOR A TRAIL ENDPOINTS
 
   //#12 GET ALL COMMENTS FOR A TRAIL
 // curl -sS http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments
@@ -50,20 +69,6 @@ router.get("/:id/comments", async(req, res) => {
   }
   
 })
-
-  //#54 GET ALL PARKING FOR A TRAIL
-// curl -sS http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/parking
-router.get("/:id/parking", async(req, res) => {
-  const comment = await trailsData.getParkingByTrailId(req.params.id)
-  if (comment) {
-    res.status(200).send(comment);
-  } else {
-    resultStatus = 404;
-  }
-  
-})
-
-
 
 //#16 CREATE A NEW COMMENT FOR A TRAIL
 // curl -sS -X POST -H "Content-Type: application/json" -d '{"userId": "63002e7ef11bb0d6dee7272d","messageBody": "I enjoyed this trail2.  Parking was almost full.", "createDayTime": "07/12/2022", "updatedDayTime": "07/12/2022"}' http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments
@@ -78,17 +83,18 @@ router.post("/:id/comments", async(req, res) => {
   
 })
 
-//#56 CREATE A NEW PARKING AREA FOR A TRAIL
-// curl -sS -X POST -H "Content-Type: application/json" -d '{"name": "parking lot 2", "trailId": [0:"63002e1b9ed6cb63e334474e",1:"63002e1b9ed6cb63e334474d"],"emptiestDayTime": "Monday 12:00pm","fullest_day_time": "Saturday 2:00pm","parkingLotStatus": "full"}' http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/parking
-router.post("/:id/parking", async(req, res) => {
-  const result = await trailsData.createParking(req.params.id, req.body)
-  if(result){
-    res.status(200).send(result);
-  } 
-  else {
+// #11 DELETE A COMMENT FOR A TRAIL
+// curl -sS -X DELETE http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments/6302c35ce2041c3eab2e83d9
+router.delete("/:trailId/comments/:commentId", async(req, res)=>{
+  const result = await trailsData.deleteCommentById(req.params.commentId)
+  if(result.error){
     resultStatus = 400;
+  } else {
+    resultStatus = 200;
   }
-  
+  console.log(resultStatus);
+  res.status(resultStatus).send(result);
+
 })
 
 //jmc note:  update is not working yet 
@@ -109,39 +115,34 @@ router.post("/:id/parking", async(req, res) => {
 // });
 
 
-// #11 DELETE A COMMENT FOR A TRAIL
-// curl -sS -X DELETE http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments/63026fd2c854e92d1d95ee41
-router.delete("/:trailId/comments/:commentId", async(req, res)=>{
-  const result = await trailsData.deleteCommentById(req.params.commentId)
-  if(result.error){
-    resultStatus = 400;
-  } else {
-    resultStatus = 200;
-  }
-  console.log(resultStatus);
-  res.status(resultStatus).send(result);
 
+
+// PARKING ENDPOINTS FOR A TRAIL
+
+  //#54 GET ALL PARKING FOR A TRAIL
+// curl -sS http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/parking
+router.get("/:id/parking", async(req, res) => {
+  const comment = await trailsData.getParkingByTrailId(req.params.id)
+  if (comment) {
+    res.status(200).send(comment);
+  } else {
+    resultStatus = 404;
+  }
+  
 })
 
-
-// #55 FIND HIKING TRAILS BY SEARCHING ON NAME
-// curl -sS "http://localhost:5000/hikingtrails/Rooster%20Rock%20Loop%20Hike"
-// curl -sS http://localhost:5000/hikingtrails/name/Rooster%20Rock%20Loop%20Hike
-router.get("/name/:name", async (req, res, next) => {
-  const result = await trailsData.getTrailsByName(req.params.name);
-
-  if (result) {
-    if (result.length > 0) {
-      res.status(200).send(result);
-    } else {
-      res.status(404).send({error: `No hike found for ${req.params.name} trail`});
-    }
-  } else {
-    res.status(500).send({error:"Something went wrong. Please try again."})
+//#56 CREATE A NEW PARKING AREA FOR A TRAIL
+// curl -sS -X POST -H "Content-Type: application/json" -d '{"name": "parking lot 2", "trailId": ["63002e1b9ed6cb63e334474e","63002e1b9ed6cb63e334474d"],"emptiestDayTime": "Monday 12:00pm","fullest_day_time": "Saturday 2:00pm","parkingLotStatus": "full"}' http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/parking
+router.post("/:id/parking", async(req, res) => {
+  const result = await trailsData.createParking(req.params.id, req.body)
+  if(result){
+    res.status(200).send(result);
+  } 
+  else {
+    resultStatus = 400;
   }
-});
-
-
+  
+})
 
 
 
