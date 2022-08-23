@@ -15,14 +15,14 @@ const usersCollName = 'users';
 
 module.exports = {}
 
-// GET ALL PARKING DATA
+
 
 module.exports.getAll = async () => {
     const database = client.db(databaseName);
     const users = database.collection(usersCollName);
   
     const query = {};
-    let usersCursor = await users.find(query);
+    let usersCursor = await users.find(query).limit(100);
     if(usersCursor){
       return usersCursor.toArray();
     }

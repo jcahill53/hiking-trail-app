@@ -23,7 +23,7 @@ module.exports.getAll = async () => {
     const trails = database.collection(trailsCollName);
   
     const query = {};
-    let trailsCursor = await trails.find(query);
+    let trailsCursor = await trails.find(query).limit(100);
     if(trailsCursor){
       return trailsCursor.toArray();
     } 
@@ -76,9 +76,7 @@ module.exports.createComment = async (trailId, newObj) => {
   const goodObj = { ...newObj, trailId: ObjectId(trailId), date: new Date() }
 
   const result = await comments.insertOne(goodObj);
-
-  console.log(ObjectId(trailId));
-  
+ 
   if(!validTrail) {
     return {error:  `The trail id provided is not a valid trail id. `}
   } else {

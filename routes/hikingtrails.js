@@ -29,7 +29,6 @@ router.get("/", async (req, res, next) => {
 
 router.get("/:id", async (req, res, next) => {
   const result = await trailsData.getTrailById(req.params.id)
-console.log(result);
   if(result.error){
     resultStatus = 404;
   } else {
@@ -84,7 +83,7 @@ router.post("/:id/comments", async(req, res) => {
 })
 
 // #11 DELETE A COMMENT FOR A TRAIL
-// curl -sS -X DELETE http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments/6302c35ce2041c3eab2e83d9
+// curl -sS -X DELETE http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments/63045b718c75813e3cabd1b4
 router.delete("/:trailId/comments/:commentId", async(req, res)=>{
   const result = await trailsData.deleteCommentById(req.params.commentId)
   if(result.error){
