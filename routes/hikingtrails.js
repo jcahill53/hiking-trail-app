@@ -40,7 +40,7 @@ router.get("/:id", async (req, res, next) => {
 });
 
 // #55 FIND HIKING TRAILS BY SEARCHING ON NAME
-// curl -sS "http://localhost:5000/hikingtrails/name/Rooster%20Rock%20Loop%20Hike"
+// curl -sS "http://localhost:5000/hikingtrails/name/Rooster%20Rock"
 router.get("/name/:name", async (req, res, next) => {
   const result = await trailsData.getTrailsByName(req.params.name);
 

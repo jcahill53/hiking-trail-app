@@ -46,8 +46,8 @@ module.exports.getTrailsByName = async (name) => {
   const database = client.db(databaseName);
   const trails = database.collection(trailsCollName);
 
-  // const query = {name:{'$regex' : '^name$', '$options' : 'i'}};
-  const query = {name: name};
+  const query = { name: { $regex: name, $options: 'i' } }
+
   let trailsCursor = await trails.find(query);
 
   return trailsCursor.toArray();
