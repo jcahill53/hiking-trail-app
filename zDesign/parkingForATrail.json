@@ -1,0 +1,38 @@
+[
+    {
+        "_id": "6302bb3e298f9ae718823ec2",
+        "name": "parking lot 2",
+        "emptiestDayTime": "Monday 12:00pm",
+        "fullest_day_time": "Saturday 2:00pm",
+        "parkingLotStatus": "full",
+        "trailId": "63002e1b9ed6cb63e334474a",
+        "date": "2022-08-21T23:09:50.363Z"
+    },
+    {
+        "_id": "6302c5dbf0fa864ea16e6e43",
+        "name": "parking lot 2",
+        "trailId": "63002e1b9ed6cb63e334474a",
+        "emptiestDayTime": "Monday 12:00pm",
+        "fullest_day_time": "Saturday 2:00pm",
+        "parkingLotStatus": "full",
+        "date": "2022-08-21T23:55:07.760Z"
+    },
+    {
+        "_id": "6302c625f0fa864ea16e6e44",
+        "name": "parking lot 2",
+        "trailId": "63002e1b9ed6cb63e334474a",
+        "emptiestDayTime": "Monday 12:00pm",
+        "fullest_day_time": "Saturday 2:00pm",
+        "parkingLotStatus": "full",
+        "date": "2022-08-21T23:56:21.911Z"
+    },
+    {
+        "_id": "6302c62cf0fa864ea16e6e45",
+        "name": "parking lot 2",
+        "trailId": "63002e1b9ed6cb63e334474a",
+        "emptiestDayTime": "Monday 12:00pm",
+        "fullest_day_time": "Saturday 2:00pm",
+        "parkingLotStatus": "full",
+        "date": "2022-08-21T23:56:28.637Z"
+    }
+]

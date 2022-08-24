@@ -1,0 +1,2343 @@
+[
+    {
+        "_id": "63002e1b9ed6cb63e3344749",
+        "id": "442c890d-7b66-44e6-b646-2c8ff3b207e1",
+        "name": "Rock Creek Greenway Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Rock_Creek_Greenway_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Bethany_Lake_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Kaiser_Woods_Natural_Area"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 8.1,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 560,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.485Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.5564,
+                "longitude": -122.86792
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334474a",
+        "id": "d6202b90-319f-4822-b198-2d071d0b13f6",
+        "name": "Seaside Promenade Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Seaside_Promenade_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Seaside_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Necanicum_Estuary"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 6.2,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 20,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.517Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.9941,
+                "longitude": -123.9268
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334474b",
+        "id": "11203853-1d4a-4d0a-be1e-a79fcf2023ac",
+        "name": "Section 36-Powder House Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Section_36-Powder_House_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Forestry_Club_Cabin_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Cap_House"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 4.8,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 880,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.518Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 44.65704,
+                "longitude": -123.23517
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334474c",
+        "id": "050efaf8-fa87-4592-a52d-018a1c8d824d",
+        "name": "Sandy River Delta Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Sandy_River_Delta_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Sandy_River_Delta_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Maya_Lin_Bird_Blind"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 4.4,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 40,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.515Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.5463,
+                "longitude": -122.374
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334474d",
+        "id": "cca1c832-db2c-4214-9a16-6fba84bee34d",
+        "name": "Shepperd's Dell Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Shepperd%27s_Dell_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Shepperd%27s_Dell_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Shepperd%27s_Dell_Falls"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 0.2,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 50,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.52Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.54697,
+                "longitude": -122.1976
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334474e",
+        "id": "b9267c1f-24bb-4c70-ac11-5208d7e79b20",
+        "name": "Rooster Rock Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Rooster_Rock_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Rooster_Rock_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Rooster_Rock_(Columbia_Gorge)"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 2.7,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 240,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.502Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.54731,
+                "longitude": -122.2341
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334474f",
+        "id": "f4d44efb-155b-4a19-8ed4-7d6e5e2d8422",
+        "name": "Salem Riverfront Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Salem_Riverfront_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Union_Street_Bridge_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Wallace_Park_Gravel_Pit"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 4.1,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 45,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.504Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 44.94822,
+                "longitude": -123.04507
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344750",
+        "id": "ba9d8853-f8e7-418b-98cc-00e9bf05d8fa",
+        "name": "Short Beach Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Short_Beach_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Short_Beach_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Short_Beach"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 1.4,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 95,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.522Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.47282,
+                "longitude": -123.96873
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344751",
+        "id": "8de9a875-00a8-4aa6-86e9-3067a5a7deed",
+        "name": "Smith Creek Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Smith_Creek_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/214_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Howard_Creek_Trailhead"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 9,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 1420,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.523Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 44.8525,
+                "longitude": -122.66
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344752",
+        "id": "4203b4a9-09b2-4a52-8a86-a51456d16e8c",
+        "name": "Smith Homestead Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Smith_Homestead_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Smith_Homestead_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Smith_Homestead_Meadow"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 0.8,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 20,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.525Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.5874,
+                "longitude": -123.5521
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344753",
+        "id": "e727c1ce-551f-49f6-bfb5-b2153b810d30",
+        "name": "Smith and Bybee Lakes Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Smith_and_Bybee_Lakes_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Smith_and_Bybee_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Bybee_Lake"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 2.1,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 10,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.526Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.61665,
+                "longitude": -122.7188
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344754",
+        "id": "e38160b7-8ebe-4db1-b79a-4a347892dd75",
+        "name": "South Molalla River Trails Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/South_Molalla_River_Trails_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Hardy_Creek_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Annie%27s_Cabin"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 9.9,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 1375,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.528Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.03968,
+                "longitude": -122.48929
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344755",
+        "id": "4bc1de34-ffc8-4b86-bdfd-fda8b3728d4f",
+        "name": "Spearfish Lake Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Spearfish_Lake_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Spearfish_Lake_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Spearfish_Lake"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 2.2,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 45,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.53Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.6253,
+                "longitude": -121.1276
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344756",
+        "id": "2885c2e8-d3f5-4b5e-9450-9eb9759ff714",
+        "name": "Spencer Creek Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Spencer_Creek_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Beverly_Beach_Trailhead",
+            "trailEnd": "http://www.oregonhikers.orgundefined"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 1.7,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 30,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.532Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 44.72841,
+                "longitude": -124.05691
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344757",
+        "id": "ed5427cf-5c34-4a80-a0d5-2d526bd84ccf",
+        "name": "Springbrook-Iron Mountain Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Springbrook-Iron_Mountain_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Sundeleaf_Drive_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Iron_Mountain_Overlook"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 3.4,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 355,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.538Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.42285,
+                "longitude": -122.70483
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344758",
+        "id": "cb78b058-2c57-4915-bc70-ccfce8e7121a",
+        "name": "Spring Lake to Devils Lake Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Spring_Lake_to_Devils_Lake_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Port_Avenue_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Devils_Lake"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 2.4,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 295,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.535Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 44.9757,
+                "longitude": -124.007
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344759",
+        "id": "81c9d4fe-fb45-446e-8065-bde97807b032",
+        "name": "Spirit Falls Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Spirit_Falls_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Spirit_Falls_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Spirit_Falls"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 6,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 130,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.533Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 43.7315234,
+                "longitude": -122.6396156
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334475a",
+        "id": "56546de3-1155-4d63-adf6-d9e4c7551be6",
+        "name": "Spring Valley Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Spring_Valley_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Spring_Valley_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Spring_Valley_Park_Entrance"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 3.9,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 135,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.536Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.0642,
+                "longitude": -123.0684
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334475b",
+        "id": "14762343-2e0c-4b67-8888-5786d6ce66db",
+        "name": "Spruce Run Lake Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Spruce_Run_Lake_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Spruce_Run_Creek_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Spruce_Run_Lake"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 6.8,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 1580,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.54Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.8116,
+                "longitude": -123.6103
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334475c",
+        "id": "0a147f41-ba05-46d4-a3fe-3c1cda2517b1",
+        "name": "St. Johns-Willamette Cove Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/St._Johns-Willamette_Cove_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Cathedral_Park_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Willamette_Cove"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 4.1,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 240,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.543Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.5881,
+                "longitude": -122.7618
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334475d",
+        "id": "644fb99d-ee71-4269-99f6-87da5252b9b7",
+        "name": "St. Cloud Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/St._Cloud_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/St._Cloud_Trailhead",
+            "trailEnd": "http://www.oregonhikers.orgundefined"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 1,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 25,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.541Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.6004,
+                "longitude": -122.1117
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334475e",
+        "id": "daba3b7a-d4db-43f3-9116-73f8eb89e8ba",
+        "name": "Steam Donkey Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Steam_Donkey_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Sunset_Rest_Area_Trailhead",
+            "trailEnd": "http://www.oregonhikers.orgundefined"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 0.8,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 140,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.545Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.7963,
+                "longitude": -123.4589
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334475f",
+        "id": "d16f384b-c5d9-4a90-bfa2-acd7ab07c151",
+        "name": "Steigerwald National Wildlife Refuge Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Steigerwald_National_Wildlife_Refuge_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Steigerwald_Lake_Trailhead"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 2.8,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 0,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.546Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.57024,
+                "longitude": -122.314586
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344760",
+        "id": "57fd7844-a0b9-4401-a777-9f26906c5cb5",
+        "name": "Step Creek Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Step_Creek_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Reehers_Camp_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Gales_Creek_Trail-Round_Top_Road_Junction"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 7.6,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 860,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.548Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.70696,
+                "longitude": -123.33793
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344761",
+        "id": "2b4e7ffa-897f-443f-a189-5327b43189ba",
+        "name": "Storey Burn Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Storey_Burn_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Summit_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Storey_Burn_Trailhead"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 8.1,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 1645,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.549Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.62394,
+                "longitude": -123.3755
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344762",
+        "id": "9499a711-5d4d-4cdb-a3f9-03af6c7b4b1b",
+        "name": "Stub Stewart Northern Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Stub_Stewart_Northern_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Hilltop_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Boomscooter_Pond"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 4.1,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 480,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.551Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.7417,
+                "longitude": -123.1861
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344763",
+        "id": "b0599629-f22a-491c-a74b-b8ecd114f626",
+        "name": "Sulphur Springs via Alpha Trail Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Sulphur_Springs_via_Alpha_Trail_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Lewisburg_Saddle_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Sulphur_Springs"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 5.4,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 1055,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.553Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 44.63676,
+                "longitude": -123.29578
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344764",
+        "id": "014441bc-d156-4605-a30e-a4d0f2cd4453",
+        "name": "Summerlake Park Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Summerlake_Park_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Summerlake_Park_Trailhead",
+            "trailEnd": "http://www.oregonhikers.orgundefined"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 1,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 20,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.555Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.43653,
+                "longitude": -122.81063
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344765",
+        "id": "d522b2af-4c22-48b4-be38-b7c1c21d0829",
+        "name": "Sundial Beach Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Sundial_Beach_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Graham_Road_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Sundial_Beach"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 3.6,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 40,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.556Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.55033,
+                "longitude": -122.38865
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344766",
+        "id": "867e3db2-9926-48df-b19f-70f832ea5202",
+        "name": "Sunset Beach to Necanicum Estuary Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Sunset_Beach_to_Necanicum_Estuary_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Sunset_Beach_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Necanicum_Estuary"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 12.6,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 25,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.559Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 46.10001,
+                "longitude": -123.93753
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344767",
+        "id": "096c1884-f4fc-4886-907a-37ed9a0e39c9",
+        "name": "Sunflower Hill-Indian Pits Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Sunflower_Hill-Indian_Pits_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Catherine_Creek_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Rowland_Basin_Viewpoint"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 4.9,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 1320,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.557Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.71047,
+                "longitude": -121.36214
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344768",
+        "id": "a4ff04c8-860b-49bb-bc06-0332000279f8",
+        "name": "Susan Creek Falls Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Susan_Creek_Falls_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Susan_Creek_Falls_Trailhead"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 1.6,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 105,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.562Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 43.29891,
+                "longitude": -122.90571
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344769",
+        "id": "92e3ae45-5820-4381-b225-fda1de813eee",
+        "name": "Sweet creek hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Sweet_creek_hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Sweet_Creek_Homestead_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Sweet_Creek_Beaver_Creek_Trailhead"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 5.2,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 650,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.565Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 43.9579,
+                "longitude": -123.9022
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334476a",
+        "id": "3e53ddf8-2ddd-4681-a4e5-eaf0f3f9280e",
+        "name": "Takena Landing Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Takena_Landing_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Takena_Landing_Trailhead",
+            "trailEnd": "http://www.oregonhikers.orgundefined"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 3.4,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 65,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.566Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 44.6406,
+                "longitude": -123.1074
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334476b",
+        "id": "8cabdda9-a42f-41df-aa00-dd68c61f942a",
+        "name": "Sweet Creek Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Sweet_Creek_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Sweet_Creek_Homestead_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Sweet_Creek_Beaver_Creek_Trailhead"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 5.2,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 650,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.563Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 43.9579,
+                "longitude": -123.9022
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334476c",
+        "id": "98779789-84b1-4574-b4c2-88b0634ff523",
+        "name": "Tamanawas Falls Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Tamanawas_Falls_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Sherwood_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Tamanawas_Falls"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 3.6,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 590,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.568Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.40098,
+                "longitude": -121.57063
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334476d",
+        "id": "484d1d72-ee71-40c4-b8fb-58b1e896e6db",
+        "name": "Teal Slough Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Teal_Slough_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Teal_Slough_Trailhead",
+            "trailEnd": "http://www.oregonhikers.orgundefined"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 0.6,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 310,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.569Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 46.42876,
+                "longitude": -123.91703
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334476e",
+        "id": "a616145e-2263-4faa-b21a-558c6889491d",
+        "name": "Tillamook Bay Wetlands Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Tillamook_Bay_Wetlands_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Goodspeed_Road_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Wilson_River_Delta"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 3.6,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 20,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.581Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.47413,
+                "longitude": -123.86907
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334476f",
+        "id": "937d513c-0ec6-4f25-b57b-03413c01a350",
+        "name": "Toleak Point Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Toleak_Point_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Third_Beach_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Toleak_Point"
+        },
+        "measures": {
+            "difficulty": "Difficult",
+            "distance": {
+                "value": 12,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 1200,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.582Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 47.8888,
+                "longitude": -124.5984
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344770",
+        "id": "e53ce9cd-c87c-4054-b04b-e7e3282f4f01",
+        "name": "The Dalles Riverfront Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/The_Dalles_Riverfront_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Discovery_Center_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Klindts_Cove_Trailhead"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 6.6,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 100,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.571Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.65277,
+                "longitude": -121.20949
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344771",
+        "id": "b6371821-0e0d-4d68-9d2f-3b955090a84e",
+        "name": "Tracy Hill Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Tracy_Hill_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Tracy_Hill_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Bathtub_Spring"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 6.1,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 1715,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.586Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.71214,
+                "longitude": -121.3541
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344772",
+        "id": "5d8d0e59-c782-4442-9dba-5ea19bc4e59e",
+        "name": "Tolinda-Ridge Trail Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Tolinda-Ridge_Trail_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Ridge_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Hardesty_Trail-Firelane_7_Junction"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 5.9,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 1685,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.584Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.5808,
+                "longitude": -122.7661
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344773",
+        "id": "d9fae2f3-8686-4cc3-9533-52fc6f126a43",
+        "name": "Triple C Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Triple_C_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Reehers_Camp_Trailhead",
+            "trailEnd": "http://www.oregonhikers.orgundefined"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 2.1,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 180,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.587Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.70696,
+                "longitude": -123.33793
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344774",
+        "id": "6124f521-cb83-4276-8034-9000905568ef",
+        "name": "Tryon Creek Outer Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Tryon_Creek_Outer_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Tryon_Creek_State_Park_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Tryon_Creek_High_Bridge"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 5.7,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 630,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.591Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.44133,
+                "longitude": -122.67559
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344775",
+        "id": "6e13ae1e-fa07-4f35-b344-d7750b506834",
+        "name": "Tryon Creek Inner Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Tryon_Creek_Inner_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Tryon_Creek_State_Park_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Tryon_Creek_High_Bridge"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 1.9,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 125,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.589Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.44133,
+                "longitude": -122.67559
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344776",
+        "id": "5c334c3d-122f-42bf-9468-3a5c68d4c28e",
+        "name": "Tualatin Hills Nature Park Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Tualatin_Hills_Nature_Park_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Millikan_Way_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Lily_Pond"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 4.3,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 85,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.593Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.498286,
+                "longitude": -122.839197
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344777",
+        "id": "a93c17fc-d131-41a8-9ba3-4c40fbc15855",
+        "name": "Two Chiefs Trail Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Two_Chiefs_Trail_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Dick_Thomas_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Greenleaf_Creek_Crossing"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 7.8,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 1600,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.597Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.65527,
+                "longitude": -121.96059
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344778",
+        "id": "6bf854b0-50cc-45c2-9415-257c6cd08f8e",
+        "name": "Tualatin Refuge Nature Trail Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Tualatin_Refuge_Nature_Trail_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Tualatin_River_National_Wildlife_Refuge_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Tualatin_Refuge_Wetland_Observation_Deck"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 2,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 55,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.594Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.38214,
+                "longitude": -122.83131
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344779",
+        "id": "14869d2b-4967-48b5-84d3-59f44d750a76",
+        "name": "University Falls Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/University_Falls_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/University_Falls_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/University_Falls"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 0.7,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 180,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.599Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.59841,
+                "longitude": -123.39234
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334477a",
+        "id": "5b42b53f-d410-4705-a242-c4976a11d0c7",
+        "name": "Upper McCord Creek Falls Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Upper_McCord_Creek_Falls_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/John_B_Yeon_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Upper_McCord_Creek_Falls"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 2.2,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 400,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.602Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.6124,
+                "longitude": -122.00428
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334477b",
+        "id": "4150dd1c-8bf2-482d-b0c4-6da0a76dd5b1",
+        "name": "University Falls Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/University_Falls_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Rogers_Camp_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/University_Falls"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 8,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 1275,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.6Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.6226,
+                "longitude": -123.3757
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334477c",
+        "id": "d88738a2-b59c-4035-98a7-b67b166ecc06",
+        "name": "Upper Rogue River Hikes",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Upper_Rogue_River_Hikes",
+            "trailStart": "http://www.oregonhikers.orgundefined",
+            "trailEnd": "http://www.oregonhikers.orgundefined"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 47,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 1000,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.603Z"
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334477d",
+        "id": "7e3d7a9a-8e5e-401c-9b4c-a8cf861a21a2",
+        "name": "Vancouver Discovery Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Vancouver_Discovery_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Vancouver_Quay_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Officers_Row"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 4.4,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 130,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.606Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.62298,
+                "longitude": -122.67721
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334477e",
+        "id": "4091243f-53f8-419f-8ac8-ac758cc27fae",
+        "name": "Vernonia Lake Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Vernonia_Lake_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Vernonia_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Vernonia_Lake_Trailhead"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 2.9,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 15,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.61Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.85681,
+                "longitude": -123.19399
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334477f",
+        "id": "51187c74-82d4-45ad-85c2-f9cfcdd9319c",
+        "name": "Wahkeena Falls Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Wahkeena_Falls_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Wahkeena_Trailhead"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 1.4,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 850,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.613Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.57528,
+                "longitude": -122.12801
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344780",
+        "id": "ef111d2c-5d6b-46b7-bfce-f8897a6fb266",
+        "name": "Wahclella Falls Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Wahclella_Falls_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Wahclella_Falls_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Wahclella_Falls"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 2,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.612Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.6306,
+                "longitude": -121.95382
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344781",
+        "id": "eaa3dc12-087e-4a1c-8445-db13192a211f",
+        "name": "Washougal River Greenway Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Washougal_River_Greenway_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Baz_Riverfront_Park_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Yale_and_2nd_Trailhead"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 2.6,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 70,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.62Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.58752,
+                "longitude": -122.38787
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344782",
+        "id": "bd895f61-c7cb-4f37-9ccd-493a35dcb203",
+        "name": "Warrior Point Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Warrior_Point_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Warrior_Point_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Warrior_Point"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 7,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 10,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.617Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.80859,
+                "longitude": -122.79833
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344783",
+        "id": "52017644-0e59-4c00-946a-10a4a371a34c",
+        "name": "Washington Park Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Washington_Park_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Sacajawea_Statue_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Hoyt_Arboretum_Trailhead"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 3.9,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 585,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.618Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.52147,
+                "longitude": -122.70228
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344784",
+        "id": "a11f4437-8fa2-4d72-982c-d274b25057a4",
+        "name": "Washougal River Greenway loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Washougal_River_Greenway_loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Baz_Riverfront_Park_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Yale_and_2nd_Trailhead"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 2.6,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 70,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.622Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.58752,
+                "longitude": -122.38787
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344785",
+        "id": "6d206f8e-eb0b-4dcd-876f-250bcf47bd43",
+        "name": "Wapato Greenway Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Wapato_Greenway_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Wapato_Access_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Virginia_Lake_North_Pond"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 2.2,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 40,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.615Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.66022,
+                "longitude": -122.83859
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344786",
+        "id": "eb72e082-6d8d-4bef-99c7-a1f6ffc9381d",
+        "name": "Whipple Creek Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Whipple_Creek_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Whipple_Creek_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Whipple_Creek_Grist_Mill"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 3.1,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 300,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.628Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.74498,
+                "longitude": -122.69283
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344787",
+        "id": "d84490ac-038c-4a8b-a63f-fa976bf4c4f2",
+        "name": "Wauna Viewpoint from Tooth Rock Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Wauna_Viewpoint_from_Tooth_Rock_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Tooth_Rock_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Wauna_Viewpoint"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 4,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 1050,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.626Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.63364,
+                "longitude": -121.95004
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344788",
+        "id": "7171db4f-5cb1-46d5-9dbb-c9d47b76ea06",
+        "name": "Wauna Viewpoint from Eagle Creek Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Wauna_Viewpoint_from_Eagle_Creek_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Eagle_Creek_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Wauna_Viewpoint"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 3.6,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 1050,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.624Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.63653,
+                "longitude": -121.91947
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344789",
+        "id": "80fc72ed-f2ec-4b07-88b0-586d60fc1370",
+        "name": "Wilderness Park Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Wilderness_Park_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Clark_Street_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Camassia_High_Meadow"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 2.2,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 390,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.631Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.3668,
+                "longitude": -122.62388
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334478a",
+        "id": "1f1206a4-1bb5-4e06-ade3-6322ace257f9",
+        "name": "Whitaker Ponds Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Whitaker_Ponds_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Whitaker_Ponds_Trailhead",
+            "trailEnd": "http://www.oregonhikers.orgundefined"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 0.5,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 10,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.63Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.57391,
+                "longitude": -122.61391
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334478b",
+        "id": "e6a1f917-bddb-464c-950a-6e199b811d0f",
+        "name": "Willamette Mission Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Willamette_Mission_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Filbert_Grove_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Willamette_Mission_Site"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 2.6,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 20,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.633Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.08148,
+                "longitude": -123.05611
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334478c",
+        "id": "3c6ca544-322c-4a50-b262-53a7c3dea89d",
+        "name": "Willapa Art Trail Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Willapa_Art_Trail_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Willapa_Refuge_Trailhead",
+            "trailEnd": "http://www.oregonhikers.orgundefined"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 1.1,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 330,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.634Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 46.41454,
+                "longitude": -123.93434
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334478d",
+        "id": "0243a660-aac1-482b-be3a-e4624a9a5596",
+        "name": "Willow Bar Islands Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Willow_Bar_Islands_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Willow_Bar_Islands_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Lower_Willow_Bar_Point"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 3,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 10,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.639Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.7309,
+                "longitude": -122.7676
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334478e",
+        "id": "f0d1d3ac-a86a-47e8-b2f4-7c8ef9dadd9a",
+        "name": "Williams Creek-Hares Canyon Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Williams_Creek-Hares_Canyon_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Hilltop_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Caddywhomper_Viewpoint"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 10.7,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 1910,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.637Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.7417,
+                "longitude": -123.1861
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334478f",
+        "id": "306aee8e-70a1-45f9-ab87-0f6f50429d9e",
+        "name": "Willow Creek-Waterhouse Trail Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Willow_Creek-Waterhouse_Trail_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Willow_Creek_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Apollo_Ridge_Park"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 5.2,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 170,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.64Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.5282,
+                "longitude": -122.84208
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344790",
+        "id": "eb264e57-308c-4894-94a4-2fca8dad351e",
+        "name": "Willard Springs Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Willard_Springs_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Willard_Springs_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Willard_Springs"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 2.3,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 55,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.636Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.9657,
+                "longitude": -121.3464
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344791",
+        "id": "239c2a7e-150a-4404-ae83-6c3850dd997c",
+        "name": "Wilson River Wagon Road Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Wilson_River_Wagon_Road_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Deyoe_Creek_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Stagecoach_Horse_Camp_Trailhead"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 11.6,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 1800,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.644Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.61428,
+                "longitude": -123.36677
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344792",
+        "id": "721343cf-69b3-4244-bfcc-affcb71a3514",
+        "name": "Wind Mountain Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Wind_Mountain_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Wind_Mountain_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Wind_Mountain"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 2.5,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 1171,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.645Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.71342,
+                "longitude": -121.75183
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344793",
+        "id": "82a8afb1-bd6e-43cf-9239-177f95259b5a",
+        "name": "Wilson River Traverse Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Wilson_River_Traverse_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Footbridge_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Keenig_Creek_Trailhead"
+        },
+        "measures": {
+            "difficulty": "DifficultModerateEasy",
+            "distance": {
+                "value": 7.2,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 2485,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.642Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.56313,
+                "longitude": -123.58491
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344794",
+        "id": "cc321802-a004-4abb-94cb-6008b2f18a02",
+        "name": "Wolf Creek Trestle Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Wolf_Creek_Trestle_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Cochran_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Wolf_Creek_Flats"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 10,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 740,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.647Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.70453,
+                "longitude": -123.41114
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344795",
+        "id": "d6f3757c-fd1f-48bc-bd19-ced791ddce7a",
+        "name": "Woodpecker Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Woodpecker_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Woodpecker_Loop_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Woodpecker_Observation_Deck"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 1.2,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 105,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.648Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 44.41266,
+                "longitude": -123.33221
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344796",
+        "id": "dc7294c5-5f8a-4dbb-b4a9-b5db896dc742",
+        "name": "Woodpecker loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Woodpecker_loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Woodpecker_Loop_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Woodpecker_Observation_Deck"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 1.2,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 105,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.65Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 44.41266,
+                "longitude": -123.33221
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344797",
+        "id": "14a11992-1da3-4ade-a211-14a80e0f9f88",
+        "name": "Wygant Peak Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Wygant_Peak_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Mitchell_Point_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/w/index.php?title=Wygant_Peak&action=edit&redlink=1"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 6,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 1200,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.662Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.70312,
+                "longitude": -121.61859
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344798",
+        "id": "0da943b6-ed42-4af6-9921-e95b3588a029",
+        "name": "Woods Park Loop Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Woods_Park_Loop_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Woods_Park_South_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Woods_Creek_High_Bridge"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 2.1,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 210,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.66Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 45.45738,
+                "longitude": -122.72323
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e3344799",
+        "id": "b723eee2-f37a-4cd9-96ba-2b1a33409c74",
+        "name": "Yaquina Estuary Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Yaquina_Estuary_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Hatfield_Marine_Science_Center_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/King_Slough_Boardwalk"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 0.9,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 10,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.665Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 44.6232,
+                "longitude": -124.04374
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334479a",
+        "id": "fb1b8eb7-3855-4e43-9b6a-10499667dc9f",
+        "name": "Yaquina Head Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Yaquina_Head_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Yaquina_Head_Interpretive_Center_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Yaquina_Head_Lighthouse"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 3.4,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 490,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.666Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 44.67536,
+                "longitude": -124.07417
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334479b",
+        "id": "a35a6761-3f48-4219-8758-bc8d09cbe2e4",
+        "name": "Yachats 804 Trail Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Yachats_804_Trail_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Smelt_Sands_Trailhead",
+            "trailEnd": "http://www.oregonhikers.org/field_guide/Starr_Creek"
+        },
+        "measures": {
+            "difficulty": "Easy",
+            "distance": {
+                "value": 1.7,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 20,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.663Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 44.3221,
+                "longitude": -124.10566
+            }
+        }
+    },
+    {
+        "_id": "63002e1b9ed6cb63e334479c",
+        "id": "49b42604-2631-45e7-be96-1a0db0ad2c78",
+        "name": "Zane Grey Campsite Hike",
+        "urls": {
+            "absoluteSource": "http://www.oregonhikers.org/field_guide/Zane_Grey_Campsite_Hike",
+            "trailStart": "http://www.oregonhikers.org/field_guide/Wright_Creek_Trailhead"
+        },
+        "measures": {
+            "difficulty": "Moderate",
+            "distance": {
+                "value": 7.5,
+                "measure": "miles"
+            },
+            "elevationGain": {
+                "value": 355,
+                "measure": "feet"
+            }
+        },
+        "updatedAt": "2016-11-27T00:45:39.668Z",
+        "locations": {
+            "trailStart": {
+                "latitude": 43.3195,
+                "longitude": -122.8092
+            }
+        }
+    }
+]

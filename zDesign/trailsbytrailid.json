@@ -1,0 +1,28 @@
+{
+    "_id": "63002e1b9ed6cb63e334474a",
+    "id": "d6202b90-319f-4822-b198-2d071d0b13f6",
+    "name": "Seaside Promenade Loop Hike",
+    "urls": {
+        "absoluteSource": "http://www.oregonhikers.org/field_guide/Seaside_Promenade_Loop_Hike",
+        "trailStart": "http://www.oregonhikers.org/field_guide/Seaside_Trailhead",
+        "trailEnd": "http://www.oregonhikers.org/field_guide/Necanicum_Estuary"
+    },
+    "measures": {
+        "difficulty": "Easy",
+        "distance": {
+            "value": 6.2,
+            "measure": "miles"
+        },
+        "elevationGain": {
+            "value": 20,
+            "measure": "feet"
+        }
+    },
+    "updatedAt": "2016-11-27T00:45:39.517Z",
+    "locations": {
+        "trailStart": {
+            "latitude": 45.9941,
+            "longitude": -123.9268
+        }
+    }
+}
