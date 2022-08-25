@@ -1,31 +1,68 @@
-.header{
+/* Added by Joann */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+/* flexbox formatting */
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* -------------------------------------------- */
+
+
+/* Miguels CSS */
+.header {
   font-family: 'Oswald', sans-serif;
   color: #1f5139;
   font-weight: 500;
+
 }
 
-p{
+p {
   font-family: 'Lato', sans-serif;
   color: #515151;
 }
 
-.negative-comment{
+.negative-comment {
   color: #A00000;
 }
 
-.icons{
+.icons {
   color: #27A9AF
 }
 
-.main-boxing{
+.main-boxing {
   border: 1px solid #1f5139;
 }
 
-.main-boxing-reverse{
+.main-boxing-reverse {
   border: 1px solid white;
 }
 
-button .btn-standard{
+button .btn-standard {
   border: 1px solid #1f5139;
   background-color: none;
   font-family: 'Oswald', sans-serif;
@@ -33,14 +70,14 @@ button .btn-standard{
   padding: 2%;
 }
 
-button .btn-standard:active{
-  background-color:  #1f5139;
+button .btn-standard:active {
+  background-color: #1f5139;
   font-family: 'Oswald', sans-serif;
   color: white;
   padding: 2%;
 }
 
-button .btn-reverse{
+button .btn-reverse {
   border: 1px solid white;
   background-color: none;
   font-family: 'Oswald', sans-serif;
@@ -48,9 +85,95 @@ button .btn-reverse{
   padding: 2%;
 }
 
-button .btn-reverse:active{
-  background-color:  white;
+button .btn-reverse:active {
+  background-color: white;
   font-family: 'Oswald', sans-serif;
   color: #1f5139;
   padding: 2%;
+}
+
+/* Added by Joann for Prototype */
+/* nav bar this can be deleted when we dont need the page links on the nav bar */
+.nav-links {
+
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  padding: 1%;
+  width: 100%
+}
+
+.nav-li {
+  padding: 3px;
+}
+
+/* Welcome Page (Home) */
+html, body {
+  height: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+
+.welcome {
+  width: 80%;
+  height: 50rem;
+  margin-left: 10%;
+  text-align: center;
+  padding-top: 5rem;
+  background-color: rgb(81, 81, 81);
+  color: #FFFFFF;
+}
+
+.welcome  h1 {
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+/* Login Form */
+
+.form {
+  max-width: 30rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.formLabel {
+  margin-bottom: 0.25rem;
+}
+
+.formField {
+  padding: 0.5rem;
+}
+
+.formFieldError {
+  border: 1px solid #e11d48;
+}
+
+.formFieldErrorMessage {
+  color: #e11d48;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.formSubmitBtn {
+  padding: 0.5rem 0.7rem;
+  min-width: 5rem;
+  background-color: #9333ea;
+  color: #f3e8ff;
+  text-transform: uppercase;
+  font-weight: 500;
 }
