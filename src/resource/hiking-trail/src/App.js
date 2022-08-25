@@ -86,14 +86,14 @@ function App() {
   }
 
   const TrailResultsPage = () => {
-    const { id } = useParams();
+    const { name } = useParams();
     return (
       <>
         <NavBar />
         <main>
           <div >
             <TrailResults
-              id={id}
+              name={name}
             />
           </div>
         </main>
@@ -153,7 +153,7 @@ function App() {
           element={<SearchTrailsPage />}
         />
         <Route
-          path="/hikingtrails/name/:id "
+          path="/hikingtrails/name/:name "
           element={<TrailResultsPage />}
         />
         <Route
