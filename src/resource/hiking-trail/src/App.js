@@ -4,7 +4,7 @@ import './App.css';
 import { Route, Routes, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import Login from './components/LoginForm';
+import Login from './components/Login';
 import Register from './components/Register';
 import SearchTrails from './components/SearchTrails';
 import TrailResults from './components/TrailResults';
