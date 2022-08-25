@@ -1,13 +1,14 @@
 import React from 'react';
-
+import '../App.css';
+import RegisterForm from "./RegisterForm"
+ 
 function Register() {
-
-    return (
-        <div>
-           <h1>Registration Page</h1>
-        </div>
-    )
-
+  return (
+    <div className="App">
+      <RegisterForm />
+    </div>
+     
+  );
 }
 
 export default Register

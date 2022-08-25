@@ -26,15 +26,15 @@ function App() {
 
           <section className="welcome">
             <div>
-              <h2>App className</h2>
-              <h1 className="">Welcome</h1>
+              <h2 className="app-name">App Name</h2>
+              <h1 className="">Welcome,</h1>
               <h2>We're glad you're here!</h2>
               <h3>App Name is a real-time, online resource for hiking trails in</h3>
               <h3>Washington State.  App Name helps identify and combat</h3>
               <h3>congestion at our trails to help you optimize your hiking.</h3>
 
             </div>
-            <div className="register">
+            <div className="welcome-register">
               <p> You are also welcome to register for a free account</p>
               <div className="row">
                 <Link to={`/register`}><button className="welcome-button">Register</button></Link>

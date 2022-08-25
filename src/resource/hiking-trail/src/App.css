@@ -110,7 +110,8 @@ button .btn-reverse:active {
 }
 
 /* Welcome Page (Home) */
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -129,15 +130,15 @@ html, body {
   color: #FFFFFF;
 }
 
-.welcome  h1 {
+.welcome h1 {
   font-weight: bold;
   font-family: 'Oswald', sans-serif;
   font-size: 3rem;
-  text-transform: capitalize;
+  text-transform: uppercase;
   padding-top: 3%;
 }
 
-.welcome  h2 {
+.welcome h2 {
 
   font-family: 'Oswald', sans-serif;
   font-size: 2rem;
@@ -146,15 +147,16 @@ html, body {
 }
 
 .welcome h3 {
- 
+
   font-family: 'Oswald', sans-serif;
   font-size: 1rem;
   color: #FFFFFF;
-  
+ 
+
 }
 
 .welcome p {
- 
+
   font-family: 'Oswald', sans-serif;
   font-size: 1rem;
   text-transform: capitalize;
@@ -162,57 +164,95 @@ html, body {
   padding: 3%;
 }
 
-.register {
+.app-name {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  width: 30%;
+  margin-left: 35%;
+ 
+}
+
+.welcome-register {
   padding: 3%;
 }
 
-.welcome-button  {
+.welcome-button {
   border: 1px solid #FFFFFF;
   background-color: transparent;
   font-family: 'Oswald', sans-serif;
   color: #FFFFFF;
-  font-weight: bold;
- padding: .5rem 2rem;
-}
-
-/* Login Form */
-
-.form {
-  max-width: 30rem;
-}
-
-.formGroup {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-}
-
-.formLabel {
-  margin-bottom: 0.25rem;
-}
-
-.formField {
-  padding: 0.5rem;
-}
-
-.formFieldError {
-  border: 1px solid #e11d48;
-}
-
-.formFieldErrorMessage {
-  color: #e11d48;
-}
-
-.formActions {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.formSubmitBtn {
-  padding: 0.5rem 0.7rem;
-  min-width: 5rem;
-  background-color: #9333ea;
-  color: #f3e8ff;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: bold;
+  padding: .5rem 2rem;
+}
+
+/* Register Form */
+
+
+ .register-form{
+  width: 60%;
+  height: 30rem;
+  margin-left: 20%;
+  text-align: center;
+  padding-top: 1%;
+  background-color: rgb(81, 81, 81);
+  color: #FFFFFF;
+
+ }
+ 
+.register-label{
+  display: block;
+  font-size: larger;
+  color: white;
+  padding: 5px;
+}
+ 
+.register-input{
+  font-size: larger;
+  padding: 5px;
+  margin: 2px;
+  
+}
+.register-btn{
+  font-family: 'Oswald', sans-serif;
+  color: #FFFFFF;
+  background-color: transparent;
+  text-transform: uppercase;
+  border: 1px solid #FFFFFF;
+  font-size: larger;
+  display: block;
+  padding: 5px;
+  margin: 10px auto;
+}
+ 
+.register-messages{
+  display: flex;
+  justify-content: center;
+}
+ 
+.register-error{
+  display: block;
+  background-color: red;
+  color: white;
+  width: fit-content;
+  height: 50px;
+  padding: 5px;
+}
+ 
+.register-success{
+  display: block;
+  background-color: lightblue;
+  color: black;
+  width: fit-content;
+  height: 50px;
+  padding: 5px;
+}
+
+.register h2 {
+
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  text-transform: capitalize;
+  padding-bottom: 3%;
 }
