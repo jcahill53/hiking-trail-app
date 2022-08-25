@@ -23,7 +23,7 @@ module.exports.getAll = async () => {
     const trails = database.collection(trailsCollName);
   
     const query = {};
-    let trailsCursor = await trails.find(query).limit(100);
+    let trailsCursor = await trails.find(query).limit(50);
     if(trailsCursor){
       return trailsCursor.toArray();
     } 
@@ -48,7 +48,7 @@ module.exports.getTrailsByName = async (name) => {
 
   const query = { name: { $regex: name, $options: 'i' } }
 
-  let trailsCursor = await trails.find(query);
+  let trailsCursor = await trails.find(query).limit(30);
 
   return trailsCursor.toArray();
 }

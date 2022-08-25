@@ -35,7 +35,6 @@ router.get("/:id", async (req, res) => {
 
 });
 
-
 //GET ALL COMMENTS FOR A USER
 // curl -sS http://localhost:5000/Users/#####/comments
 
