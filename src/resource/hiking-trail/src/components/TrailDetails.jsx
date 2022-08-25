@@ -1,11 +1,7 @@
-function TrailDetails() {
+import React from 'react';
 
-    return (
-        <div>
-           <h1>TrailDetails</h1>
-        </div>
-    )
-
+export default function TrailDetails () {
+    return <div>
+        <h1>Trail details here</h1>
+    </div>
 }
-
-export default TrailDetails

@@ -13,6 +13,7 @@ import CreateMessage from './components/CreateMessage';
 
 
 
+
 function App() {
 
 
@@ -88,6 +89,7 @@ function App() {
           <div >
             <SearchTrails
             />
+           
           </div>
         </main>
       </>
@@ -102,7 +104,6 @@ function App() {
         <main>
           <div >
             <TrailResults
-              name={name}
             />
           </div>
         </main>
@@ -161,6 +162,7 @@ function App() {
           path="/hikingtrails"
           element={<SearchTrailsPage />}
         />
+        
         <Route
           path="/hikingtrails/name/:name "
           element={<TrailResultsPage />}
