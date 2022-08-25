@@ -1,31 +1,68 @@
-.header{
+/* Added by Joann */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Oswald', sans-serif;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+/* flexbox formatting */
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* -------------------------------------------- */
+
+
+/* Miguels CSS */
+.header {
   font-family: 'Oswald', sans-serif;
   color: #1f5139;
   font-weight: 500;
+
 }
 
-p{
+p {
   font-family: 'Lato', sans-serif;
   color: #515151;
 }
 
-.negative-comment{
+.negative-comment {
   color: #A00000;
 }
 
-.icons{
+.icons {
   color: #27A9AF
 }
 
-.main-boxing{
+.main-boxing {
   border: 1px solid #1f5139;
 }
 
-.main-boxing-reverse{
+.main-boxing-reverse {
   border: 1px solid white;
 }
 
-button .btn-standard{
+button .btn-standard {
   border: 1px solid #1f5139;
   background-color: none;
   font-family: 'Oswald', sans-serif;
@@ -33,14 +70,14 @@ button .btn-standard{
   padding: 2%;
 }
 
-button .btn-standard:active{
-  background-color:  #1f5139;
+button .btn-standard:active {
+  background-color: #1f5139;
   font-family: 'Oswald', sans-serif;
   color: white;
   padding: 2%;
 }
 
-button .btn-reverse{
+button .btn-reverse {
   border: 1px solid white;
   background-color: none;
   font-family: 'Oswald', sans-serif;
@@ -48,9 +85,174 @@ button .btn-reverse{
   padding: 2%;
 }
 
-button .btn-reverse:active{
-  background-color:  white;
+button .btn-reverse:active {
+  background-color: white;
   font-family: 'Oswald', sans-serif;
   color: #1f5139;
   padding: 2%;
+}
+
+/* Added by Joann for Prototype */
+/* nav bar this can be deleted when we dont need the page links on the nav bar */
+.nav-links {
+
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  padding: 1%;
+  width: 100%
+}
+
+.nav-li {
+  padding: 3px;
+}
+
+/* Welcome Page (Home) */
+html,
+body {
+  height: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+
+.welcome {
+  width: 60%;
+  height: 30rem;
+  margin-left: 20%;
+  text-align: center;
+  padding-top: 1%;
+  background-color: rgb(81, 81, 81);
+  color: #FFFFFF;
+}
+
+.welcome h1 {
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  padding-top: 3%;
+}
+
+.welcome h2 {
+
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  text-transform: capitalize;
+  padding-bottom: 3%;
+}
+
+.welcome h3 {
+
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  color: #FFFFFF;
+ 
+
+}
+
+.welcome p {
+
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  padding: 3%;
+}
+
+.app-name {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  width: 30%;
+  margin-left: 35%;
+ 
+}
+
+.welcome-register {
+  padding: 3%;
+}
+
+.welcome-button {
+  border: 1px solid #FFFFFF;
+  background-color: transparent;
+  font-family: 'Oswald', sans-serif;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: .5rem 2rem;
+}
+
+/* Register Form */
+
+
+ .register-form{
+  width: 60%;
+  height: 30rem;
+  margin-left: 20%;
+  text-align: center;
+  padding-top: 1%;
+  background-color: rgb(81, 81, 81);
+  color: #FFFFFF;
+
+ }
+ 
+.register-label{
+  display: block;
+  font-size: larger;
+  color: white;
+  padding: 5px;
+}
+ 
+.register-input{
+  font-size: larger;
+  padding: 5px;
+  margin: 2px;
+  
+}
+.register-btn{
+  font-family: 'Oswald', sans-serif;
+  color: #FFFFFF;
+  background-color: transparent;
+  text-transform: uppercase;
+  border: 1px solid #FFFFFF;
+  font-size: larger;
+  display: block;
+  padding: 5px;
+  margin: 10px auto;
+}
+ 
+.register-messages{
+  display: flex;
+  justify-content: center;
+}
+ 
+.register-error{
+  display: block;
+  background-color: red;
+  color: white;
+  width: fit-content;
+  height: 50px;
+  padding: 5px;
+}
+ 
+.register-success{
+  display: block;
+  background-color: lightblue;
+  color: black;
+  width: fit-content;
+  height: 50px;
+  padding: 5px;
+}
+
+.register h2 {
+
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  text-transform: capitalize;
+  padding-bottom: 3%;
 }
