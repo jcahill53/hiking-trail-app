@@ -1,5 +1,6 @@
 const { Router, response } = require("express");
 const router = Router();
+const corsOptions = {origin:"http://localhost:3000"};
 
 const bodyParser = require('body-parser');
 
@@ -40,7 +41,7 @@ router.get("/:id", async (req, res, next) => {
 });
 
 // #55 FIND HIKING TRAILS BY SEARCHING ON NAME
-// curl -sS "http://localhost:5000/hikingtrails/name/Rooster%20Rock"
+// curl -sS "http://localhost:5000/hikingtrails/name/Loop"
 router.get("/name/:name", async (req, res, next) => {
   const result = await trailsData.getTrailsByName(req.params.name);
 

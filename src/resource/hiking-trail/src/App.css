@@ -190,7 +190,7 @@ body {
 /* Register Form */
 
 
- .register-form{
+ .register-form, .login-form  {
   width: 60%;
   height: 30rem;
   margin-left: 20%;
@@ -201,37 +201,39 @@ body {
 
  }
  
-.register-label{
+.button-container {
+  padding-top: 2rem;
+}
+
+.register-label, .login-label {
   display: block;
   font-size: larger;
   color: white;
   padding: 5px;
 }
  
-.register-input{
+.register-input, .login-input {
   font-size: larger;
   padding: 5px;
   margin: 2px;
   
 }
-.register-btn{
+.register-btn, .login-btn {
+  border: 1px solid #FFFFFF;
+  background-color: transparent;
   font-family: 'Oswald', sans-serif;
   color: #FFFFFF;
-  background-color: transparent;
   text-transform: uppercase;
-  border: 1px solid #FFFFFF;
-  font-size: larger;
-  display: block;
-  padding: 5px;
-  margin: 10px auto;
+  font-weight: bold;
+  padding: .5rem 2rem;
 }
  
-.register-messages{
+.register-messages, .login-messages {
   display: flex;
   justify-content: center;
 }
  
-.register-error{
+.register-error, .login-error {
   display: block;
   background-color: red;
   color: white;
@@ -240,7 +242,7 @@ body {
   padding: 5px;
 }
  
-.register-success{
+.register-success, .login-success {
   display: block;
   background-color: lightblue;
   color: black;
@@ -249,7 +251,7 @@ body {
   padding: 5px;
 }
 
-.register h2 {
+.register h2, .login h2 {
 
   font-family: 'Oswald', sans-serif;
   font-size: 2rem;
