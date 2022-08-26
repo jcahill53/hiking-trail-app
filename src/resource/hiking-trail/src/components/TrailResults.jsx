@@ -14,7 +14,7 @@ export default function TrailResults({ trailsInput }) {
     console.log(trailName);
     const url = `http://localhost:5000/hikingtrails/name/${trailName}`;
 console.log(url);
-
+// add a comment
     useEffect(() => {
         fetch(url)
             .then(response => response.json())
