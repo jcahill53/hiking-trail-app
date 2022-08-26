@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 import '../App.css';
-
+import { getTrailsByName } from '../../../../../datainterface/hikingtrails';
 
 function SearchTrails() {
     const [trailsInput, setTrailsInput] = useState('');
@@ -12,6 +12,12 @@ function SearchTrails() {
       console.log(trailsInput);
     };
     
+
+    useEffect(() => {
+      getTrailsByName.then(snapshot => {
+          console.log(snapshot);
+      })
+  }, [])
   
     return (
      <div>
