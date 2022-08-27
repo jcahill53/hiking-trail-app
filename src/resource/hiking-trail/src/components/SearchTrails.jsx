@@ -6,6 +6,7 @@ import TrailResults from "./TrailResults"
 function SearchTrails() {
   // use state for form submission of hero name
   const [trailsInput, setTrailsInput] = useState('');
+ 
   const onFormSubmit = (event) => {
     event.preventDefault();
     setTrailsInput(event.target[0].value);

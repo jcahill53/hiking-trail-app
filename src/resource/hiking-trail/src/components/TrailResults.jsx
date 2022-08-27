@@ -12,7 +12,7 @@ export default function TrailResults({ trailsInput }) {
     // variables to create url
     let trailName = trailsInput;
     console.log(trailName);
-    const url = `http://localhost:5000/hikingtrails/name/${trailName}`;
+    const url = `http://localhost:5000/users/name/${trailName}`;
 console.log(url);
 // add a comment
     useEffect(() => {
