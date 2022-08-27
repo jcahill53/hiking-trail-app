@@ -1,4 +1,6 @@
-const { MongoClient } = require("mongodb");
+
+const MongoClient = require('mongodb').MongoClient;
+
 const ObjectId = require('mongodb').ObjectId;
 
 require('dotenv').config()
@@ -6,7 +8,9 @@ require('dotenv').config()
 const uri =
 `mongodb+srv://d-team:Test12@cluster0.f4ghe7b.mongodb.net/?retryWrites=true&w=majority`
 
-const client = new MongoClient(uri);
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+
 
 const databaseName = 'hiking_db';
 const trailsCollName = 'trails';
