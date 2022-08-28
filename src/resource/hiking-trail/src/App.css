@@ -258,3 +258,9 @@ body {
   text-transform: capitalize;
   padding-bottom: 3%;
 }
+
+/* Trails */
+
+.trail-card {
+  justify-content: flex-start;
+}
