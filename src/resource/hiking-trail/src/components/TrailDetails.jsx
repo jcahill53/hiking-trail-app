@@ -106,11 +106,11 @@ console.log(trailId);
             <section className="parking-info">
                 <h2 className="detail-hero-comics">App Name Real Time Statistics</h2>
                 <h2 className="app-name"> </h2>
-                <p>trailDetails.name</p>
+                <p>{trailDetails.name}</p>
                 <div>
                     <div>
                     <p>Parking Lot Status</p>
-                    <p>trailParking.parkingLotStatus</p>
+                    <p>{trailParking.parkingLotStatus}</p>
                     </div>
 
                     <div>
