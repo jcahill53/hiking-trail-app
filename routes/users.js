@@ -8,8 +8,6 @@ router.use(bodyParser.json());
 
 const userData = require('../dataInterface/users.jsx');
 
-
-
 // GET ALL USERS
 // curl -sS http://localhost:5000/users/
 router.get("/", async (req, res, next) => {

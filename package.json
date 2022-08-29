@@ -1,13 +1,13 @@
 {
-  
   "name": "hiking-trail-app",
   "description": "PROJECT PROPOSAL\r D Team:  Arthur Rodrigues, Yuhong Wang, Himanshi Gupta, Joann Cahill, Miguel Marin\r ---------------------------------------------------------------------------------",
   "version": "1.0.0",
   "main": "index.js",
-   "scripts": {
-     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
-    },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "startDev": "nodemon index.js",
+    "start": "node index.js"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -16,23 +16,19 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.9.0",
     "node-fetch": "^3.2.10"
-    },
-  
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jcahill53/hiking-trail-app.git"
-    },
-  
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jcahill53/hiking-trail-app/issues"
-    },
-  
+  },
   "homepage": "https://github.com/jcahill53/hiking-trail-app#readme",
-  
   "devDependencies": {
     "jest": "^28.1.3"
-    }
+  }
 }
