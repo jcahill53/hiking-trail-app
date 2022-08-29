@@ -1,3 +1,4 @@
+
 {
   "name": "hiking-trail-app",
   "description": "PROJECT PROPOSAL\r D Team:  Arthur Rodrigues, Yuhong Wang, Himanshi Gupta, Joann Cahill, Miguel Marin\r ---------------------------------------------------------------------------------",
@@ -32,3 +33,4 @@
     "jest": "^28.1.3"
   }
 }
+
