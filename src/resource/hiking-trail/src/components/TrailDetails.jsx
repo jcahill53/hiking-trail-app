@@ -5,10 +5,10 @@ import axios from "axios";
 import TrailComments from "./TrailComments"
  
 
-const { REACT_APP_NAME} = process.env
+// const { REACT_APP_NAME} = process.env
 
 function TrailDetails() {
-    const { _id } = useParams();
+    const {  id } = useParams();
 
     // use states for data fetch
     const [trailDetails, setTrailDetail] = useState([]);
@@ -19,8 +19,8 @@ function TrailDetails() {
 
     // url variables
 
-    const trailId =  JSON.stringify(_id);
-console.log(_id);
+    const trailId =  id;
+console.log(id);
 console.log(trailId);
 
     // trail by id api
@@ -84,37 +84,33 @@ console.log(trailId);
     // variables to be used in return
 
     // use only results from data fetch
-    const detail = trailDetails.data.results;
-    const comments = trailComments.data.results;
-    const parking = trailParking.data.results;
+    // const detail = trailDetails.data.results;
+    // const comments = trailComments.data.results;
+    // const parking = trailParking.data.results;
 
-    // variables for hero image
-    // const heroThumbPath = heroDetails[0].thumbnail.path;
-    // const heroThumbExt = heroDetails[0].thumbnail.extension
-    // const heroThumbNail = `${heroThumbPath}.${heroThumbExt}`
 
     // variable for hero description
     const trailDescr = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-    // const current = new Date();
-    // const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+    
 
+    
     return (
         <section>
             <section className="trail-info">
-                  <h2 className="app-name">${REACT_APP_NAME}</h2>
-                <h1 className="detail-hdr">{detail[0].name}</h1>
+                  <h2 className="app-name">App.name</h2>
+                <h1 className="detail-hdr">{trailDetails.name}</h1>
 
                 <p>${trailDescr}</p>
             </section>
 
             <section className="parking-info">
-                <h2 className="detail-hero-comics">${REACT_APP_NAME} Real Time Statistics</h2>
-                <h2 className="app-name">${REACT_APP_NAME}</h2>
-                <p>parking[0].name</p>
+                <h2 className="detail-hero-comics">App Name Real Time Statistics</h2>
+                <h2 className="app-name"> </h2>
+                <p>trailDetails.name</p>
                 <div>
                     <div>
                     <p>Parking Lot Status</p>
-                    <p>parking[0].parkingLotStatus</p>
+                    <p>trailParking.parkingLotStatus</p>
                     </div>
 
                     <div>
@@ -131,28 +127,23 @@ console.log(trailId);
                 <div>
                     <div>
                     <p>Emptiest Day/Time</p>
-                    <p>{parking[0].fullest_day_time}</p>
+                    <p>{trailParking.fullest_day_time}</p>
                     </div>
 
                     <div>
                     <p>Emptiest Day/Time</p>
-                    <p>{parking[0].emptiest_day_time}</p>
+                    <p>{trailParking.emptiest_day_time}</p>
                     </div>
 
 
                 </div>
 
-                "name": "parking lot 2",
-        "emptiestDayTime": "Monday 12:00pm",
-        "fullest_day_time": "Saturday 2:00pm",
-        "parkingLotStatus": "full",
-        "trailId": "63002e1b9ed6cb63e334474a",
-        "date": "2022-08-21T23:09:50.363Z"
+
             </section>
 
             <section className="comment-info">
                 <article className="row comment-card" >
-                    {comments.map((comment, id) =>
+                    {trailComments.map((comment, id) =>
                         <TrailComments
                             key={id}
                             comment={comment}

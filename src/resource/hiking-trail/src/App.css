@@ -30,9 +30,16 @@
   width: 50%;
 }
 
+.wide {
+  display: inline;
+  width: 80%;
+  
+}
+
 /* -------------------------------------------- */
 
 
+/* Miguels CSS */
 /* Miguels CSS */
 .header {
   font-family: 'Oswald', sans-serif;
@@ -44,6 +51,21 @@
 p {
   font-family: 'Lato', sans-serif;
   color: #515151;
+}
+
+.popup{
+  background-color: rgba(0,0,0,0.9) !important;
+  width: 100% !important;
+  height: 100%  !important;
+  display: flex;
+}
+
+#post-msg{
+  color: white;
+}
+
+#ty-msg{
+  color: white;
 }
 
 .negative-comment {
@@ -92,10 +114,11 @@ button .btn-reverse:active {
   padding: 2%;
 }
 
+
 /* Added by Joann for Prototype */
 /* nav bar this can be deleted when we dont need the page links on the nav bar */
 .nav-links {
-
+  
   height: 50px;
   display: flex;
   flex-direction: row;
@@ -130,7 +153,7 @@ body {
   color: #FFFFFF;
 }
 
-.welcome h1 {
+.welcome h1, .search-trail h1 {
   font-weight: bold;
   font-family: 'Oswald', sans-serif;
   font-size: 3rem;
@@ -146,7 +169,7 @@ body {
   padding-bottom: 3%;
 }
 
-.welcome h3 {
+.welcome h3  {
 
   font-family: 'Oswald', sans-serif;
   font-size: 1rem;
@@ -251,16 +274,100 @@ body {
   padding: 5px;
 }
 
-.register h2, .login h2 {
+.register h2, .login h2, .search-trail h2 {
 
   font-family: 'Oswald', sans-serif;
   font-size: 2rem;
   text-transform: capitalize;
   padding-bottom: 3%;
+  text-align: center;
 }
 
 /* Trails */
 
+.search-app {
+  color:rgb(81, 81, 81);
+  border-left: 1px solid  rgb(81, 81, 81);
+  border-right: 1px solid rgb(81, 81, 81);
+  border-bottom: 1px solid rgb(81, 81, 81);
+  width: 30%;
+  margin-left: 35%;
+}
+
+.search-trail {
+  margin-bottom: 3rem;
+}
+
+.srch-trl-ttl {
+  margin-top: 2rem;
+} 
+
+.search-label {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color:rgb(81, 81, 81);
+}
+
+.search-input {
+  height: 2rem;
+}
+
+
+.search-button {
+  border: 1px solid #FFFFFF;;
+  background-color: rgb(81, 81, 81);
+  font-family: 'Oswald', sans-serif;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: .5rem 2rem;
+}
+
+
+.container {
+width: 80%;
+margin-left: 15%;
+}
+
+
+
+
+.trail-container {
+  width: 80%;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+  margin-left: 10%;
+}
+ 
+.trail-card-img {
+  width: 15%;
+  margin-right: 5rem;
+}
+
 .trail-card {
   justify-content: flex-start;
+  width: 45%
+}
+
+
+.card-button {
+  border: 1px solid #FFFFFF;;
+  background-color: rgb(81, 81, 81);
+  font-family: 'Oswald', sans-serif;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: .5rem 2rem;
+  height: 35%;
+ 
+}
+
+.card-button button {
+   
+  background-color: rgb(81, 81, 81);
+  font-family: 'Oswald', sans-serif;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: .5rem 2rem;
 }

@@ -61,7 +61,7 @@ function RegisterForm() {
               <input className="register-input"
                 onChange={(e) => setUserName(e.target.value)}
                 value={userEmail}
-                type="email"
+                type="text"
                 autoComplete="on"
                 required
               />

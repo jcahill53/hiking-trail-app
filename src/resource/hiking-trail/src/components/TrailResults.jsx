@@ -48,21 +48,27 @@ console.log(url);
         return <p>An error has occurred.  Please try again.</p>
     }
 
-    // use only results from data fetch
-    // const trails = trailResults.data.results;
-    console.log(trailResults.id);
-    console.log(trailResults._id);
  
-   return (
+ 
+   console.log(trailResults);
+
+    return (
         <>
         {/* trail cards */}
         <section className="column" >
 
-            {trailResults.map((trail, _id) =>
+            {trailResults.map((trail,  _id) =>
+   
                 <TrailCard
                     key={_id}
                     trail={trail}
-                    trailId = {_id}
+                    trailId = {trail._id}
+                    trailDifficulty = {trail.measures.difficulty}
+                    trailDistanceValue = {trail.measures.distance.value}
+                    trailDistanceMeasure = {trail.measures.distance.measure}
+                    trailGainValue = {trail.measures.elevationGain.value}
+                    trailGainMeasure = {trail.measures.elevationGain.measure}
+                    
                 />
             )}
         </section>

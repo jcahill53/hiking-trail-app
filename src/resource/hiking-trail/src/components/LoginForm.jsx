@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 
 function LoginForm() {
   // States for login
-  const [userEmail, setUserEmail] = useState('');
-  const [userPassword, setUserPassword] = useState('');
+  const [email, setUserEmail] = useState('');
+  const [password, setUserPassword] = useState('');
 
-  console.log(`Email ${userEmail}`);
-  console.log(`Password ${userPassword}`);
+  console.log(`Email ${email}`);
+  console.log(`Password ${password}`);
 
   // Handle the login on submit
   const handleLogin = async (event) => {
     event.preventDefault();
 
     const data = new FormData();
-    data.append("email", userEmail);
-    data.append("password", userPassword);
+    data.append("email", email);
+    data.append("password", password);
 
     for (const pair of data.entries()) {
       console.log(`${pair[0]}, ${pair[1]}`);
@@ -50,7 +50,7 @@ function LoginForm() {
               <label className="register-label">Email</label>
               <input className="register-input"
                 onChange={(e) => setUserEmail(e.target.value)}
-                value={userEmail}
+                value={email}
                 type="email"
                 autoComplete="on"
                 required
@@ -58,7 +58,7 @@ function LoginForm() {
               <label className="register-label">Password</label>
               <input className="register-input"
                 onChange={(e) => setUserPassword(e.target.value)}
-                value={userPassword}
+                value={password}
                 autoComplete="on"
                 type="password"
                 required />
