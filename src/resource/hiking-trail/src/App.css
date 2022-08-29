@@ -46,6 +46,21 @@ p {
   color: #515151;
 }
 
+.popup{
+  background-color: rgba(0,0,0,0.9) !important;
+  width: 100% !important;
+  height: 100%  !important;
+  display: flex;
+}
+
+#post-msg{
+  color: white;
+}
+
+#ty-msg{
+  color: white;
+}
+
 .negative-comment {
   color: #A00000;
 }
