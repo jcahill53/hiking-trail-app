@@ -1,144 +1,133 @@
-# hiking-trail-api
+# hiking-trail-api and app
 
 PROJECT PROPOSAL
-D Team:  Arthur Rodrigues, Yuhong Wang, Himanshi Gupta, Joann Cahill, Miguel Marin
+#D-Team:  Arthur Rodrigues, Yuhong Wang, Himanshi Gupta, Joann Cahill, Miguel Marin
 ---------------------------------------------------------------------------------
-
-1.  GITHUB REPOSITORY
+1. Github Repository
+---------------------------------------------------------------------------------
 A public github repository has been established for this project at:  https://github.com/jcahill53/hiking-trail-app. 
 
 ---------------------------------------------------------------------------------
+2. Database
+---------------------------------------------------------------------------------
+A mongo database was created with three collections:
+    1.  hiking-trails: information on Oregon trails
+         {
+            "_id": "63002e1b9ed6cb63e3344749",
+            "id": "442c890d-7b66-44e6-b646-2c8ff3b207e1",
+            "name": "Rock Creek Greenway Hike",
+            "urls": {
+                "absoluteSource": "http://www.oregonhikers.org/field_guide/Rock_Creek_Greenway_Hike",
+                "trailStart": "http://www.oregonhikers.org/field_guide/Bethany_Lake_Trailhead",
+                "trailEnd": "http://www.oregonhikers.org/field_guide/Kaiser_Woods_Natural_Area"
+        },
+            "measures": {
+                "difficulty": "Moderate",
+                "distance": {
+                    "value": 8.1,
+                    "measure": "miles"
+                },
+                "elevationGain": {
+                    "value": 560,
+                    "measure": "feet"
+                }
+        },
+            "updatedAt": "2016-11-27T00:45:39.485Z",
+            "locations": {
+                "trailStart": {
+                    "latitude": 45.5564,
+                    "longitude": -122.86792
+                }
+            }
+        }
 
-2.  PROBLEM STATEMENT
-Hiking is a popular activity in many communities.  According to a 2020 article in Trails and Summit (https://trailandsummit.com/is-hiking-becoming-more-popular/,) this activity has seen a significant increase in popularity over time.  In the United States, hiking increased 34%, between 2015 and 2020 when 57.1 million people participated in hiking activities.  With the pandemic, hiking became even more popular as people sought safe activities that they could enjoy while under COVID restrictions. 
-The result of this ever-increasing popularity is the unpredictability of how popular a trailhead is on a given day.  Want-to-be hikers find themselves in the dilemma of arriving at a hiking trail to find parking lots full or overflowing.  The team identified several requirements that a hiker might have:
+    2. commments:  comments made by users about the trail
 
-Users need to know if parking is available at a hiking trail including:
+        {
+        "_id": "6301c3a4a21505ac4795e2f4",
+        "messageBody": "I enjoyed this trail.  Parking was almost full.",
+        "createDayTime": "07/12/2022",
+        "updatedDayTime": "07/12/2022",
+        "trailId": "63002e1b9ed6cb63e334474a",
+        "date": "2022-08-21T05:33:24.848Z"
+        }
 
-    a.  if the Parking lot is empty, full, or overflowing
-    b.  what times of the day parking lots are more full
-    c.  Users need to know if any fees are associated with the hiking trail
-    d.  Users need to arrange shared transportation to a hiking trail that has little parking availability
-
-The team researched hiking sites and found that although many provide useful information on trails none give hikers information needed to determine if parking will be available or the best times to access the trail.  Many current sites have user messages that bemoan the fact that they were unable to hike when they arrived because there was no parking available.
-
-The goal of our project is to provide users a method to report on and find information about parking availability at hiking trailheads.  This information can be useful not only to hikers but other individuals interested in trends in hiking activities and developing solutions for enhancing hikers’ access to the outdoors. 
+    3. parking:  information about parking faciities for the trail
+        {
+        "_id": "630032a40719308563783d50",
+        "name": "parking lot East",
+        "trailId": [
+            "050efaf8-fa87-4592-a52d-018a1c8d824d"
+        ],
+        "emptiestDayTime": "Tuesday 8:00pm",
+        "fullest_day_time": "Sunday 12:00pm",
+        "parkingLotStatus": "half"
+        }
+    4.  users:  users who have registered to use the app
+        {
+        "_id": "630a84145da4e4915826480e",
+        "name": "Sylvia Smith",
+        "email": "ssmith52@gmail.com",
+        "password": "$2a$10$mqLctB.Sjx5U/Nei29owwOb1BbQzKJPBymgwpFMSnDFr3NQu7NYUa"
+        }
 
 ---------------------------------------------------------------------------------
-
-3.  SOLUTION DESIGN
-    a.  Overview
-    The team plans to develop a hiking app that will track the popularity of a given trailhead through the status of parking for the trailhead.  The app will allow users to look up information about a trailhead, whether any parking fees apply  and determine whether parking is available, full or overflowing.  Users will also be able to send updates to the site if they find that the parking availability has changed.  This will provide hikers a tool to better plan their day and encourage the use of car-pooling to trails that have a high level of activity and little parking. 
-
-    b.  Databases to be built (Lead: Yuhong)
-        i.  Collections: We have three MongoDB collections
-
-            (1)  OR Hiking Trail
-            (2)  Users
-            (3)  Messages
-
-    c.  Planned Schema 
-
-        i.  OR Hiking Trails Collection
-            Id: letters/number charactor/special character like %, #
-            Trail Name: string
-            Parking Type: Free/Paid
-            Parking Lot Status:Empty/Half/Full
-            Total # of parking spots(either empty or occupied)
-            number of parking spots available/occupied(this can be +/- each time a user checks out/in for parking in the parking lot, which may impact the parking lot status above from empty=>full) 
-            Emptiest Day and Time: DateTime
-            Fullest Day and Time: DateTime
-            Distance: e.g. 15.8 miles round trip: decimal
-            Elevation gain: e.g. 2500 feet: number
-            Difficulty: Easy/Moderate/Difficult,
-            Location: latitude/longitude
-            URL:
-            absoluteSource: URI
-            trailStart: URI
-            trailEnd: URI
-
-        ii. Users collection
-            Id: letters/number charactor/special character like %, #
-            Password: string
-            Email: string
-
-        iii. Messages collection
-            Id: letters/number charactor/special character like %, #
-            Trail Id: Foreign key
-            User Id: Foreign key
-            Message body
-            Message Creation DateTIme
-            Message Update DateTime
-
-    d.  Source of data：From a Github project https://github.com/VerteDinde/hikers-field-guide-map
-    Source data for this project was scraped from the Oregon Hiker's Field Guide.
-
+3. API
 ---------------------------------------------------------------------------------
-
-4.  API ENDPOINTS -  The following API end points are planned:
-    a.  GET endpoint - users will be able to get information about all hiking trails and available parking for those trails Arthur
-    b.  GET enpoint - users will be able to get information about a specific hiking trail and available parking for that trail Arthur 
-    Arthur
-    c.  PUT endpoint - users will be able to update the parking availability that will show the status and time of day Arthur
-    d.  POST endpoint  - users will be able to post a message about the parking status of a site Joann
-    e.  DELETE endpoint - users will be able to delete a message  Joann
-    f.  GET endpoint - all messages for a trail Joann
-    g.  GET endpoint - all messages for a user  Joann
-    h.  GET endpoint - all messages  Joann
-    i.  GET endpoint - one message based on message id  Joann
-
-
-
----------------------------------------------------------------------------------
-
-5.  EXTERNAL TOOLS TO BE USED
-    a.  Server-side tools
-        Mongodb
-        Postman
-    b.  Front End
-        Font awesome
-        Google fonts
-        IBM Carbon Design System
-        Front End Functionality
-
----------------------------------------------------------------------------------
-6.  FRONT END FUNCTIONALITY - Proposed UX/UI   
  
-    a.  On load The user is taken to the home page where they will be greeted as to what the app is. Then they can go on and search the database for trails as a guest or they can login to their own account or register for an account. If they chose to log in, the homepage will simply be updated to say “Welcome, <user>. The search functionality will remain as-is and the login/register commands are replaced with a “my profile” and a log out commands. 
+An API has been created using Express to access data in the mongodb hiking-trails database.  The API is free and does not require the use of a private or public API Key
 
-    b.  A successful search query will return a list of trails that matches what the user searched. That list will contain some basic details about the trail at-a-glance. The user can then select which trail they want to view. An unsuccessful query will return an error message and the user will be instructed to try the search again. 
+The following endpoints are available when using the API:
 
-    c.  Once the user has selected a trail, it will take them to the individual trail page. This page will be the core reason why users will use this app. The individual trails page has all the information about the trail users are looking for. This page will display the distance, rating and location of a trail along with a small blurb about it and an image of the trail in the background as the page’s header. The next section of this page will contain all the real-time data the app has about this specific trail, including if parking lots are available, full or overflowing, any parking fees, best time of day to visit, worst time of day to visit. The next section down will allow users to check in and check out of a trail in real time and will help increment or decrement the total number of users at the trail right now. The last section is a message forum feature/functionality. This section will allow users to post short messages about any status about the trail and is all updated in real-time to serve as a sort of “timeline” to let other users know information about the trail. 
+    1.  hiking-trails
+    -  Get all trails http://localhost:5000/hikingtrails
+    -  Get a trail by ID: http://localhost:5000/hikingtrails/:trailId
+    -  Get trails by trail name http://localhost:5000/hikingtrails/name/:name
 
-    d.  The “my profile” is the page where users can see stats of their past usage on the site. As of now they will have 3 options to choose from 1) the trails that they have checked in and out from 2) Trails uses have posted messages on and 3) a log out 
 
-        i. The trails that they have checked in and out from page will just be a list of all the trails the specific user has checked in and out from
-        
-        ii. Trails users have posted messages on page  will be a list of all the trails that the specific user  has posted comments to. The View will show what trail they posted on, on what date and what the message was with an option to delete that message 
+    2.  comments
 
-    Mockups of planned pages can be found in the folder zDesign (Team D Mockups of FrontEnd WebPages.pdf).
+    -  Get all comments http://localhost:5000/comments
+    -  Get all comments for a trail http://localhost:5000/hikingtrails/trailId/comments
+    -  Create a new comment for a trail X POST -H "Content-Type: application/json" -d '{"userId": "63002e7ef11bb0d6dee7272d","messageBody": "I enjoyed this trail2.  Parking was almost full.", "createDayTime": "07/12/2022", "updatedDayTime": "07/12/2022"}' http://localhost:5000/hikingtrails/trailId/comments
+    -  Delete a comment for a trail -X DELETE http://localhost:5000/hikingtrails/trailId/comments/commentId
+    - Update comment for a trail
+
+    3.  parking
+
+    -  Get all parking http://localhost:5000/parking
+    -  Get all parking for a trail http://localhost:5000/hikingtrails/trailId/parking
+    -  Create parking for a trail X POST -H "Content-Type: application/json" -d '{"name": "parking lot 2", "trailId": ["63002e1b9ed6cb63e334474e","63002e1b9ed6cb63e334474d"],"emptiestDayTime": "Monday 12:00pm","fullest_day_time": "Saturday 2:00pm","parkingLotStatus": "full"}' http://localhost:5000/hikingtrails/trailId/parking
+    - Update parking for a trail
+
+    4.  users
+
+    -  Get all users http://localhost:5000/users/
+    -  Get user by credentials (login) -X POST -H "Content-Type: application/json" -d '{"name":"Sylvia Smith","email":"ssmith41@gmail.com","password":"Password123!"}' http://localhost:5000/users/login
+    -  Create a user (register) -X POST -H "Content-Type: application/json" -d '{"name":"Sylvia Smith","email":"ssmith41@gmail.com","password":"Password123!"}' http://localhost:5000/users/register
 
 ---------------------------------------------------------------------------------
-7.  WORK TIMELINE
+4. Front End
+---------------------------------------------------------------------------------
+The site was written using using React.  Dependencies include:
+    - bcrypt
+    - cors
+    - dotenv
+    - jsonwebtoken
+    - popups
 
-The following is an overview of the timeline for the project:
+The following pages are available in the application:
 
--  Finalize Design          8/12/22
--  Create Mongo DB          8/15/22
--  Populate Sample Data	    8/15/22
--  Create React App		    8/15/22
--  Populate Final Data      8/22/22
--  Create Endpoints         8/22/22
--  Develop Components       8/26/22
--  Integration Testing      8/29/22
--  Bug Fixes and Retest     9/03/22
--  Finalize Presentation    9/04/22
--  Presentation Rehearsal   9/04/22
--  Final Presentation       9/06/22
+Note:  While under development, a nav bar has been added to the site so developers can access any page directly.  When the following flow is completed the nav bar will be removed.
+
+1.  Home Page - Welcomes the user to the site and provides access to a Register page for new users and a login page for returning users
+2.  Register Page - allows a user to set up a new user account by submitting their name, email and password (connection to database in process)
+3.  Login Page -  allows a user to login to the site by entering their email and password (connection to database in process)
+4.  Trails Search - if login is successful, the user will be brought to the Trails Search page.  They may enter any part of a  trail name.  When submit is clicked a list of trails with names containing the search parameter is displayed.  A user can then click on the Details for a trail to learn more info about the trail.
+5.  Trail Details -  When the details for a trail are selected on the Trails Search page, a page displays that contains the trail name, information about parking for the trail and comments submitted by users.  Users can select to add a new comment or update the parking lot status (e.g. overflowing, full, partially full, empty) (in process)
+6.  Add a comment = provides a page for users to add a comment for the trail (in process)
 
 ---------------------------------------------------------------------------------
-
- Resource:
-https://www.statista.com/statistics/191240/participants-in-hiking-in-the-us-since-2006/
-https://trailandsummit.com/is-hiking-becoming-more-popular/,
-
+5. Deployment
+---------------------------------------------------------------------------------
+Deployment is pending

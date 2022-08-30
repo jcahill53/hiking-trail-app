@@ -10,11 +10,11 @@ import SearchTrails from './components/SearchTrails';
 import TrailResults from './components/TrailResults';
 import TrailDetails from './components/TrailDetails';
 import CreateMessage from './components/CreateMessage';
+ 
 
-
+ 
 
 function App() {
-
 
 
   const Home = () => {
@@ -25,8 +25,9 @@ function App() {
         <main className="">
 
           <section className="welcome">
+          
             <div>
-              <h2 className="app-name">App Name</h2>
+            <h2 className="app-name"> App Name </h2>
               <h1 className="">Welcome,</h1>
               <h2>We're glad you're here!</h2>
               <h3>App Name is a real-time, online resource for hiking trails in</h3>

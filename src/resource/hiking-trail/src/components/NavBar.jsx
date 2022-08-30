@@ -11,8 +11,8 @@ function NavBar() {
                 <ul className="nav-links row">
                     <li className="nav-li" ><Link to="/">Return to Welcome Page</Link></li>
                     <li className="nav-li" ><Link to="/hikingtrails">Search Trails</Link></li>
-                    <li className="nav-li" ><Link to="/hikingtrails/:id">Trail Details</Link></li>
-                    <li className="nav-li" ><Link to="/hikingtrails/:id/comments">Create a Comment</Link></li>
+                    <li className="nav-li" ><Link to="/hikingtrails/63002e1b9ed6cb63e334474a">Trail Details</Link></li>
+                    <li className="nav-li" ><Link to="/hikingtrails/63002e1b9ed6cb63e334474a/comments">Create a Comment</Link></li>
                   
                 </ul>
                 </section>

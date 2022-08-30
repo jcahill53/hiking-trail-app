@@ -1,100 +1,87 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+// curl -X POST -H "Content-Type: application/json" -d '{"name":"Sylvia Smith","email":"ssmith41@gmail.com","password":"Password123!"}' http://localhost:5000/users/register
+
 
 function RegisterForm() {
 
   // States for registration
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // const [userId, setUserId] = useState('');
+  const [userName, setUserName] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+  const [userPassword, setUserPassword] = useState('');
 
-  // States for checking the errors
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState(false);
+ console.log(`Email ${userEmail}`);
+ console.log(`Password ${userPassword}`);
 
-  // Handling the name change
-  const handleName = (e) => {
-    setName(e.target.value);
-    setSubmitted(false);
-  };
+ // Handle the login on submit
+ const handleSubmit = async (event) => {
+   event.preventDefault();
 
-  // Handling the email change
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-    setSubmitted(false);
-  };
+   const data = new FormData();
+   data.append("name", userName);
+   data.append("email", userEmail);
+   data.append("password", userPassword);
 
-  // Handling the password change
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-    setSubmitted(false);
-  };
+   for (const pair of data.entries()) {
+     console.log(`${pair[0]}, ${pair[1]}, ${pair[2]}`);
+   }
 
-  // Handling the form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (name === '' || email === '' || password === '') {
-      setError(true);
-    } else {
-      setSubmitted(true);
-      setError(false);
-    }
-  };
+   // process the login
+   fetch('http://localhost:5000/users/login', {
+     method: 'POST', // or 'PUT'
+     headers: {
+       'Content-Type': 'application/json',
+     },
+     body: JSON.stringify(data),
+   })
+     .then((response) => response.json())
+     .then((data) => {
+       console.log('Success:', data);
+     })
+     .catch((error) => {
+       console.error('Error:', error);
+     });
+   }
 
-  // Showing success message
-  const successMessage = () => {
-    return (
-      <div
-        className="success"
-        style={{
-          display: submitted ? '' : 'none',
-        }}>
-        <h1>User {name} successfully registered!!</h1>
-      </div>
-    );
-  };
 
-  // Showing error message if error is true
-  const errorMessage = () => {
-    return (
-      <div
-        className="error"
-        style={{
-          display: error ? '' : 'none',
-        }}>
-        <h1>Please enter all the fields</h1>
-      </div>
-    );
-  };
-
-  return (
+   return (
     <section className="register">
       <div className="register-form">
         <div>
           <h2>User Registration</h2>
         </div>
 
-        {/* Calling to the methods */}
-        <div className="register-messages">
-          {errorMessage()}
-          {successMessage()}
-        </div>
 
         <form>
           {/* Labels and inputs for form data */}
+ 
           <div className="form-container">
-            <label className="register-label">Name</label>
-            <input onChange={handleName} className="register-input"
-              value={name} type="text" />
-
-            <label className="register-label">Email</label>
-            <input onChange={handleEmail} className="register-input"
-              value={email} type="email" />
-
-            <label className="register-label">Password</label>
-            <input onChange={handlePassword} className="register-input"
-              value={password} type="password" />
-          </div>
+          <label className="register-label">Name</label>
+              <input className="register-input"
+                onChange={(e) => setUserName(e.target.value)}
+                value={userEmail}
+                type="text"
+                autoComplete="on"
+                required
+              />
+              <label className="register-label">Email</label>
+              <input className="register-input"
+                onChange={(e) => setUserEmail(e.target.value)}
+                value={userEmail}
+                type="email"
+                autoComplete="on"
+                required
+              />
+              <label className="register-label">Password</label>
+              <input className="register-input"
+                onChange={(e) => setUserPassword(e.target.value)}
+                value={userPassword}
+                autoComplete="on"
+                type="password"
+                required />
+            </div>
+ 
           <div className="row button-container">
             <Link to={`/`}><button className="register-btn">Cancel</button></Link>
             <button onClick={handleSubmit} className="register-btn" type="submit">

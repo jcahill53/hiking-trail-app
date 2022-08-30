@@ -11,10 +11,11 @@ export default function TrailResults({ trailsInput }) {
 
     // variables to create url
     let trailName = trailsInput;
-    console.log(trailName);
+
     const url = `http://localhost:5000/hikingtrails/name/${trailName}`;
+
 console.log(url);
-// add a comment
+ 
     useEffect(() => {
         fetch(url)
             .then(response => response.json())
@@ -47,19 +48,27 @@ console.log(url);
         return <p>An error has occurred.  Please try again.</p>
     }
 
-    // use only results from data fetch
-    // const trails = trailResults.data.results;
-    console.log(trailResults);
+ 
+ 
+   console.log(trailResults);
 
-   return (
+    return (
         <>
         {/* trail cards */}
         <section className="column" >
 
-            {trailResults.map((trail, id) =>
+            {trailResults.map((trail,  _id) =>
+   
                 <TrailCard
-                    key={id}
+                    key={_id}
                     trail={trail}
+                    trailId = {trail._id}
+                    trailDifficulty = {trail.measures.difficulty}
+                    trailDistanceValue = {trail.measures.distance.value}
+                    trailDistanceMeasure = {trail.measures.distance.measure}
+                    trailGainValue = {trail.measures.elevationGain.value}
+                    trailGainMeasure = {trail.measures.elevationGain.measure}
+                    
                 />
             )}
         </section>

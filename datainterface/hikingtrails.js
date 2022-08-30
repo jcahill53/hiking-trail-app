@@ -133,7 +133,7 @@ module.exports.deleteCommentById = async (commentId) => {
     const database = client.db(databaseName);
     const parking = database.collection(parkingCollName);
   
-    const query = { trailId: ObjectId(trailId) };
+    const query = { trailId: {$in: [ObjectId(trailId)]}};
   
     let parkingCursor = await parking.find(query);
     return parkingCursor.toArray();
