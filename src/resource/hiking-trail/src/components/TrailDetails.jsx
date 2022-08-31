@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from "axios";
 
 import TrailComments from "./TrailComments"
- 
+
 
 // const { REACT_APP_NAME} = process.env
 
 function TrailDetails() {
-    const {  id } = useParams();
+    const { id } = useParams();
 
     // use states for data fetch
     const [trailDetails, setTrailDetail] = useState([]);
@@ -19,9 +20,7 @@ function TrailDetails() {
 
     // url variables
 
-    const trailId =  id;
-console.log(id);
-console.log(trailId);
+    const trailId = id;
 
     // trail by id api
     const url = `http://localhost:5000/hikingtrails/${trailId}`;
@@ -67,7 +66,7 @@ console.log(trailId);
 
     }, [parkingUrl, commentUrl, url]);
 
-    // during load show Pow image and Loading...
+    // during load show Loading...
     if (isLoading) {
         return (
             <div className="wait">
@@ -81,58 +80,55 @@ console.log(trailId);
         return <p>An error has occurred.  Please try again.</p>
     }
 
-    // variables to be used in return
 
-    // use only results from data fetch
-    // const detail = trailDetails.data.results;
-    // const comments = trailComments.data.results;
-    // const parking = trailParking.data.results;
+    // variables for parking info
+    const parkingName = trailParking[0].name;
+    const parkingStatus = trailParking[0].parkingLotStatus;
+    const parkingType = trailParking[0].type;
+    const usersHere = trailParking[0].usersThere
+    const fullestDTTM = trailParking[0].fullest_day_time
+    const emptiestDTTM = trailParking[0].emptiestDayTime
 
-
-    // variable for hero description
-    const trailDescr = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-    
-
-    
+  
     return (
         <section>
             <section className="trail-info">
-                  <h2 className="app-name">App.name</h2>
+                <h2 className="app-name">App.name</h2>
                 <h1 className="detail-hdr">{trailDetails.name}</h1>
 
-                <p>${trailDescr}</p>
+                <p>${trailDetails.descr}</p>
             </section>
 
             <section className="parking-info">
                 <h2 className="detail-hero-comics">App Name Real Time Statistics</h2>
                 <h2 className="app-name"> </h2>
-                <p>{trailDetails.name}</p>
+                <p>{parkingName}</p>
                 <div>
                     <div>
-                    <p>Parking Lot Status</p>
-                    <p>{trailParking.parkingLotStatus}</p>
+                        <p>Parking Lot Status</p>
+                        <p>{parkingStatus}</p>
                     </div>
 
                     <div>
-                    <p>Parking Type</p>
-                    <p>Free</p>
+                        <p>Parking Type</p>
+                        <p>{parkingType}</p>
                     </div>
-                    
+
                     <div>
-                    <p>App Users Here</p>
-                    <p>10</p>
+                        <p>App Users Here</p>
+                        <p>{usersHere}</p>
                     </div>
                 </div>
 
                 <div>
                     <div>
-                    <p>Emptiest Day/Time</p>
-                    <p>{trailParking.fullest_day_time}</p>
+                        <p>Emptiest Day/Time</p>
+                        <p>{fullestDTTM}</p>
                     </div>
 
                     <div>
-                    <p>Emptiest Day/Time</p>
-                    <p>{trailParking.emptiest_day_time}</p>
+                        <p>Emptiest Day/Time</p>
+                        <p>{emptiestDTTM}</p>
                     </div>
 
 
@@ -140,13 +136,15 @@ console.log(trailId);
 
 
             </section>
-
+            <h1> User Posted Comments</h1>
+            <Link to={`/createmessage/${trailId}`}><button  >Post your own comment</button></Link>
             <section className="comment-info">
                 <article className="row comment-card" >
                     {trailComments.map((comment, id) =>
                         <TrailComments
                             key={id}
                             comment={comment}
+                            messageBody={comment.messageBody}
 
                         />
                     )}

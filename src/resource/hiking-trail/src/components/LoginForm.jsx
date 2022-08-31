@@ -13,13 +13,17 @@ function LoginForm() {
   const handleLogin = async (event) => {
     event.preventDefault();
 
-    const data = new FormData();
-    data.append("email", email);
-    data.append("password", password);
-
-    for (const pair of data.entries()) {
-      console.log(`${pair[0]}, ${pair[1]}`);
+    const data = {
+      "email": email,
+      "password": password
     }
+    // const data = new FormData();
+    // data.append("email", email);
+    // data.append("password", password);
+
+    // for (const pair of data.entries()) {
+    //   console.log(`${pair[0]}, ${pair[1]}`);
+    // }
  
     // process the login
     fetch('http://localhost:5000/users/login', {
@@ -64,7 +68,7 @@ function LoginForm() {
                 required />
             </div>
             {/* <div>
-          <button className="login-btn" type="submit">Submit</button>
+ 
         </div> */}
             <div className="row button-container">
               <Link to={`/`}><button className="register-btn">Cancel</button></Link>

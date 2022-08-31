@@ -14,7 +14,7 @@ A mongo database was created with three collections:
     1.  hiking-trails: information on Oregon trails
          {
             "_id": "63002e1b9ed6cb63e3344749",
-            "id": "442c890d-7b66-44e6-b646-2c8ff3b207e1",
+            "guideId": "442c890d-7b66-44e6-b646-2c8ff3b207e1",
             "name": "Rock Creek Greenway Hike",
             "urls": {
                 "absoluteSource": "http://www.oregonhikers.org/field_guide/Rock_Creek_Greenway_Hike",
