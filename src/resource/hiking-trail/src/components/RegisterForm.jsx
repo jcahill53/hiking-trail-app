@@ -6,29 +6,26 @@ import { Link } from 'react-router-dom';
 function RegisterForm() {
 
   // States for registration
-  // const [userId, setUserId] = useState('');
+
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
-
- console.log(`Email ${userEmail}`);
- console.log(`Password ${userPassword}`);
+//   console.log(`Name ${userName}`);
+//  console.log(`Email ${userEmail}`);
+//  console.log(`Password ${userPassword}`);
 
  // Handle the login on submit
  const handleSubmit = async (event) => {
    event.preventDefault();
 
-   const data = new FormData();
-   data.append("name", userName);
-   data.append("email", userEmail);
-   data.append("password", userPassword);
-
-   for (const pair of data.entries()) {
-     console.log(`${pair[0]}, ${pair[1]}, ${pair[2]}`);
+   const data = {
+    "name":userName,
+    "email":userEmail,
+    "password":userPassword
    }
 
-   // process the login
-   fetch('http://localhost:5000/users/login', {
+   // process the registration
+   fetch('http://localhost:5000/users/register', {
      method: 'POST', // or 'PUT'
      headers: {
        'Content-Type': 'application/json',
@@ -60,7 +57,7 @@ function RegisterForm() {
           <label className="register-label">Name</label>
               <input className="register-input"
                 onChange={(e) => setUserName(e.target.value)}
-                value={userEmail}
+                value={userName}
                 type="text"
                 autoComplete="on"
                 required
