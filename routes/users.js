@@ -40,7 +40,7 @@ router.post("/login", async (req, res, next) => {
 
 });
 // REGISTER A USER
-// curl -X POST -H "Content-Type: application/json" -d '{"name":"Sylvia Smith","email":"ssmith41@gmail.com","password":"Password123!"}' http://localhost:5000/users/register
+// curl -X POST -H "Content-Type: application/json" -d '{"name":"Arthur Rodrigues","email":"arodrig41@gmail.com","password":"Password123!"}' http://localhost:5000/users/register
 router.post("/register", async (req, res, next) => {
   let resultStatus;
 
