@@ -26,7 +26,7 @@ router.get("/", async (req, res, next) => {
 
   // #4 GET TRAILS BY TRAIL ID
 // curl -sS http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a
-// curl -sS http://localhost:5000/hikingtrails/6301bd4862a5d14a1a780e35
+// curl -sS http://localhost:5000/hikingtrails/630e32a920214d9fcc411d74
 
 router.get("/:id", async (req, res, next) => {
   const result = await trailsData.getTrailById(req.params.id)
@@ -42,6 +42,7 @@ router.get("/:id", async (req, res, next) => {
 
 // #55 FIND HIKING TRAILS BY SEARCHING ON NAME
 // curl -sS "http://localhost:5000/hikingtrails/name/Loop"
+// curl -sS "http://localhost:5000/hikingtrails/name/Hike"
 router.get("/name/:name", async (req, res, next) => {
   const result = await trailsData.getTrailsByName(req.params.name);
 
@@ -60,6 +61,7 @@ router.get("/name/:name", async (req, res, next) => {
 
   //#12 GET ALL COMMENTS FOR A TRAIL
 // curl -sS http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments
+// curl -sS http://localhost:5000/hikingtrails/630e32a920214d9fcc411d74/comments
 router.get("/:id/comments", async(req, res) => {
   const comment = await trailsData.getCommentsByTrailId(req.params.id)
   if (comment) {
@@ -72,6 +74,9 @@ router.get("/:id/comments", async(req, res) => {
 
 //#16 CREATE A NEW COMMENT FOR A TRAIL
 // curl -sS -X POST -H "Content-Type: application/json" -d '{"userId": "63002e7ef11bb0d6dee7272d","messageBody": "I enjoyed this trail2.  Parking was almost full.", "createDayTime": "07/12/2022", "updatedDayTime": "07/12/2022"}' http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments
+// curl -sS -X POST -H "Content-Type: application/json" -d '{"userId": "630e6f5376fee74a15fbb7fe","messageBody": "I enjoyed this trail - very easy.  Parking was almost full.", "createDayTime": "08/22/2022", "updatedDayTime": "08/22/2022"}' http://localhost:5000/hikingtrails/630e73d13307f536c8f25a67/comments
+
+
 router.post("/:id/comments", async(req, res) => {
   const result = await trailsData.createComment(req.params.id, req.body)
   if(result){
@@ -84,7 +89,7 @@ router.post("/:id/comments", async(req, res) => {
 })
 
 // #11 DELETE A COMMENT FOR A TRAIL
-// curl -sS -X DELETE http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments/63045b718c75813e3cabd1b4
+// curl -sS -X DELETE http://localhost:5000/hikingtrails/630e32a920214d9fcc411d74/comments/630e707d76fee74a15fbb7ff
 router.delete("/:trailId/comments/:commentId", async(req, res)=>{
   const result = await trailsData.deleteCommentById(req.params.commentId)
   if(result.error){
@@ -120,7 +125,7 @@ router.delete("/:trailId/comments/:commentId", async(req, res)=>{
 // PARKING ENDPOINTS FOR A TRAIL
 
   //#54 GET ALL PARKING FOR A TRAIL
-// curl -sS http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/parking
+// curl -sS http://localhost:5000/hikingtrails/630e32a920214d9fcc411d74/parking
 router.get("/:id/parking", async(req, res) => {
   const comment = await trailsData.getParkingByTrailId(req.params.id)
   if (comment) {
@@ -132,7 +137,7 @@ router.get("/:id/parking", async(req, res) => {
 })
 
 //#56 CREATE A NEW PARKING AREA FOR A TRAIL
-// curl -sS -X POST -H "Content-Type: application/json" -d '{"name": "parking lot 2", "trailId": ["63002e1b9ed6cb63e334474e","63002e1b9ed6cb63e334474d"],"emptiestDayTime": "Monday 12:00pm","fullest_day_time": "Saturday 2:00pm","parkingLotStatus": "full"}' http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/parking
+// curl -sS -X POST -H "Content-Type: application/json" -d '{"name": "parking lot 2", "trailId": ["630e73d13307f536c8f25a67"],"emptiestDayTime": "Monday 10:00am","fullest_day_time": "Sunday 12:00pm","parkingLotStatus": "Partially Full"}' http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/parking
 router.post("/:id/parking", async(req, res) => {
   const result = await trailsData.createParking(req.params.id, req.body)
   if(result){
