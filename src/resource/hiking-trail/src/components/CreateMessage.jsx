@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-
+import { useParams } from 'react-router-dom';
 
 function CreateMessage() {
+    const { id } = useParams();
 
     const [postMessage, setPostMessage] = useState(null);
     const onFormSubmit = (event) => {
       event.preventDefault();
     
-        
+      const trailId = id;
+      console.log(id);
+      console.log(trailId);
+      
+      
     //   let postMsgHeader = document.getElementById('post-msg');
       let form = document.getElementById('comment-form');
       if(form.comment.value === ""){

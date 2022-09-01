@@ -137,7 +137,7 @@ router.get("/:id/parking", async(req, res) => {
 })
 
 //#56 CREATE A NEW PARKING AREA FOR A TRAIL
-// curl -sS -X POST -H "Content-Type: application/json" -d '{"name": "parking lot 2", "trailId": ["630e73d13307f536c8f25a67"],"emptiestDayTime": "Monday 10:00am","fullest_day_time": "Sunday 12:00pm","parkingLotStatus": "Partially Full"}' http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/parking
+// curl -sS -X POST -H "Content-Type: application/json" -d '{"name": "parking lot 2", "trailId": ["630e73d13307f536c8f25a67"],"emptiestDayTime": "Monday 10:00am","fullest_day_time": "Sunday 12:00pm","parkingLotStatus": "Partially Full","type": "Permit Required", "usersThere": 5}' http://localhost:5000/hikingtrails/630e73d13307f536c8f25a67/parking
 router.post("/:id/parking", async(req, res) => {
   const result = await trailsData.createParking(req.params.id, req.body)
   if(result){

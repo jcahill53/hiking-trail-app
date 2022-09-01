@@ -48,10 +48,6 @@ console.log(url);
         return <p>An error has occurred.  Please try again.</p>
     }
 
- 
- 
-   console.log(trailResults);
-
     return (
         <>
         {/* trail cards */}

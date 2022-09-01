@@ -4,8 +4,8 @@ import './App.css';
 import { Route, Routes, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import Login from './components/Login';
-import Register from './components/Register';
+import LoginForm from './components/LoginForm';
+import RegisterForm from './components/RegisterForm';
 import SearchTrails from './components/SearchTrails';
 import TrailResults from './components/TrailResults';
 import TrailDetails from './components/TrailDetails';
@@ -48,14 +48,14 @@ function App() {
     )
   };
 
-  const LoginForm = () => {
+  const LoginFormPage = () => {
 
     return (
       <>
         <NavBar />
         <main>
           <div >
-            <Login
+            <LoginForm
 
             />
           </div>
@@ -71,7 +71,7 @@ function App() {
         <NavBar />
         <main>
           <div >
-            <Register
+            <RegisterForm
             />
           </div>
         </main>
@@ -135,7 +135,7 @@ function App() {
         <main>
           <div >
             <CreateMessage
-              id={id}
+             id={id}
             />
           </div>
         </main>
@@ -152,7 +152,7 @@ function App() {
 
         <Route
           path="/login"
-          element={<LoginForm />}
+          element={<LoginFormPage />}
         />
         <Route
           path="/register"
@@ -171,7 +171,7 @@ function App() {
           element={<TrailDetailsPage />}
         />
         <Route
-          path="/hikingtrails/:id/comments"
+          path="/createmessage/:id"
           element={<CreateMessagePage />}
         />
       </Routes>

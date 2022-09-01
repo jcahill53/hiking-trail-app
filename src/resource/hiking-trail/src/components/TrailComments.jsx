@@ -1,15 +1,23 @@
 import React from 'react';
 
-function TrailComments() {
+import PropTypes from 'prop-types'
+
+
+function TrailComments(comment, _id) {
 
     return (
         <div>
-            <footer>
-                <p> </p>
-            </footer>
+            <h1>User Says:</h1>
+            <h2> {comment.messageBody}</h2>
+
         </div>
     )
 
 }
 
+TrailComments.propTypes = {
+    comment: PropTypes.object.isRequired,
+    _id: PropTypes.string,
+
+}
 export default TrailComments

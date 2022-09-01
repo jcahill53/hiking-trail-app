@@ -25,6 +25,7 @@ router.get("/", async (req, res, next) => {
   
 //GET USERS BY EMAIL CREDENTIAL
 // curl -X POST -H "Content-Type: application/json" -d '{"name":"Sylvia Smith","email":"ssmith41@gmail.com","password":"Password123!"}' http://localhost:5000/users/login
+// curl -X POST -H "Content-Type: application/json" -d '{"email":"ssmith41@gmail.com","password":"Password123!"}' http://localhost:5000/users/login
 router.post("/login", async (req, res, next) => {
   let resultStatus;
 
