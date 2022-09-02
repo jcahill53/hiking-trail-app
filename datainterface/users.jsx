@@ -5,14 +5,10 @@ const auth = require('../auth');
 
 require('dotenv').config()
 
-// const uri =
-// `mongodb+srv://d-team:Test12@cluster0.f4ghe7b.mongodb.net/?retryWrites=true&w=majority`
-
 const uri =
 `mongodb+srv://d-team:Test12@cluster0.qlff5yn.mongodb.net/?retryWrites=true&w=majority`
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
 
 const databaseName = 'hiking_db';
 const usersCollName = 'users';
@@ -47,17 +43,17 @@ async function findByEmail(email){
 module.exports.findByCredentials = async (userObj) => {
   let user = await findByEmail(userObj.email)
 
-  if(!user.password){ return {error: "User doesn't have password??"} }
+  if(!user.password){ return {error: "The user must have a password."} }
 
   if(await bcrypt.compare(userObj.password, user.password)){
     let token = auth.createToken(user.email)
-    return {message: "User logged in", token: token};
+    return {message: "User logged in",username: user.name, userId: user._id, token: token};
   } else {
     return {error: `No user found with email ${userObj.email}.`}
   }
 }
 
-//VERIFY USER
+//VERIFY USER FOR REGISTRATION
 module.exports.create = async (newObj) => {
   const database = client.db(databaseName);
   const users = database.collection(usersCollName);

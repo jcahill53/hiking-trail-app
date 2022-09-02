@@ -100,7 +100,7 @@ function TrailDetails() {
             </section>
 
             <section className="parking-info">
-                <h2 className="detail-hero-comics">App Name Real Time Statistics</h2>
+                <h2 className="detail-hero-comics">ParkNHike Real Time Statistics</h2>
                 <h2 className="app-name"> </h2>
                 <p>{parkingName}</p>
                 <div>

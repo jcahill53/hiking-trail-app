@@ -27,11 +27,11 @@ function App() {
           <section className="welcome">
           
             <div>
-            <h2 className="app-name"> App Name </h2>
+            <h2 className="app-name">ParkNHike </h2>
               <h1 className="">Welcome,</h1>
               <h2>We're glad you're here!</h2>
-              <h3>App Name is a real-time, online resource for hiking trails in</h3>
-              <h3>Washington State.  App Name helps identify and combat</h3>
+              <h3>ParkNHike is a real-time, online resource for hiking trails in</h3>
+              <h3>Washington State.  ParkNHike helps identify and combat</h3>
               <h3>congestion at our trails to help you optimize your hiking.</h3>
 
             </div>
