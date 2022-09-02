@@ -10,6 +10,7 @@ function SearchTrails() {
   const onFormSubmit = (event) => {
     event.preventDefault();
     setTrailsInput(event.target[0].value);
+   
   };
 
   console.log(trailsInput);

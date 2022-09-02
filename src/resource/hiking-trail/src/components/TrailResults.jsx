@@ -14,19 +14,32 @@ export default function TrailResults({ trailsInput }) {
 
     const url = `http://localhost:5000/hikingtrails/name/${trailName}`;
 
-console.log(url);
+
  
     useEffect(() => {
         fetch(url)
-            .then(response => response.json())
+            .then(response => {
+                if(response.status === 404 || response.status === 500){
+                    setHasError(true)
+                    setIsLoading(false);
+                   
+                    
+                }
+                else{
+                    return response.json();
+                }
+           })
             .then(
                 // successful callback
                 data => {
+                    console.log("Hi I am here");
                     setTrailResults(data);
+                    console.log(data);
                     setIsLoading(false);
                 },
                 // unsuccessful callback
                 error => {
+                    //console.log("Hi I am here");
                     setHasError(true)
                     setIsLoading(false);
                 }
@@ -45,6 +58,7 @@ console.log(url);
     }
     // return message if fetch results in error
     if (hasError) {
+        
         return <p>An error has occurred.  Please try again.</p>
     }
 
