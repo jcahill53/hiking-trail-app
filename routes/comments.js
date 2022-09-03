@@ -23,7 +23,7 @@ router.get("/", async (req, res, next) => {
 
 // GET A SINGLE COMMENT BY COMMENT ID
 // curl -sS http://localhost:5000/comments/630033e6d869e7133ea861e8
-// curl -sS http://localhost:5000/comments/6301c0c15da14ea19ee0caab
+// curl -sS http://localhost:5000/comments/630e32a920214d9fcc411d74
 router.get("/:id", async (req, res) => {
   let comment = await commentData.getCommentById(req.params.id)
 
@@ -35,30 +35,13 @@ router.get("/:id", async (req, res) => {
 
 });
 
-//GET ALL COMMENTS FOR A USER
-// curl -sS http://localhost:5000/Users/#####/comments
+// UPDATE A COMMENT
+  
 
-// router.get("/users/:id/comments", async(req, res) => {
-//   const comment = await commentData.getCommentsByUserId(req.params.id)
-//   if (comment) {
-//     res.status(200).send(result);
-//   } else {
-//     resultStatus = 404;
-//   }
-  
-// })
 
-//GET ALL COMMENTS FOR A TRAIL AND USER
-// curl -sS http://localhost:5000/Trails/#####/comments
-// router.get("/users/:id/comments", async(req, res) => {
-//   const comment = await commentData.getCommentsByUserId(req.params.id)
-//   if (comment) {
-//     res.status(200).send(result);
-//   } else {
-//     resultStatus = 404;
-//   }
-  
-// })
-  
- 
+// DELETE A COMMENT
+
+
+
+
 module.exports = router;

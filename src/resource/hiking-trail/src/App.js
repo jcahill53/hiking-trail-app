@@ -40,6 +40,7 @@ function App() {
               <div className="row">
                 <Link to={`/register`}><button className="welcome-button">Register</button></Link>
                 <Link to={`/login`}><button className="welcome-button">Login</button></Link>
+                <Link to={`/hikingtrails`}><button className="welcome-button">Trail Search</button></Link>
               </div>
             </div>
           </section>

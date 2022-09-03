@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import axios from "axios";
-
 import TrailComments from "./TrailComments"
 
-
-// const { REACT_APP_NAME} = process.env
+const hiking_db = 'hiking_db';
 
 function TrailDetails() {
     const { id } = useParams();
@@ -89,7 +87,23 @@ function TrailDetails() {
     const fullestDTTM = trailParking[0].fullest_day_time
     const emptiestDTTM = trailParking[0].emptiestDayTime
 
-  
+
+// aggregation for a trail - average trail rating
+const avgTrailRating = hiking_db.comments.aggregate(
+    [
+      {
+        $group:
+          {
+            _id: "$trailId",
+            avgAmount: { $avg: "$rateTrail" } },
+
+      }
+    ]
+ )
+ 
+ console.log(avgTrailRating)
+
+
     return (
         <section>
             <section className="trail-info">

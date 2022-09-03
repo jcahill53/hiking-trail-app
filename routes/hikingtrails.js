@@ -25,8 +25,8 @@ router.get("/", async (req, res, next) => {
   });
 
   // #4 GET TRAILS BY TRAIL ID
-// curl -sS http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a
 // curl -sS http://localhost:5000/hikingtrails/630e32a920214d9fcc411d74
+
 
 router.get("/:id", async (req, res, next) => {
   const result = await trailsData.getTrailById(req.params.id)
@@ -57,6 +57,55 @@ router.get("/name/:name", async (req, res, next) => {
   }
 });
 
+// CREATE A TRAIL
+// curl -sS -X POST -H "Content-Type: application/json" -d '{"name":"Mount Hood Hike Loop"}' http://localhost:5000/hikingtrails
+// curl -sS -X POST -H "Content-Type: application/json" -d '{"guideId":"442c890d-7b66-44e6-b646-2c8ff3b207e1","name":"Rock Creek Greenway Hike","urls":{"absoluteSource":"","trailStart":"","trailEnd":""},"measures":{"difficulty":"Moderate","distance":{"value":"8.1","measure":"miles"},"elevationGain":{"value":"560","measure":"feet"}},"updatedAt":"2016-11-27T00:45:39.485Z","locations":{"latitude":"45.55","longitude":"-122.86792"},"descr":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"}' http://localhost:5000/hikingtrails
+
+router.post("/", async (req, res, next) => {
+  let resultStatus;
+  let result = await trailsData.create(req.body);
+
+  if(result.error){
+    resultStatus = 400;
+  } else {
+    resultStatus = 200;
+  }
+
+  res.status(resultStatus).send(result);
+});
+
+// UPDATE A TRAIL
+// ***************
+// curl -sS -X PUT -H "Content-Type: application/json" -d '{"name":"Oregon Hills Loop Hike"}' http://localhost:5000/hikingtrails/63129a0d1a9b8abfde9dca26
+router.put("/hikingtrails/:id", async (req, res, next) => {
+  let resultStatus;
+  const result = await trailsData.updateById(req.params.id, req.body)
+
+  if(result.error){
+    resultStatus = 400;
+  } else {
+    resultStatus = 200;
+  }
+
+  res.status(resultStatus).send(result);
+});
+
+// DELETE A TRAIL 
+// ***************
+// curl -sS -X DELETE http://localhost:5000/hikingtrails/63129a0d1a9b8abfde9dca26
+router.delete("/:id", async (req, res, next) => {
+  const result = await trailsData.deleteById(req.params.id);
+
+  if(result.error){
+    resultStatus = 400;
+  } else {
+    resultStatus = 200;
+  }
+
+  res.status(resultStatus).send(result);
+
+});
+
 // COMMENTS FOR A TRAIL ENDPOINTS
 
   //#12 GET ALL COMMENTS FOR A TRAIL
@@ -73,8 +122,7 @@ router.get("/:id/comments", async(req, res) => {
 })
 
 //#16 CREATE A NEW COMMENT FOR A TRAIL
-// curl -sS -X POST -H "Content-Type: application/json" -d '{"userId": "63002e7ef11bb0d6dee7272d","messageBody": "I enjoyed this trail2.  Parking was almost full.", "createDayTime": "07/12/2022", "updatedDayTime": "07/12/2022"}' http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments
-// curl -sS -X POST -H "Content-Type: application/json" -d '{"userId": "630e6f5376fee74a15fbb7fe","messageBody": "I enjoyed this trail - very easy.  Parking was almost full.", "createDayTime": "08/22/2022", "updatedDayTime": "08/22/2022"}' http://localhost:5000/hikingtrails/630e73d13307f536c8f25a67/comments
+// curl -sS -X POST -H "Content-Type: application/json" -d '{"userId": "630e6f5376fee74a15fbb7fe","messageBody": "I enjoyed this trail - very easy.  Parking was almost full.", "createDayTime": "08/22/2022", "updatedDayTime": "08/22/2022"}' http://localhost:5000/hikingtrails/63129a951a9b8abfde9dca27/comments
 
 
 router.post("/:id/comments", async(req, res) => {
@@ -89,7 +137,8 @@ router.post("/:id/comments", async(req, res) => {
 })
 
 // #11 DELETE A COMMENT FOR A TRAIL
-// curl -sS -X DELETE http://localhost:5000/hikingtrails/630e32a920214d9fcc411d74/comments/630e707d76fee74a15fbb7ff
+// curl -sS -X DELETE http://localhost:5000/hikingtrails/63129a951a9b8abfde9dca27/comments/6312a4ff1a9b8abfde9dca28
+
 router.delete("/:trailId/comments/:commentId", async(req, res)=>{
   const result = await trailsData.deleteCommentById(req.params.commentId)
   if(result.error){
@@ -101,25 +150,6 @@ router.delete("/:trailId/comments/:commentId", async(req, res)=>{
   res.status(resultStatus).send(result);
 
 })
-
-//jmc note:  update is not working yet 
-// UPDATE A COMMENT TEXT
-// curl -sS http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments
-// curl -sS -X PUT -H "Content-Type: application/json" -d '{"messageBody":"Not one of my favorite trails."}' http://localhost:5000/hikingtrails/63002e1b9ed6cb63e334474a/comments/63025c449df58d8c409a4828
-// router.put("/:trailId/comments/:commentId", async (req, res, next) => {
-//   let resultStatus;
-//   const result = await trailsData.updateCommentById(req.params.commentId, req.body)
-
-//   if(result){
-//     resultStatus = 200;
-//   } else {
-//     resultStatus = 400;
-//   }
-
-//   res.status(resultStatus).send(result);
-// });
-
-
 
 
 // PARKING ENDPOINTS FOR A TRAIL
@@ -137,7 +167,7 @@ router.get("/:id/parking", async(req, res) => {
 })
 
 //#56 CREATE A NEW PARKING AREA FOR A TRAIL
-// curl -sS -X POST -H "Content-Type: application/json" -d '{"name": "parking lot 2", "trailId": ["630e73d13307f536c8f25a67"],"emptiestDayTime": "Monday 10:00am","fullest_day_time": "Sunday 12:00pm","parkingLotStatus": "Partially Full","type": "Permit Required", "usersThere": 5}' http://localhost:5000/hikingtrails/630e73d13307f536c8f25a67/parking
+// curl -sS -X POST -H "Content-Type: application/json" -d '{"name": "parking lot 2", "trailId": ["63129a0d1a9b8abfde9dca26"],"emptiestDayTime": "Monday 10:00am","fullest_day_time": "Sunday 12:00pm","parkingLotStatus": "Partially Full","type": "Permit Required", "usersThere": 5}' http://localhost:5000/hikingtrails/630e32a920214d9fcc411d74/parking
 router.post("/:id/parking", async(req, res) => {
   const result = await trailsData.createParking(req.params.id, req.body)
   if(result){

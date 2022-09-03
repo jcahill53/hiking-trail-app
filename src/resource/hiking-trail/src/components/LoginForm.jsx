@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+// import SearchTrails from "./SearchTrails";
+
 
 function LoginForm() {
+  const navigate = useNavigate();
   // States for login
   const [email, setUserEmail] = useState('');
   const [password, setUserPassword] = useState('');
-  const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated") || false));
+  // const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated") || false));
 
-  console.log(`Email ${email}`);
-  console.log(`Password ${password}`);
+  // console.log(`Email ${email}`);
+  // console.log(`Password ${password}`);
 
   // Handle the login on submit
   const handleLogin = async (event) => {
@@ -31,11 +35,7 @@ function LoginForm() {
       .then((data) => {
 
         console.log('Success:', data);
-        if (data.token) {
-
-
-          // set authenticated to true when a data token exists
-          setAuthenticated(true)
+        if (data.token !== '' || data.token !== null) {
 
           // define a new object for the reponse data
           const loginData = data
@@ -43,7 +43,9 @@ function LoginForm() {
           // store authentication status and loginData object in local storage.  loginData must be stored as a string.
           localStorage.setItem("authenticated", true);
           localStorage.setItem("loginData", JSON.stringify(loginData));
+          navigate("/hikingtrails");
         }
+       
       })
       .catch((error) => {
         console.error('Error:', error);
