@@ -35,13 +35,4 @@ router.get("/:id", async (req, res) => {
 
 });
 
-// UPDATE A COMMENT
-  
-
-
-// DELETE A COMMENT
-
-
-
-
 module.exports = router;

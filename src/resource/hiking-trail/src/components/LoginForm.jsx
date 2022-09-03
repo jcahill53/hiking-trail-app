@@ -52,8 +52,8 @@ function LoginForm() {
       });
 
     // to access login info from local storage get it from local storage where it is stored as a string and parse it back into an object
-    // let userLogin = window.localStorage.getItem("loginData");
-    // console.log(JSON.parse(userLogin));
+    let userLogin = window.localStorage.getItem("loginData");
+    console.log(JSON.parse(userLogin));
 
   }
   return (

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import axios from "axios";
 import TrailComments from "./TrailComments"
 
-const hiking_db = 'hiking_db';
 
 function TrailDetails() {
     const { id } = useParams();
@@ -88,26 +87,15 @@ function TrailDetails() {
     const emptiestDTTM = trailParking[0].emptiestDayTime
 
 
-// aggregation for a trail - average trail rating
-const avgTrailRating = hiking_db.comments.aggregate(
-    [
-      {
-        $group:
-          {
-            _id: "$trailId",
-            avgAmount: { $avg: "$rateTrail" } },
 
-      }
-    ]
- )
  
- console.log(avgTrailRating)
+
 
 
     return (
         <section>
             <section className="trail-info">
-                <h2 className="app-name">App.name</h2>
+                <h2 className="app-name">ParkNHike</h2>
                 <h1 className="detail-hdr">{trailDetails.name}</h1>
 
                 <p>${trailDetails.descr}</p>

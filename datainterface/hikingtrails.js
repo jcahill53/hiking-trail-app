@@ -5,16 +5,11 @@ const ObjectId = require('mongodb').ObjectId;
 
 require('dotenv').config()
 
-// const uri =
-// `mongodb+srv://d-team:Test12@cluster0.f4ghe7b.mongodb.net/?retryWrites=true&w=majority`
-
 const uri =
 `mongodb+srv://d-team:Test12@cluster0.qlff5yn.mongodb.net/?retryWrites=true&w=majority`
 
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
-
 
 const databaseName = 'hiking_db';
 const trailsCollName = 'trails';
@@ -83,7 +78,7 @@ module.exports.create = async (newObj) => {
 
 // UPDATE A TRAIL
 
-module.exports.updateById = async (trailId, newObj) => {
+module.exports.updateTrailById = async (trailId, newObj) => {
   const database = client.db(databaseName);
   const trails = database.collection(trailsCollName);
 
@@ -95,7 +90,7 @@ module.exports.updateById = async (trailId, newObj) => {
   const result = await trails.updateOne(filter, updateRules);
 
   if (result.modifiedCount != 1) {
-    return { error: `Something went wrong. ${result.modifiedCount} movies were updated. Please try again.` }
+    return { error: `Something went wrong. ${result.modifiedCount} trails were updated. Please try again.` }
   };
 }
 
@@ -166,6 +161,45 @@ module.exports.deleteCommentById = async (commentId) => {
   return { message: `Deleted ${result.deletedCount} comment.` };
 }
 
+// UPDATE A COMMENT
+
+// UPDATE A COMMENT BY ID
+ 
+module.exports.updateCommentById = async (commentId, newObj) => {
+  const database = client.db(databaseName);
+  const comments = database.collection(commCollName)
+
+  const updateRules = {
+    $set: { "messageBody": newObj.messageBody }
+  };
+  const filter = { _id: ObjectId(commentId) };
+  const result = await comments.updateOne(filter, updateRules);
+
+  if (result.modifiedCount != 1) {
+    return { error: `Something went wrong. ${result.modifiedCount} comments were updated. Please try again.` }
+  };
+
+
+  const updatedComment = module.exports.getOneComment(commentId);
+  console.log(updatedComment);
+  return updatedComment;
+}
+
+// DELETE A COMMENT
+module.exports.deleteCommentById = async (commentId) => {
+  const database = client.db(databaseName);
+  const comments = database.collection(commCollName)
+
+  const deletionRules = { _id: ObjectId(commentId) }
+  const result = await comments.deleteOne(deletionRules);
+
+  if (result.deletedCount != 1) {
+    return { error: `Something went wrong. Please try again.` }
+  };
+
+  return { message: `Deleted ${result.deletedCount} trail.` };
+}
+
 // PARKING FOR A TRAIL ENDPOINT
 
    // #54 GET ALL PARKING FOR A TRAIL
@@ -201,4 +235,21 @@ module.exports.createParking = async (trailId, newObj) => {
   }
   }
 
+}
+
+// UPDATE PARKING FOR A TRAIL
+
+// DELETE PARKING FOR A TRAIL
+module.exports.deleteParkingById = async (parkingId) => {
+  const database = client.db(databaseName);
+  const parking = database.collection(parkingCollName)
+
+  const deletionRules = { _id: ObjectId(parkingId) }
+  const result = await parking.deleteOne(deletionRules);
+
+  if (result.deletedCount != 1) {
+    return { error: `Something went wrong. Please try again.` }
+  };
+
+  return { message: `Deleted ${result.deletedCount} trail.` };
 }

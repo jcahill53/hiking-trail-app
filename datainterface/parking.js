@@ -34,12 +34,13 @@ module.exports.getAll = async () => {
 }
 
 // UPDATE PARKING
-module.exports.updateParkingtById = async (newObj, parkingId) => {
+
+module.exports.updateParkingById = async (newObj, parkingId) => {
   const database = client.db(databaseName);
   const parking = database.collection(parkingCollName)
 
   const updateRules = {
-    $set: { "messageBody": newObj.messageBody }
+    $set: { "parkingLotStatus": newObj.parkingLotStatus }
   };
   const filter = { _id: ObjectId(parkingId) };
   const result = await parking.updateOne(filter, updateRules);

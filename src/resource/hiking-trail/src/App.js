@@ -10,9 +10,10 @@ import SearchTrails from './components/SearchTrails';
 import TrailResults from './components/TrailResults';
 import TrailDetails from './components/TrailDetails';
 import CreateMessage from './components/CreateMessage';
- 
+import Logout from './components/Logout';
 
- 
+
+
 
 function App() {
 
@@ -20,23 +21,21 @@ function App() {
   const Home = () => {
 
     return (
-      <>
+      <div className="home">
         <NavBar />
         <main className="">
 
           <section className="welcome">
-          
-            <div>
             <h2 className="app-name">ParkNHike </h2>
-              <h1 className="">Welcome,</h1>
-              <h2>We're glad you're here!</h2>
-              <h3>ParkNHike is a real-time, online resource for hiking trails in</h3>
-              <h3>Washington State.  ParkNHike helps identify and combat</h3>
-              <h3>congestion at our trails to help you optimize your hiking.</h3>
-
+            <div className="wecome-background">
+              <div className="welcome-text">
+                <h1 >Welcome,</h1>
+                <h2>We're glad you're here!</h2>
+                <h3><span>ParkNHike</span> is a real-time, online resource for hiking trails in Oregon State.  ParkNHike helps identify and combat congestion at our trails to help you optimize your hiking.</h3>
+              </div>
+              <p className="welcome-text"> You are welcome to register for a free account</p>
             </div>
             <div className="welcome-register">
-              <p> You are also welcome to register for a free account</p>
               <div className="row">
                 <Link to={`/register`}><button className="welcome-button">Register</button></Link>
                 <Link to={`/login`}><button className="welcome-button">Login</button></Link>
@@ -45,7 +44,7 @@ function App() {
             </div>
           </section>
         </main>
-      </>
+      </div>
     )
   };
 
@@ -73,6 +72,21 @@ function App() {
         <main>
           <div >
             <RegisterForm
+            />
+          </div>
+        </main>
+      </>
+    );
+  }
+
+  const LogoutPage = () => {
+
+    return (
+      <>
+        <NavBar />
+        <main>
+          <div >
+            <Logout
             />
           </div>
         </main>
@@ -136,7 +150,7 @@ function App() {
         <main>
           <div >
             <CreateMessage
-             id={id}
+              id={id}
             />
           </div>
         </main>
@@ -158,6 +172,10 @@ function App() {
         <Route
           path="/register"
           element={<RegistrationForm />}
+        />
+        <Route
+          path="/logout"
+          element={<LogoutPage />}
         />
         <Route
           path="/hikingtrails"
