@@ -20,7 +20,7 @@ function SearchTrails() {
       <main >
         {/* trail name input */}
         <section className="search-trail center">
-          <h2 className="search-app"> App Name </h2>
+          <h2 className="app-name"> ParkNHike </h2>
           <h2 className="srch-trl-ttl">Search for a Trail</h2>
           <form className="trail-form " onSubmit={onFormSubmit}>
             <label className="search-label center" htmlFor="trail-input">Enter a Trail Name:</label>

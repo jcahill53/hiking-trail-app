@@ -2,11 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import axios from "axios";
-
 import TrailComments from "./TrailComments"
 
-
-// const { REACT_APP_NAME} = process.env
 
 function TrailDetails() {
     const { id } = useParams();
@@ -89,18 +86,23 @@ function TrailDetails() {
     const fullestDTTM = trailParking[0].fullest_day_time
     const emptiestDTTM = trailParking[0].emptiestDayTime
 
-  
+
+
+ 
+
+
+
     return (
         <section>
             <section className="trail-info">
-                <h2 className="app-name">App.name</h2>
+                <h2 className="app-name">ParkNHike</h2>
                 <h1 className="detail-hdr">{trailDetails.name}</h1>
 
                 <p>${trailDetails.descr}</p>
             </section>
 
             <section className="parking-info">
-                <h2 className="detail-hero-comics">App Name Real Time Statistics</h2>
+                <h2 className="detail-hero-comics">ParkNHike Real Time Statistics</h2>
                 <h2 className="app-name"> </h2>
                 <p>{parkingName}</p>
                 <div>
