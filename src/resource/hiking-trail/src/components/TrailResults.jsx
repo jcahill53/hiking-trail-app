@@ -32,14 +32,14 @@ export default function TrailResults({ trailsInput }) {
             .then(
                 // successful callback
                 data => {
-                    console.log("Hi I am here");
+ 
                     setTrailResults(data);
                     console.log(data);
                     setIsLoading(false);
                 },
                 // unsuccessful callback
                 error => {
-                    //console.log("Hi I am here");
+ 
                     setHasError(true)
                     setIsLoading(false);
                 }

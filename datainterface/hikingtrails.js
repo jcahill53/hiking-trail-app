@@ -6,7 +6,7 @@ const ObjectId = require('mongodb').ObjectId;
 require('dotenv').config()
 
 const uri =
-`mongodb+srv://d-team:Test12@cluster0.qlff5yn.mongodb.net/?retryWrites=true&w=majority`
+  `mongodb+srv://d-team:Test12@cluster0.qlff5yn.mongodb.net/?retryWrites=true&w=majority`
 
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -22,18 +22,18 @@ module.exports = {}
 
 // #2 GET ALL HIKING TRAIL DATA
 module.exports.getAll = async () => {
-    const database = client.db(databaseName);
-    const trails = database.collection(trailsCollName);
-  
-    const query = {};
-    let trailsCursor = await trails.find(query).limit(50);
-    if(trailsCursor){
-      return trailsCursor.toArray();
-    } 
-    
+  const database = client.db(databaseName);
+  const trails = database.collection(trailsCollName);
+
+  const query = {};
+  let trailsCursor = await trails.find(query).limit(50);
+  if (trailsCursor) {
+    return trailsCursor.toArray();
   }
 
-  // #4 GET TRAILS BY ID
+}
+
+// #4 GET TRAILS BY ID
 module.exports.getTrailById = async (trailId) => {
   const database = client.db(databaseName);
   const trails = database.collection(trailsCollName);
@@ -77,21 +77,22 @@ module.exports.create = async (newObj) => {
 }
 
 // UPDATE A TRAIL
-
 module.exports.updateTrailById = async (trailId, newObj) => {
   const database = client.db(databaseName);
-  const trails = database.collection(trailsCollName);
+  const trails = database.collection(trailsCollName)
 
-  // Product team says only these two fields can be updated.
   const updateRules = {
-    $set: { "name":newObj.name, "descr": newObj.descr }
+    $set: { "descr": newObj.descr }
   };
   const filter = { _id: ObjectId(trailId) };
   const result = await trails.updateOne(filter, updateRules);
 
   if (result.modifiedCount != 1) {
-    return { error: `Something went wrong. ${result.modifiedCount} trails were updated. Please try again.` }
+    return { error: `Something went wrong. ${result.modifiedCount} comments were updated. Please try again.` }
   };
+  const updatedTrail = module.exports.getTrailById(trailId);
+
+  return updatedTrail;
 }
 
 // DELETE A TRAIL
@@ -112,7 +113,7 @@ module.exports.deleteTrailById = async (trailId) => {
 
 // COMMENTS FOR A TRAIL ENDPOINT
 
-  // #12 GET ALL COMMENTS FOR A TRAIL
+// #12 GET ALL COMMENTS FOR A TRAIL
 module.exports.getCommentsByTrailId = async (trailId) => {
   const database = client.db(databaseName);
   const comments = database.collection(commCollName);
@@ -123,7 +124,7 @@ module.exports.getCommentsByTrailId = async (trailId) => {
   return commentCursor.toArray();
 }
 
-  
+
 // #16 CREATE A NEW COMMENT
 module.exports.createComment = async (trailId, newObj) => {
 
@@ -133,15 +134,15 @@ module.exports.createComment = async (trailId, newObj) => {
   const goodObj = { ...newObj, trailId: ObjectId(trailId), date: new Date() }
 
   const result = await comments.insertOne(goodObj);
- 
-  if(!validTrail) {
-    return {error:  `The trail id provided is not a valid trail id. `}
+
+  if (!validTrail) {
+    return { error: `The trail id provided is not a valid trail id. ` }
   } else {
-  if(goodObj){
-    return { newObjectId: result.insertedId, message: `Comment created! ID: ${result.insertedId}` }
-  } else {
-    return {error: "Something went wrong. Please try again."}
-  }
+    if (goodObj) {
+      return { newObjectId: result.insertedId, message: `Comment created! ID: ${result.insertedId}` }
+    } else {
+      return { error: "Something went wrong. Please try again." }
+    }
   }
 
 }
@@ -161,10 +162,8 @@ module.exports.deleteCommentById = async (commentId) => {
   return { message: `Deleted ${result.deletedCount} comment.` };
 }
 
-// UPDATE A COMMENT
-
 // UPDATE A COMMENT BY ID
- 
+
 module.exports.updateCommentById = async (commentId, newObj) => {
   const database = client.db(databaseName);
   const comments = database.collection(commCollName)
@@ -202,18 +201,30 @@ module.exports.deleteCommentById = async (commentId) => {
 
 // PARKING FOR A TRAIL ENDPOINT
 
-   // #54 GET ALL PARKING FOR A TRAIL
-   module.exports.getParkingByTrailId = async (trailId) => {
-    const database = client.db(databaseName);
-    const parking = database.collection(parkingCollName);
-  
-    const query = { trailId: {$in: [ObjectId(trailId)]}};
-  
-    let parkingCursor = await parking.find(query);
-    return parkingCursor.toArray();
-  }
+// #54 GET ALL PARKING FOR A TRAIL
+module.exports.getParkingByTrailId = async (trailId) => {
+  const database = client.db(databaseName);
+  const parking = database.collection(parkingCollName);
 
-  // #56 CREATE A NEW PARKING AREA FOR A TRAIL
+  const query = { trailId: { $in: [ObjectId(trailId)] } };
+
+  let parkingCursor = await parking.find(query);
+  return parkingCursor.toArray();
+}
+
+// GET PARKING FOR A SPECIFIC PARKING ID
+module.exports.getParkingbyId = async (parkingId) => {
+  const database = client.db(databaseName);
+  const parking = database.collection(parkingCollName);
+
+  const query = { _id: ObjectId(parkingId) };
+  let parkg = await parking.findOne(query);
+
+  return parkg;
+}
+
+
+// #56 CREATE A NEW PARKING AREA FOR A TRAIL
 module.exports.createParking = async (trailId, newObj) => {
 
   const database = client.db(databaseName);
@@ -224,20 +235,60 @@ module.exports.createParking = async (trailId, newObj) => {
   const result = await parking.insertOne(goodObj);
 
   console.log(ObjectId(trailId));
-  
-  if(!validTrail) {
-    return {error:  `The trail id provided is not a valid trail id. `}
+
+  if (!validTrail) {
+    return { error: `The trail id provided is not a valid trail id. ` }
   } else {
-  if(goodObj){
-    return { newObjectId: result.insertedId, message: `Parking created! ID: ${result.insertedId}` }
-  } else {
-    return {error: "Something went wrong. Please try again."}
-  }
+    if (goodObj) {
+      return { newObjectId: result.insertedId, message: `Parking created! ID: ${result.insertedId}` }
+    } else {
+      return { error: "Something went wrong. Please try again." }
+    }
   }
 
 }
 
-// UPDATE PARKING FOR A TRAIL
+// UPDATE A PARKING STATUS DATAINTERFACE
+
+// module.exports.updateParkingById = async (parkingId, newObj) => {
+//   const database = client.db(databaseName);
+//   const parking = database.collection(parkingCollName)
+
+//   const updateRules = {
+//     $set: { "parkingLotStatus": newObj.parkingLotStatus }
+//   };
+//   const filter = { _id: ObjectId(parkingId) };
+//   const result = await parking.updateOne(filter, updateRules);
+
+//   if (result.modifiedCount != 1) {
+//     return { error: `Something went wrong. ${result.modifiedCount} comments were updated. Please try again.` }
+//   };
+
+
+//   const updatedParking = module.exports.getOneParking(parkingId);
+//   console.log(updatedParking);
+//   return updatedParking;
+// }
+// UPDATE PARKING BY ID
+module.exports.updateParkingById = async (parkingId, newObj) => {
+  const database = client.db(databaseName);
+  const parking = database.collection(parkingCollName)
+
+  const updateRules = {
+    $set: { "parkingLotStatus": newObj.parkingLotStatus }
+  };
+  const filter = { _id: ObjectId(parkingId) };
+  console.log(filter);
+  const result = await parking.updateOne(filter, updateRules);
+console.log(result);
+console.log(result.modifiedCount);
+  if (result.modifiedCount != 1) {
+    return { error: `Something went wrong. ${result.modifiedCount} comments were updated. Please try again.` }
+  };
+  const updatedParking = module.exports.getParkingById(parkingId);
+
+  return updatedParking;
+}
 
 // DELETE PARKING FOR A TRAIL
 module.exports.deleteParkingById = async (parkingId) => {
