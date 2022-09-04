@@ -1,70 +1,87 @@
 import React, { useState } from 'react';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 function CreateMessage() {
     const { id } = useParams();
 
+    // use state to get message
     const [postMessage, setPostMessage] = useState(null);
-    const onFormSubmit = (event) => {
-      event.preventDefault();
-    
-      const trailId = id;
-      console.log(id);
-      console.log(trailId);
-      
-      
-    //   let postMsgHeader = document.getElementById('post-msg');
-      let form = document.getElementById('comment-form');
-      if(form.comment.value === ""){
-       window.alert("form can't be empty");
-      }else{
-          setPostMessage(form.comment.value)
-      }
 
-    };
+    // get trailId from parameter
+    const trailId = id;
 
-    function getFormContent(close) {
-    if(postMessage === null){
-        return (<div>
-        <form id="comment-form">
-            <h2 id="post-msg">Post your own message to trail</h2>
-            <div id="form-name">
-                <label>
-                    Name:
-                    <input type="text" name="comment" />
-                </label>
-            </div>
-            <div id="form-btns">
-                <input id="cancel" className="button" type="button" value="Cancel" onClick={close} />
-                <input id="submit" value="Post Message" type="button" onClick={onFormSubmit}  />
-            </div>
-        </form>
-    </div>)
-    } else {
-        return (<div>
-            <h2 id="ty-msg">Thank You! Your Message has been posted to Trail</h2>
-            <button onClick={close}>Exit Notification</button>
-        </div>)
+    // get userId from local storage -- we need something to handle if there is no user logged in
+    let newObj = window.localStorage.getItem("loginData",);
+    let loggedUser = JSON.parse(newObj);
+    console.log(loggedUser);
+    const userId = loggedUser.userId;
+    console.log(userId);
+
+    // Handle the login on submit
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const data = {
+            "trailId": trailId,
+            "userId": userId,
+            "messageBody": postMessage,
+            "createDayTime": new Date(),
+            "updatedDayTime": new Date(),
+        }
+
+        // process the registration
+        fetch(`http://localhost:5000/hikingtrails/${trailId}/comments`, {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
     }
-}
 
 
     return (
-        <div>
-           <p>Create a Trail Comment Page</p>
-                <Popup trigger={<button> Post Your Own Message </button>} 
-                position="right center">
-                    {close => (
-                <div className='popup'>
-                    {getFormContent(close)}
+        <section className="register">
+            <div className="register-form">
+                <div>
+                    <h2>Post a message about this trail</h2>
                 </div>
-                )}
-                </Popup>
-        </div>
-    )
 
+
+                <form>
+                    {/* Labels and inputs for form data */}
+
+                    <div className="form-container">
+                        <label className="register-label">Enter Your Comment</label>
+                        <input className="register-input"
+                            onChange={(e) => setPostMessage(e.target.value)}
+                            value={postMessage}
+                            type="text"
+                            autoComplete="on"
+                            required
+                        />
+                    </div>
+
+                    <div className="row button-container">
+                        <Link to={`/hikingTrails`}><button className="register-btn">Return to Search</button></Link>
+                        <button onClick={handleSubmit} className="register-btn" type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    );
 }
 
 export default CreateMessage

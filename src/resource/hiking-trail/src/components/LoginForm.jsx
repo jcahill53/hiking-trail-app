@@ -22,7 +22,7 @@ function LoginForm() {
       "email": email,
       "password": password
     }
-
+ 
     // process the login
     fetch('http://localhost:5000/users/login', {
       method: 'POST', // or 'PUT'
@@ -45,15 +45,24 @@ function LoginForm() {
           localStorage.setItem("loginData", JSON.stringify(loginData));
           navigate("/hikingtrails");
         }
-       
+ 
       })
       .catch((error) => {
         console.error('Error:', error);
+        navigate("/faillogin");
       });
 
     // to access login info from local storage get it from local storage where it is stored as a string and parse it back into an object
-    let userLogin = window.localStorage.getItem("loginData");
-    console.log(JSON.parse(userLogin));
+    
+    let newObj = window.localStorage.getItem("loginData", );
+    let loggedUser = JSON.parse(newObj);
+    console.log(loggedUser);
+    
+    const username =  loggedUser.username ;
+    const userId =  loggedUser.userId ;
+
+    console.log({username});
+    console.log({userId});
 
   }
   return (
@@ -63,7 +72,7 @@ function LoginForm() {
           <h2>User Login</h2>
         </div>
 
-        <form >
+        <form  id= "user-login-form">
           {/* Labels and inputs for form data */}
           <div className="form-container">
             <label className="register-label">Email</label>

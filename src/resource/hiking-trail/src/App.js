@@ -5,6 +5,7 @@ import { Route, Routes, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import LoginForm from './components/LoginForm';
+import FailLogin from './components/FailLogin'
 import RegisterForm from './components/RegisterForm';
 import SearchTrails from './components/SearchTrails';
 import TrailResults from './components/TrailResults';
@@ -39,7 +40,7 @@ function App() {
               <div className="row">
                 <Link to={`/register`}><button className="welcome-button">Register</button></Link>
                 <Link to={`/login`}><button className="welcome-button">Login</button></Link>
-                <Link to={`/hikingtrails`}><button className="welcome-button">Trail Search</button></Link>
+                {/* <Link to={`/hikingtrails`}><button className="welcome-button">Trail Search</button></Link> */}
               </div>
             </div>
           </section>
@@ -87,6 +88,21 @@ function App() {
         <main>
           <div >
             <Logout
+            />
+          </div>
+        </main>
+      </>
+    );
+  }
+
+  const FailLoginPage = () => {
+
+    return (
+      <>
+        <NavBar />
+        <main>
+          <div >
+            <FailLogin
             />
           </div>
         </main>
@@ -176,6 +192,10 @@ function App() {
         <Route
           path="/logout"
           element={<LogoutPage />}
+        />
+          <Route
+          path="/faillogin"
+          element={<FailLoginPage />}
         />
         <Route
           path="/hikingtrails"

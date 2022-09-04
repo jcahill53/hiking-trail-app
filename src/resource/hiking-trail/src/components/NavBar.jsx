@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Logout from '../components/Logout';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
 
@@ -8,16 +9,13 @@ function NavBar() {
         <>
 
             <nav>
-
-                <section className="row">
-                    <ul className="nav-links row">
-                        <li className="nav-li" ><Link to="/">Return to Welcome Page</Link></li>
-                        <li className="nav-li" ><Link to="/hikingtrails">Search Trails</Link></li>
-                        <li className="nav-li" ><Link to="/hikingtrails/63002e1b9ed6cb63e334474a">Trail Details</Link></li>
-                        <li className="nav-li" ><Link to="/hikingtrails/63002e1b9ed6cb63e334474a/comments">Create a Comment</Link></li>
-
-                    </ul>
-                    <Logout />
+"
+                <section className="row button-container">
+  
+                        <Link to="/"><button className="logout-btn" >Return Home</button></Link> 
+                        <Link to="/hikingtrails"><button className="logout-btn" >Search Trails</button></Link> 
+                        <Logout />
+ 
                 </section>
 
             </nav>

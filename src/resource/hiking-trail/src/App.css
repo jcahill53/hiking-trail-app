@@ -135,6 +135,12 @@ button .btn-reverse:active {
   padding: 3px;
 }
 
+.user-name {
+font-size: 2rem;
+margin-top: 3rem;
+}
+
+
 /* Welcome Page (Home) */
 html,
 body {

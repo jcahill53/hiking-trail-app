@@ -6,5 +6,5 @@ router.use("/hikingtrails", require("./hikingtrails"));
 router.use("/parking", require("./parking"));
 router.use("/users", require("./users"));
 
-router.use("/", (req, res) => res.status(404).send("Route not found. Maybe you meant /hikingtrails"))
+router.use("/", (req, res) => res.status(404).send("Route is not valid."))
 module.exports = router;
