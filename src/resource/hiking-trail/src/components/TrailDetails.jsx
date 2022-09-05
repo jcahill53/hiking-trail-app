@@ -4,6 +4,15 @@ import { Link } from 'react-router-dom';
 import axios from "axios";
 import TrailComments from "./TrailComments"
 
+import Background from '../images/austin-ban-juHayWuaaoQ-unsplash.jpg'
+
+/* ARTHUR summary of changes:
+** - Added const trailHeaderSectionStyle with proper variables
+** - Added class trail-header-section and background image
+** - Add className="trail-details"
+** - Add Trail Details section to app.css
+*/
+
 
 function TrailDetails() {
     const { id } = useParams();
@@ -14,6 +23,13 @@ function TrailDetails() {
     const [trailParking, setTrailParking] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
+
+    const trailHeaderSectionStyle = {
+        backgroundImage: `url(${Background})`,
+        backgroundPosition: 'top',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'contain'
+    }
 
     // url variables
 
@@ -68,7 +84,6 @@ function TrailDetails() {
         return (
             <div className="wait">
                 <p className="load">Loading...</p>
-
             </div>
         )
     }
@@ -86,24 +101,34 @@ function TrailDetails() {
     const fullestDTTM = trailParking[0].fullest_day_time
     const emptiestDTTM = trailParking[0].emptiestDayTime
 
-
-
- 
-
-
-
     return (
-        <section>
-            <section className="trail-info">
-                <h2 className="app-name">ParkNHike</h2>
-                <h1 className="detail-hdr">{trailDetails.name}</h1>
+        <div className="trail-details">
+            <section className="trail-header-section" style={trailHeaderSectionStyle}>
+                <section className="trail-info">
+                    <h2 className="app-name">ParkNHike</h2>
+                    <h1 className="detail-hdr">{trailDetails.name}</h1>
 
-                <p>${trailDetails.descr}</p>
+                    <span><img id="location-pin" src="/pin.png" alt=""/>
+                        {trailDetails.locations.latitude}, {trailDetails.locations.longitude}
+                    </span>
+                    
+                    <span><img id="trail-distance" src="/travel.png" alt=""/>
+                        {trailDetails.measures.distance.value} {trailDetails.measures.distance.measure}
+                    </span>
+                    
+                    <span><img id="trail-difficulty" src="/speedometer.png" alt=""/>
+                        {trailDetails.measures.difficulty}
+                    </span>
+
+                    <p>{trailDetails.descr}</p>
+                </section>
             </section>
 
-            <section className="parking-info">
+            <section className="trail-details parking-info">
+                
                 <h2 className="detail-hero-comics">ParkNHike Real Time Statistics</h2>
-                <h2 className="app-name"> </h2>
+                
+                <h2 className="app-name">ParkNHike</h2>
                 <p>{parkingName}</p>
                 <div>
                     <div>
@@ -152,7 +177,7 @@ function TrailDetails() {
                     )}
                 </article>
             </section>
-        </section>
+        </div>
     )
 }
 

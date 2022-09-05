@@ -416,3 +416,38 @@ margin-left: 15%;
   font-weight: bold;
   padding: .5rem 2rem;
 }
+
+/* TRAIL DETAILS CSS
+**
+*/
+.trail-details {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.trail-details .detail-hdr,
+.trail-details .parking-info h2 {
+    font-variant-caps: all-small-caps;
+    font-size: 72px;
+    text-align: center;
+}
+
+.trail-header-section {
+    height: 650px;
+}
+
+.trail-details .app-name {
+    font-size: xx-large;
+    text-align: center;
+}
+
+.trail-info p {
+    color: black;
+}
+
+#location-pin,
+#trail-distance,
+#trail-difficulty {
+    height: 1rem;
+}
