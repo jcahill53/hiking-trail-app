@@ -108,17 +108,19 @@ function TrailDetails() {
                     <h2 className="app-name">ParkNHike</h2>
                     <h1 className="detail-hdr">{trailDetails.name}</h1>
 
-                    <span><img id="location-pin" src="/pin.png" alt=""/>
-                        {trailDetails.locations.latitude}, {trailDetails.locations.longitude}
-                    </span>
-                    
-                    <span><img id="trail-distance" src="/travel.png" alt=""/>
-                        {trailDetails.measures.distance.value} {trailDetails.measures.distance.measure}
-                    </span>
-                    
-                    <span><img id="trail-difficulty" src="/speedometer.png" alt=""/>
-                        {trailDetails.measures.difficulty}
-                    </span>
+                    <div className="trail-stats">
+                        <span><img id="location-pin" src="/pin.png" alt=""/>
+                            {trailDetails.locations.latitude}, {trailDetails.locations.longitude}
+                        </span>
+                        
+                        <span><img id="trail-distance" src="/travel.png" alt=""/>
+                            {trailDetails.measures.distance.value} {trailDetails.measures.distance.measure}
+                        </span>
+                        
+                        <span><img id="trail-difficulty" src="/speedometer.png" alt=""/>
+                            {trailDetails.measures.difficulty}
+                        </span>
+                    </div>
 
                     <p>{trailDetails.descr}</p>
                 </section>

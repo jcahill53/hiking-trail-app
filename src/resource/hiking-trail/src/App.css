@@ -420,6 +420,10 @@ margin-left: 15%;
 /* TRAIL DETAILS CSS
 **
 */
+:root {
+    --trail-stats-font-size: 2rem;
+}
+
 .trail-details {
     width: 960px;
     margin-left: auto;
@@ -435,6 +439,13 @@ margin-left: 15%;
 
 .trail-header-section {
     height: 650px;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.trail-header-section::before {
+    content: '';
+    position: absolute;
 }
 
 .trail-details .app-name {
@@ -446,8 +457,28 @@ margin-left: 15%;
     color: black;
 }
 
+.trail-stats {
+    display: flex;
+
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.trail-stats span {
+    font-size: var(--trail-stats-font-size);
+    padding-right: 2rem;
+    background-color: rgba(81, 81, 81, 0.65);
+    color: white;
+}
+
+.trail-stats span img {
+    filter: invert();
+    padding-right: 0.5rem;
+}
+
 #location-pin,
 #trail-distance,
 #trail-difficulty {
-    height: 1rem;
+    height:  var(--trail-stats-font-size);
 }
