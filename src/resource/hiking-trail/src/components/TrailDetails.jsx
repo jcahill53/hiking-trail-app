@@ -199,40 +199,42 @@ function TrailDetails() {
 
             </section>
 
-            <section className="trail-details parking-info trail-info-container">
-                <section className="trail-details report-park-status trail-info-container">
-                    <div >
+            <section className=" trail-info-container update-status">
+                 
+                  
                         <div>
-                            <h2 className="trail-section-hdr">Report Changes in Parking Status</h2>
-                        </div>
+                            <h2 className="trail-details  trail-section-hdr">Report Changes in Parking Status</h2>
+                        </div> 
 
+                        <section className="report-park-status">
+                            <form className="report-status-form">
+                                {/* Labels and inputs for form data */}
 
-                        <form className="report-status-form">
-                            {/* Labels and inputs for form data */}
+                                <div className="row form-container">
+                                    <label className="status-label">What is the Current Parking Status?
+                                        <input className="status-select"
+                                            onChange={(e) => setStatus(e.target.value)}
+                                            value={status}
+                                            type="text"
+                                            autoComplete="on"
+                                            required
+                                        /></label>
+                                </div>
+                            </form>
 
-                            <div className="form-container">
-                                <label className="status-label">Select the Current Parking Status
-                                    <input className="status-select"
-                                        onChange={(e) => setStatus(e.target.value)}
-                                        value={status}
-                                        type="text"
-                                        autoComplete="on"
-                                        required
-                                    /></label>
-                            </div>
-                            <div className="row button-container">
+                            <div className="row update-status-btn">
                                 <button onClick={handlePost} className="welcome-button" type="submit">
                                     Post the Status of Parking
                                 </button>
                             </div>
-                        </form>
-                    </div>
-                </section>
+                        </section>
+                 
+                 
             </section>
 
             <section className="trail-details user-comments trail-info-container">
                 <h2 className="trail-section-hdr"><span>ParkNHike</span>User Posted Comments</h2>
-                <Link to={`/createmessage/${trailId}`}><button  >Post your own comment</button></Link>
+                <Link to={`/createmessage/${trailId}`}><button className="welcome-button post-comment" >Post your own comment</button></Link>
                 <section className="comment-info">
                     <article className="column comment-card" >
                         {trailComments.map((comment, id) =>

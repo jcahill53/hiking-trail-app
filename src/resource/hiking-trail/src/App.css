@@ -434,8 +434,9 @@ margin-left: 15%;
 }
 
 .trail-info-container {
-  width: 60%;
-  margin-left:20%
+  width: 65%;
+  margin-left:20%;
+  margin-top: 2rem;
 }
 
 
@@ -445,12 +446,13 @@ margin-left: 15%;
     font-family: 'Oswald', sans-serif;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    margin-left: 2rem;
 }
 
 .trail-header-section {
     height: 360px;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .trail-header-section::before {
@@ -465,7 +467,7 @@ margin-left: 15%;
 
 .trail-info p {
     color: rgb(239, 239, 246);
-    width:90%;
+    width:87%;
     margin-left: 5%;
     margin-bottom: 1rem;
     padding: .5rem;
@@ -514,6 +516,7 @@ margin-left: 15%;
 
 .section-sub-hdr {
   font-size: 1.5rem;
+  margin-top: 1rem;
 }
 
 .park-label {
@@ -527,5 +530,42 @@ color:   rgb(1, 68, 1);
 }
 
 .parking-data {
-  justify-content: space-around;
+ 
+  margin-top: 1rem;
+  
+}
+
+.parking-data div {
+  margin-right: 1rem;
+  text-align: center;
+
+}
+
+.post-comment {
+  margin-left: 25%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.update-status-btn {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* .parking-data, .update-status, .user-comments {
+ 
+} */
+
+.report-status-form{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.comment-card h1 {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+.comment-card h2{
+  font-size: 1.5rem;
+  margin-top: 1rem;
 }
