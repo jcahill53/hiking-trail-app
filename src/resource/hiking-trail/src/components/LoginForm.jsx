@@ -11,8 +11,8 @@ function LoginForm() {
   const [password, setUserPassword] = useState('');
   // const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated") || false));
 
-  // console.log(`Email ${email}`);
-  // console.log(`Password ${password}`);
+  console.log(`Email ${email}`);
+  console.log(`Password ${password}`);
 
   // Handle the login on submit
   const handleLogin = async (event) => {

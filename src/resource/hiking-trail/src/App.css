@@ -1,4 +1,5 @@
 /* Added by Joann */
+/* Added by Joann */
 * {
   margin: 0;
   padding: 0;
@@ -134,12 +135,6 @@ button .btn-reverse:active {
 .nav-li {
   padding: 3px;
 }
-
-.user-name {
-font-size: 2rem;
-margin-top: 3rem;
-}
-
 
 /* Welcome Page (Home) */
 html,
@@ -421,4 +416,116 @@ margin-left: 15%;
   text-transform: uppercase;
   font-weight: bold;
   padding: .5rem 2rem;
+}
+
+/* TRAIL DETAILS CSS
+**
+*/
+:root {
+    --trail-stats-font-size: 1.25rem;
+}
+
+
+
+.trail-details {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.trail-info-container {
+  width: 60%;
+  margin-left:20%
+}
+
+
+.trail-details .detail-hdr { 
+    /* font-variant-caps: all-small-caps; */
+    font-size: 2.5rem;
+    font-family: 'Oswald', sans-serif;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.trail-header-section {
+    height: 360px;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.trail-header-section::before {
+    content: '';
+    position: absolute;
+}
+
+.trail-details .app-name {
+    font-size: xx-large;
+    text-align: center;
+}
+
+.trail-info p {
+    color: rgb(239, 239, 246);
+    width:90%;
+    margin-left: 5%;
+    margin-bottom: 1rem;
+    padding: .5rem;
+    background-color: rgba(81, 81, 81, 0.65);
+}
+
+.trail-stats {
+    display: flex;
+
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.trail-stats span {
+    font-size: var(--trail-stats-font-size);
+    padding-right: 2rem;
+    background-color: rgba(81, 81, 81, 0.65);
+    color: white;
+}
+
+.trail-stats span img {
+    filter: invert();
+    padding-right: 0.5rem;
+}
+
+#location-pin,
+#trail-distance,
+#trail-difficulty {
+    height:  var(--trail-stats-font-size);
+}
+
+
+
+.trail-section-hdr {
+  font-size: 1.75rem;
+  font-family: 'Oswald', sans-serif;
+  margin: 2rem, 0;
+} 
+
+.trail-section-hdr span {
+  font-style: italic;
+
+}
+
+.section-sub-hdr {
+  font-size: 1.5rem;
+}
+
+.park-label {
+font-size: 1.25rem;
+font-weight: bold;
+}
+
+.park-value {
+  font-size: 1.5rem;
+color:   rgb(1, 68, 1);
+}
+
+.parking-data {
+  justify-content: space-around;
 }
