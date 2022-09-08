@@ -64,7 +64,7 @@ module.exports.create = async (newObj) => {
 
   if(!newObj.email || !newObj.name || !newObj.password){
     // Invalid user object, shouldn't go in database.
-    return {error: "Users must have a name, password, and email."}
+    return {error: "User must enter name, password and email."}
   }
 
   let encryptedPassword = await bcrypt.hash(newObj.password, 10)
