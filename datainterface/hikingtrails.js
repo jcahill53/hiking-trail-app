@@ -107,7 +107,7 @@ module.exports.deleteTrailById = async (trailId) => {
     return { error: `Something went wrong. Please try again.` }
   };
 
-  return { message: `Deleted ${result.deletedCount} comment.` };
+  return { message: `Deleted ${result.deletedCount} trail.` };
 }
 
 
@@ -123,6 +123,18 @@ module.exports.getCommentsByTrailId = async (trailId) => {
   let commentCursor = await comments.find(query);
   return commentCursor.toArray();
 }
+
+// GET A COMMENT FOR A SPECIFIC TRAIL AND COMMENT ID
+
+module.exports.getCommentbyCommentId = async (commentId) => {
+  const database = client.db(databaseName);
+  const commentdata = database.collection(commCollName);
+
+  const query = { _id: ObjectId(commentId) };
+  let onecomment = await commentdata.findOne(query);
+  return onecomment;
+}
+
 
 
 // #16 CREATE A NEW COMMENT
@@ -179,8 +191,8 @@ module.exports.updateCommentById = async (commentId, newObj) => {
   };
 
 
-  const updatedComment = module.exports.getOneComment(commentId);
-  console.log(updatedComment);
+  const updatedComment = module.exports.getCommentbyCommentId(commentId);
+
   return updatedComment;
 }
 
@@ -212,7 +224,7 @@ module.exports.getParkingByTrailId = async (trailId) => {
   return parkingCursor.toArray();
 }
 
-// GET PARKING FOR A SPECIFIC PARKING ID
+// GET PARKING FOR A SPECIFIC TRAIL AND PARKING ID
 module.exports.getParkingbyId = async (parkingId) => {
   const database = client.db(databaseName);
   const parking = database.collection(parkingCollName);
@@ -234,8 +246,6 @@ module.exports.createParking = async (trailId, newObj) => {
 
   const result = await parking.insertOne(goodObj);
 
-  console.log(ObjectId(trailId));
-
   if (!validTrail) {
     return { error: `The trail id provided is not a valid trail id. ` }
   } else {
@@ -248,27 +258,6 @@ module.exports.createParking = async (trailId, newObj) => {
 
 }
 
-// UPDATE A PARKING STATUS DATAINTERFACE
-
-// module.exports.updateParkingById = async (parkingId, newObj) => {
-//   const database = client.db(databaseName);
-//   const parking = database.collection(parkingCollName)
-
-//   const updateRules = {
-//     $set: { "parkingLotStatus": newObj.parkingLotStatus }
-//   };
-//   const filter = { _id: ObjectId(parkingId) };
-//   const result = await parking.updateOne(filter, updateRules);
-
-//   if (result.modifiedCount != 1) {
-//     return { error: `Something went wrong. ${result.modifiedCount} comments were updated. Please try again.` }
-//   };
-
-
-//   const updatedParking = module.exports.getOneParking(parkingId);
-//   console.log(updatedParking);
-//   return updatedParking;
-// }
 // UPDATE PARKING BY ID
 module.exports.updateParkingById = async (parkingId, newObj) => {
   const database = client.db(databaseName);
@@ -278,14 +267,12 @@ module.exports.updateParkingById = async (parkingId, newObj) => {
     $set: { "parkingLotStatus": newObj.parkingLotStatus }
   };
   const filter = { _id: ObjectId(parkingId) };
-  console.log(filter);
   const result = await parking.updateOne(filter, updateRules);
-console.log(result);
-console.log(result.modifiedCount);
+
   if (result.modifiedCount != 1) {
     return { error: `Something went wrong. ${result.modifiedCount} comments were updated. Please try again.` }
   };
-  const updatedParking = module.exports.getParkingById(parkingId);
+  const updatedParking = module.exports.getParkingbyId(parkingId);
 
   return updatedParking;
 }

@@ -33,35 +33,4 @@ module.exports.getAll = async () => {
   
 }
 
-// UPDATE PARKING
 
-module.exports.updateParkingById = async (newObj, parkingId) => {
-  const database = client.db(databaseName);
-  const parking = database.collection(parkingCollName)
-
-  const updateRules = {
-    $set: { "parkingLotStatus": newObj.parkingLotStatus }
-  };
-  const filter = { _id: ObjectId(parkingId) };
-  const result = await parking.updateOne(filter, updateRules);
-
-  if (result.modifiedCount != 1) {
-    return { error: `Something went wrong. Please try again.` }
-  };
-  return {message: `${result.modifiedCount} trail has been updated`}
-}
-
-// DELETE PARKING
-module.exports.deleteParkingById = async (parkingId) => {
-  const database = client.db(databaseName);
-  const parking = database.collection(parkingCollName)
-
-  const deletionRules = { _id: ObjectId(parkingId) }
-  const result = await parking.deleteOne(deletionRules);
-
-  if (result.deletedCount != 1) {
-    return { error: `Something went wrong. Please try again.` }
-  };
-
-  return { message: `Deleted ${result.deletedCount} trail.` };
-}
