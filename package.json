@@ -22,7 +22,9 @@
     "type": "git",
     "url": "git+https://github.com/jcahill53/hiking-trail-app.git"
   },
-  "keywords": [],
+  "keywords": [
+    "heroku"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -31,6 +33,9 @@
   "homepage": "https://github.com/jcahill53/hiking-trail-app#readme",
   "devDependencies": {
     "jest": "^28.1.3"
+  },
+  "engines": {
+    "node": "18.7"
   }
 }
 
