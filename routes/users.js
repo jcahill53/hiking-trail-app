@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
-const userData = require('../dataInterface/users.jsx');
+const userData = require('../dataInterface/users.js');
 
 // GET ALL USERS
 // curl -sS http://localhost:5000/users/
@@ -26,7 +26,7 @@ router.get("/", async (req, res, next) => {
 //GET USERS BY EMAIL CREDENTIAL
 // curl -X POST -H "Content-Type: application/json" -d '{"name":"Sylvia Smith","email":"ssmith41@gmail.com","password":"Password123!"}' http://localhost:5000/users/login
 // curl -X POST -H "Content-Type: application/json" -d '{"email":"ssmith41@gmail.com","password":"Password123!"}' http://localhost:5000/users/login
-router.post("/login", async (req, res, next) => {
+router.get("/login", async (req, res, next) => {
   let resultStatus;
 
   let result = await userData.findByCredentials(req.body)

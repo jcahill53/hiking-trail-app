@@ -43,9 +43,9 @@ async function findByEmail(email){
 module.exports.findByCredentials = async (userObj) => {
   let user = await findByEmail(userObj.email)
 
-  if(!user.password){ return {error: "The user must have a password."} }
+  if(user != null && user.password == null){ return {error: "The user must have a password."} }
 
-  if(await bcrypt.compare(userObj.password, user.password)){
+  if(userObj != null && user != null && await bcrypt.compare(userObj.password, user.password)){
     let token = auth.createToken(user.email)
     return {message: "User logged in",username: user.name, userId: user._id, token: token};
   } else {
