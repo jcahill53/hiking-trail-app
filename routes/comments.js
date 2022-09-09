@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
-const commentData = require('../dataInterface/comments.js');
+const commentData = require('../datainterface/comments.js');
 
 // GET ALL COMMENTS
 // curl -sS http://localhost:8000/comments

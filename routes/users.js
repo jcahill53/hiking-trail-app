@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
-const userData = require('../dataInterface/users.jsx');
+const userData = require('../datainterface/users.jsx');
 
 // GET ALL USERS
 // curl -sS http://localhost:8000/users/

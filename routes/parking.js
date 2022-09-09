@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
-const parkingData = require('../dataInterface/parking.js');
+const parkingData = require('../datainterface/parking.js');
 
 // GET ALL parking
 // curl -sS http://localhost:8000/parking
