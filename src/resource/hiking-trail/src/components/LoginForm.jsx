@@ -11,48 +11,58 @@ function LoginForm() {
   const [password, setUserPassword] = useState('');
   // const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated") || false));
 
+  console.log(`Email ${email}`);
+  console.log(`Password ${password}`);
+
   // Handle the login on submit
   const handleLogin = async (event) => {
     event.preventDefault();
 
+    const data = {
+      "email": email,
+      "password": password
+    }
+ 
     // process the login
-    fetch('https://hiking-trail-app.herokuapp.com/users/login', {
-      method: 'GET', // or 'PUT'
+    fetch(`https://hiking-trail-app.herokuapp.com//users/login`, {
+      method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',
       },
+      body: JSON.stringify(data),
     })
       .then((response) => response.json())
       .then((data) => {
-        if(data.error){
-          navigate("/faillogin");
-          return;
-        }
 
-        if (data != null && (data.token !== '' || data.token !== null)) {
+        console.log('Success:', data);
+        if (data.token !== '' || data.token !== null) {
 
           // define a new object for the reponse data
           const loginData = data
+
           // store authentication status and loginData object in local storage.  loginData must be stored as a string.
-          localStorage.setItem("authenticated", "true");
-          localStorage.setItem("loginData", loginData);
+          localStorage.setItem("authenticated", true);
+          localStorage.setItem("loginData", JSON.stringify(loginData));
           navigate("/hikingtrails");
         }
+ 
       })
       .catch((error) => {
+        console.error('Error:', error);
         navigate("/faillogin");
       });
-    
+
     // to access login info from local storage get it from local storage where it is stored as a string and parse it back into an object
-      let newObj = localStorage.getItem("loginData");
-      let loggedUser = JSON.parse(newObj);
-     
-      let userId = "";
-      let username = ""; 
-      if(loggedUser != null){
-        username =  loggedUser.username ;
-        userId =  loggedUser.userId ;
-      }
+    
+    let newObj = window.localStorage.getItem("loginData", );
+    let loggedUser = JSON.parse(newObj);
+    console.log(loggedUser);
+    
+    const username =  loggedUser.username ;
+    const userId =  loggedUser.userId ;
+
+    console.log({username});
+    console.log({userId});
 
   }
   return (
