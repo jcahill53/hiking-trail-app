@@ -15,11 +15,6 @@ function LoginForm() {
   const handleLogin = async (event) => {
     event.preventDefault();
 
-    const data = {
-      "email": email,
-      "password": password
-    }
-
     // process the login
     fetch('https://hiking-trail-app.herokuapp.com/users/login', {
       method: 'GET', // or 'PUT'
@@ -52,8 +47,8 @@ function LoginForm() {
       let newObj = localStorage.getItem("loginData");
       let loggedUser = JSON.parse(newObj);
      
-      const userId = null;
-      const username = null; 
+      let userId = "";
+      let username = ""; 
       if(loggedUser != null){
         username =  loggedUser.username ;
         userId =  loggedUser.userId ;
