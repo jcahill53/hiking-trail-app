@@ -24,7 +24,7 @@ function LoginForm() {
     }
  
     // process the login
-    fetch(`https://hiking-trail-app.herokuapp.com//users/login`, {
+    fetch(`https://hiking-trail-app.herokuapp.com/users/login`, {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',
