@@ -34,7 +34,7 @@ function LoginForm() {
           return;
         }
 
-        if (data != null && data.token !== '' || data.token !== null) {
+        if (data != null && (data.token !== '' || data.token !== null)) {
 
           // define a new object for the reponse data
           const loginData = data

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import FailRegistration from './FailRegistration';
 // curl -X POST -H "Content-Type: application/json" -d '{"name":"Sylvia Smith","email":"ssmith41@gmail.com","password":"Password123!"}' http://localhost:5000/users/register
 
@@ -14,9 +14,6 @@ function RegisterForm() {
   const [bool, setBoolean] = useState(false);
   const [dataErr, setDataError] = useState('');
     const navigate = useNavigate ();
-//   console.log(`Name ${userName}`);
-//  console.log(`Email ${userEmail}`);
-//  console.log(`Password ${userPassword}`);
 
  // Handle the login on submit
  const handleSubmit = async (event) => {
