@@ -19,7 +19,7 @@ function SearchTrails() {
   //console.log(`LoggedInUser: ${loggedInUser}`);
 
   useEffect(() => {
-    const loggedInUser = localStorage.getItem("authenticated");
+    // const loggedInUser = localStorage.getItem("authenticated");
     // if (loggedInUser) {
     //   setAuthenticated(loggedInUser);
     // }

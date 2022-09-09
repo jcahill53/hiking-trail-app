@@ -1,4 +1,4 @@
-fetch('http://localhost:5000/users/create', {
+fetch('https://hiking-trail-app.herokuapp.com/users/create', {
     method: 'POST',
     headers: {
       Accept: 'application/form-data',

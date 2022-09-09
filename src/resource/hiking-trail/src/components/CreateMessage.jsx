@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Popup from 'reactjs-popup';
+// import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
@@ -33,7 +33,7 @@ function CreateMessage() {
         }
 
         // process the registration
-        fetch(`http://localhost:5000/hikingtrails/${trailId}/comments`, {
+        fetch(`https://hiking-trail-app.herokuapp.com/hikingtrails/${trailId}/comments`, {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

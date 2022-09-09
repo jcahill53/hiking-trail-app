@@ -36,15 +36,15 @@ function TrailDetails() {
     const trailId = id;
 
     // trail by id api
-    const url = `http://localhost:5000/hikingtrails/${trailId}`;
+    const url = `https://hiking-trail-app.herokuapp.com/hikingtrails/${trailId}`;
     console.log(url);
 
     // comments for a trail api
-    const commentUrl = `http://localhost:5000/hikingtrails/${trailId}/comments`;
+    const commentUrl = `https://hiking-trail-app.herokuapp.com/hikingtrails/${trailId}/comments`;
     console.log(commentUrl);
 
     // parking for a trail api
-    const parkingUrl = `http://localhost:5000/hikingtrails/${trailId}/parking`;
+    const parkingUrl = `https://hiking-trail-app.herokuapp.com/hikingtrails/${trailId}/parking`;
     console.log(parkingUrl);
 
 
@@ -112,7 +112,7 @@ function TrailDetails() {
         }
 
         // process the registration
-        fetch(`http://localhost:5000/hikingtrails/${trailId}/parking/${parkingId}`, {
+        fetch(`https://hiking-trail-app.herokuapp.com/hikingtrails/${trailId}/parking/${parkingId}`, {
             method: 'PUT', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

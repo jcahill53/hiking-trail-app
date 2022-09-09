@@ -14,7 +14,7 @@ function ReportStatus() {
         }
 
         // process the registration
-        fetch('http://localhost:5000/hikingtrails/${trailId}/parking/${parkingId}', {
+        fetch('https://hiking-trail-app.herokuapp.com/hikingtrails/${trailId}/parking/${parkingId}', {
             method: 'PUT', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

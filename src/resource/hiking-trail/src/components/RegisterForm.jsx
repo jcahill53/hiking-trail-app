@@ -29,7 +29,7 @@ function RegisterForm() {
    }
 
    // process the registration
-   fetch('http://localhost:5001/users/register', {
+   fetch('https://hiking-trail-app.herokuapp.com/users/register', {
      method: 'POST', // or 'PUT'
      headers: {
        'Content-Type': 'application/json',
