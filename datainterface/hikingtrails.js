@@ -65,7 +65,7 @@ module.exports.create = async (newObj) => {
 
   if (!newObj.name) {
     // Invalid movie object, shouldn't go in database.
-    return { error: "Trails must have a title." }
+    return { error: "Trails must have a trail name." }
   }
   const result = await trails.insertOne(newObj);
 
@@ -208,7 +208,7 @@ module.exports.deleteCommentById = async (commentId) => {
     return { error: `Something went wrong. Please try again.` }
   };
 
-  return { message: `Deleted ${result.deletedCount} trail.` };
+  return { message: `Deleted ${result.deletedCount} comment.` };
 }
 
 // PARKING FOR A TRAIL ENDPOINT
@@ -289,5 +289,5 @@ module.exports.deleteParkingById = async (parkingId) => {
     return { error: `Something went wrong. Please try again.` }
   };
 
-  return { message: `Deleted ${result.deletedCount} trail.` };
+  return { message: `Deleted ${result.deletedCount} parking object.` };
 }
