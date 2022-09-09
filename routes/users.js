@@ -7,7 +7,7 @@ router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
 
-const userData = require('../datainterface/users.jsx');
+const userData = require('../datainterface/users.js');
 
 
 // GET ALL USERS
