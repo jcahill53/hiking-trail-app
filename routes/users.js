@@ -6,10 +6,12 @@ const bodyParser = require('body-parser');
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
-const userData = require('../dataInterface/users.js');
+=
+const userData = require('../datainterface/users.jsx');
+
 
 // GET ALL USERS
-// curl -sS http://localhost:5000/users/
+// curl -sS http://localhost:8000/users/
 router.get("/", async (req, res, next) => {
     let userList = await userData.getAll()
   
@@ -24,9 +26,11 @@ router.get("/", async (req, res, next) => {
   });
   
 //GET USERS BY EMAIL CREDENTIAL
-// curl -X POST -H "Content-Type: application/json" -d '{"name":"Sylvia Smith","email":"ssmith41@gmail.com","password":"Password123!"}' http://localhost:5000/users/login
-// curl -X POST -H "Content-Type: application/json" -d '{"email":"ssmith41@gmail.com","password":"Password123!"}' http://localhost:5000/users/login
-router.get("/login", async (req, res, next) => {
+
+// curl -X POST -H "Content-Type: application/json" -d '{"name":"Sylvia Smith","email":"ssmith41@gmail.com","password":"Password123!"}' http://localhost:8000/users/login
+// curl -X POST -H "Content-Type: application/json" -d '{"email":"ssmith41@gmail.com","password":"Password123!"}' http://localhost:8000/users/login
+router.post("/login", async (req, res, next) => {
+
   let resultStatus;
 
   let result = await userData.findByCredentials(req.body)
@@ -41,7 +45,7 @@ router.get("/login", async (req, res, next) => {
 
 });
 // REGISTER A USER
-// curl -X POST -H "Content-Type: application/json" -d '{"name":"Arthur Rodrigues","email":"arodrig41@gmail.com","password":"Password123!"}' http://localhost:5000/users/register
+// curl -X POST -H "Content-Type: application/json" -d '{"name":"Arthur Rodrigues","email":"arodrig41@gmail.com","password":"Password123!"}' http://localhost:8000/users/register
 router.post("/register", async (req, res, next) => {
   let resultStatus;
 
