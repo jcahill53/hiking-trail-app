@@ -5,7 +5,8 @@ import { Route, Routes, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import LoginForm from './components/LoginForm';
-import FailLogin from './components/FailLogin'
+import FailLogin from './components/FailLogin';
+import FailRegistration from './components/FailRegistration'
 import RegisterForm from './components/RegisterForm';
 import SearchTrails from './components/SearchTrails';
 import TrailResults from './components/TrailResults';
@@ -110,6 +111,19 @@ function App() {
     );
   }
 
+  const FailRegistrationPage = () => {
+
+    return (
+      <>
+        <NavBar />
+        <main>
+          <div >
+            <FailRegistration />
+          </div>
+        </main>
+      </>
+    );
+  }
   const SearchTrailsPage = () => {
 
     return (
@@ -196,6 +210,10 @@ function App() {
           <Route
           path="/faillogin"
           element={<FailLoginPage />}
+        />
+          <Route
+          path="/failregistration"
+          element={<FailRegistrationPage />}
         />
         <Route
           path="/hikingtrails"
