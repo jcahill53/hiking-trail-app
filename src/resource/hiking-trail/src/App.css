@@ -247,7 +247,7 @@ body {
 
  .register-form, .login-form  {
   width: 60%;
-  height: 30rem;
+  padding-bottom:70px;
   margin-left: 20%;
   text-align: center;
   padding-top: 1%;
@@ -568,4 +568,11 @@ color:   rgb(1, 68, 1);
 .comment-card h2{
   font-size: 1.5rem;
   margin-top: 1rem;
+}
+
+.show{
+  display:block;
+}
+.hide{
+  display:none;
 }

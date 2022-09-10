@@ -107,6 +107,7 @@ let resultStatus;
 // DELETE A TRAIL 
 // curl -sS -X DELETE http://localhost:8000/hikingtrails/631a3277fd2a43ad17018786
 router.delete("/:id", async (req, res, next) => {
+  let resultStatus;
   const result = await trailsData.deleteTrailById(req.params.id);
 
   if (result.error) {
@@ -124,18 +125,21 @@ router.delete("/:id", async (req, res, next) => {
 //#12 GET ALL COMMENTS FOR A TRAIL valid
 // curl -sS http://localhost:8000/hikingtrails/630e32a920214d9fcc411d74/comments
 router.get("/:id/comments", async (req, res) => {
+  let resultStatus;
   const comment = await trailsData.getCommentsByTrailId(req.params.id)
   if (comment) {
     res.status(200).send(comment);
   } else {
     resultStatus = 404;
   }
-  res.status(resultStatus).send(result);
+  res.status(resultStatus).send(comment);
 })
 
 // GET COMMENTS FOR A SPECIFIC TRAIL ID
 //curl -sS http://localhost:8000/hikingtrails/630e32a920214d9fcc411d74/comments/630e38064123aad9416bd843
+//curl -sS https://hiking-trail-app.herokuapp.com/hikingtrails/630e32a920214d9fcc411d74/comments/630e38064123aad9416bd843
 router.get("/:id/comments/:commentId", async (req, res, next) => {
+  let resultStatus;
   const result = await trailsData.getCommentbyCommentId(req.params.commentId)
   // console.log(result);
   if(result.error){
@@ -155,6 +159,7 @@ router.get("/:id/comments/:commentId", async (req, res, next) => {
 
 
 router.post("/:id/comments", async (req, res) => {
+  let resultStatus;
   const result = await trailsData.createComment(req.params.id, req.body)
   if (result) {
     res.status(200).send(result);
@@ -187,6 +192,7 @@ router.put("/:id/comments/:commentId", async (req, res, next) => {
 // curl -sS -X DELETE http://localhost:8000/hikingtrails/63129a951a9b8abfde9dca27/comments/631a58ff676adae575ecf764
 
 router.delete("/:trailId/comments/:commentId", async (req, res) => {
+  let resultStatus;
   const result = await trailsData.deleteCommentById(req.params.commentId)
   if (result.error) {
     resultStatus = 400;
@@ -204,6 +210,7 @@ router.delete("/:trailId/comments/:commentId", async (req, res) => {
 //#54 GET ALL PARKING FOR A TRAIL valid
 // curl -sS http://localhost:8000/hikingtrails/630e32a920214d9fcc411d74/parking
 router.get("/:id/parking", async (req, res) => {
+  let resultStatus;
   const comment = await trailsData.getParkingByTrailId(req.params.id)
   if (comment) {
     res.status(200).send(comment);
@@ -217,6 +224,7 @@ router.get("/:id/parking", async (req, res) => {
 // curl -sS http://localhost:8000/hikingtrails/630e32a920214d9fcc411d74/parking/630e38a34123aad9416bd844
 
 router.get("/:trailId/parking/:parkingId", async (req, res, next) => {
+  let resultStatus;
   const result = await trailsData.getParkingbyId(req.params.parkingId)
   console.log(result);
   if(result.error){
@@ -233,6 +241,7 @@ router.get("/:trailId/parking/:parkingId", async (req, res, next) => {
 //#56 CREATE A NEW PARKING AREA FOR A TRAIL valid
 // curl -sS -X POST -H "Content-Type: application/json" -d '{"name": "parking lot 2", "trailId": ["63143027ada3e59710fd18a9"],"emptiestDayTime": "Monday 10:00am","fullest_day_time": "Sunday 12:00pm","parkingLotStatus": "Partially Full","type": "Permit Required", "usersThere": 23}' http://localhost:8000/hikingtrails/630e32a920214d9fcc411d74/parking
 router.post("/:id/parking", async (req, res) => {
+  let resultStatus;
   const result = await trailsData.createParking(req.params.id, req.body)
   if (result) {
     res.status(200).send(result);
@@ -272,6 +281,7 @@ router.put("/:trailId/parking/:parkingId", async (req, res, next) => {
 // curl -sS -X DELETE http://localhost:8000/hikingtrails/630e32a920214d9fcc411d74/parking/631a5ae3676adae575ecf765
 
 router.delete("/:trailId/parking/:parkingId", async (req, res) => {
+  let resultStatus;
   const result = await trailsData.deleteParkingById(req.params.parkingId)
   if (result.error) {
     resultStatus = 400;

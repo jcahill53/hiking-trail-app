@@ -24,7 +24,7 @@ function LoginForm() {
     }
  
     // process the login
-    fetch('http://localhost:5000/users/login', {
+    fetch(`https://hiking-trail-app.herokuapp.com/users/login`, {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json',

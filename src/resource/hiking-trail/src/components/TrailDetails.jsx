@@ -36,16 +36,16 @@ function TrailDetails() {
     const trailId = id;
 
     // trail by id api
-    const url = `http://localhost:5000/hikingtrails/${trailId}`;
-    console.log(url);
+    const url = `https://hiking-trail-app.herokuapp.com/hikingtrails/${trailId}`;
+    
 
     // comments for a trail api
-    const commentUrl = `http://localhost:5000/hikingtrails/${trailId}/comments`;
-    console.log(commentUrl);
+    const commentUrl = `https://hiking-trail-app.herokuapp.com/hikingtrails/${trailId}/comments`;
+   
 
     // parking for a trail api
-    const parkingUrl = `http://localhost:5000/hikingtrails/${trailId}/parking`;
-    console.log(parkingUrl);
+    const parkingUrl = `https://hiking-trail-app.herokuapp.com/hikingtrails/${trailId}/parking`;
+ 
 
 
     //    fetch data for both hero and comics for the hero
@@ -111,8 +111,8 @@ function TrailDetails() {
             "parkingLotStatus": status,
         }
 
-        // process the registration
-        fetch(`http://localhost:5000/hikingtrails/${trailId}/parking/${parkingId}`, {
+        // process the post of parking status
+        fetch(`https://hiking-trail-app.herokuapp.com/hikingtrails/${trailId}/parking/${parkingId}`, {
             method: 'PUT', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

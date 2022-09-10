@@ -1,31 +1,33 @@
-import React from 'react';
-
 const databaseName = 'hiking_db'; 
 
 module.exports = {}
 
-function Footer() {
+function AvgRating() {
 // aggregation for a trail - average trail rating
 const avgTrailRating = databaseName.comments.aggregate(
-    [
-      {
-        $group:
-          {
-            _id: "$trailId",
-            avgAmount: { $avg: "$rateTrail" } },
-
+  [
+    {
+      '$match': {
+        'rateTrail': {
+          '$exists': 1, 
+          '$ne': ''
+        }
       }
-    ]
- )
- console.log(avgTrailRating)
- return (
-    <div>
-        <footer>
-            <p> </p>
-        </footer>
-    </div>
+    }, {
+      '$group': {
+        '_id': '$trailId', 
+        'avgTrailRating': {
+          '$avg': '$rateTrail'
+        }
+      }
+    }
+  ]
+  
 )
 
+console.log(avgTrailRating)
 }
 
-export default Footer
+
+
+export default AvgRating

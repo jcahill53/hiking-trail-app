@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import { Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import '../App.css';
 import TrailResults from "./TrailResults"
 function SearchTrails() {
@@ -16,23 +16,23 @@ function SearchTrails() {
   console.log(trailsInput);
 
   const loggedInUser = localStorage.getItem("authenticated");
-  console.log(`LoggedInUser: ${loggedInUser}`);
+  //console.log(`LoggedInUser: ${loggedInUser}`);
 
-  // useEffect(() => {
-  //   const loggedInUser = localStorage.getItem("authenticated");
-  //   if (loggedInUser) {
-  //     setAuthenticated(loggedInUser);
-  //   }
-  // }, []);
+  useEffect(() => {
+    // const loggedInUser = localStorage.getItem("authenticated");
+    // if (loggedInUser) {
+    //   setAuthenticated(loggedInUser);
+    // }
+  }, []);
 
   // console.log(`Authenticated: ${authenticated}`);
 
-  // if (authenticated!==true || authenticated == null) {
+  if (!(loggedInUser) || loggedInUser == null) {
 
-  // // Redirect to login page
-  // return <Navigate replace to="/login" />;
+  // Redirect to login page
+  return <Navigate replace to="/login" />;
 
-  // } else {
+  } else {
   return (
     <>
       <main >
@@ -55,7 +55,7 @@ function SearchTrails() {
       </main>
       </>
     )
-  // }
+  }
 }
 
 export default SearchTrails

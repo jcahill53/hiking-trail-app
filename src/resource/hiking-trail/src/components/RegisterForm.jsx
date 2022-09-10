@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import FailRegistration from './FailRegistration';
 // curl -X POST -H "Content-Type: application/json" -d '{"name":"Sylvia Smith","email":"ssmith41@gmail.com","password":"Password123!"}' http://localhost:5000/users/register
 
 
@@ -10,9 +11,9 @@ function RegisterForm() {
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
-//   console.log(`Name ${userName}`);
-//  console.log(`Email ${userEmail}`);
-//  console.log(`Password ${userPassword}`);
+  const [bool, setBoolean] = useState(false);
+  const [dataErr, setDataError] = useState('');
+    const navigate = useNavigate ();
 
  // Handle the login on submit
  const handleSubmit = async (event) => {
@@ -25,7 +26,7 @@ function RegisterForm() {
    }
 
    // process the registration
-   fetch('http://localhost:5000/users/register', {
+   fetch('https://hiking-trail-app.herokuapp.com/users/register', {
      method: 'POST', // or 'PUT'
      headers: {
        'Content-Type': 'application/json',
@@ -34,7 +35,13 @@ function RegisterForm() {
    })
      .then((response) => response.json())
      .then((data) => {
-       console.log('Success:', data);
+       if(data.error){
+        setBoolean(true);
+        setDataError(data.error);
+       }
+       else{
+        navigate('/login');
+       }
      })
      .catch((error) => {
        console.error('Error:', error);
@@ -48,9 +55,13 @@ function RegisterForm() {
         <div>
           <h2>User Registration</h2>
         </div>
+        <div className ={bool ? "show" : "hide"}>
+        <FailRegistration 
+            errorMsg = {dataErr}
+            />
+        </div>
 
-
-        <form>
+        <form className ={bool ? "hide" : "show"}>
           {/* Labels and inputs for form data */}
  
           <div className="form-container">
