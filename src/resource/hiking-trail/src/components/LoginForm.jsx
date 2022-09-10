@@ -9,7 +9,7 @@ function LoginForm() {
   // States for login
   const [email, setUserEmail] = useState('');
   const [password, setUserPassword] = useState('');
-  // const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated") || false));
+  
 
   console.log(`Email ${email}`);
   console.log(`Password ${password}`);
@@ -54,17 +54,6 @@ function LoginForm() {
         navigate("/faillogin");
       });
 
-    // to access login info from local storage get it from local storage where it is stored as a string and parse it back into an object
-    
-    //let newObj = window.localStorage.getItem("loginData");
-    // let loggedUser = JSON.parse(newObj);
-    // console.log(loggedUser);
-    
-    // const username =  loggedUser.username ;
-    // const userId =  loggedUser.userId ;
-
-    // console.log({username});
-    // console.log({userId});
 
   }
   return (

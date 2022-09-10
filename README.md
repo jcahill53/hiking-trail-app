@@ -11,7 +11,10 @@ A public github repository has been established for this project at:  https://gi
 2. Database
 ---------------------------------------------------------------------------------
 A mongo database was created with three collections:
+
     1.  hiking-trails: information on Oregon trails
+        indexes: _id; name
+
          {
             "_id": "63002e1b9ed6cb63e3344749",
             "guideId": "442c890d-7b66-44e6-b646-2c8ff3b207e1",
@@ -42,7 +45,7 @@ A mongo database was created with three collections:
         }
 
     2. commments:  comments made by users about the trail
-
+        indexes: _id; trailId
         {
         "_id": "6301c3a4a21505ac4795e2f4",
         "messageBody": "I enjoyed this trail.  Parking was almost full.",
@@ -54,6 +57,7 @@ A mongo database was created with three collections:
         }
 
     3. parking:  information about parking faciities for the trail
+        indexes: _id; trailId
         {
         "_id": "630032a40719308563783d50",
         "name": "parking lot East",
@@ -72,8 +76,54 @@ A mongo database was created with three collections:
         "password": "$2a$10$mqLctB.Sjx5U/Nei29owwOb1BbQzKJPBymgwpFMSnDFr3NQu7NYUa"
         }
 
+
 ---------------------------------------------------------------------------------
-3. Instructions on use of the API
+3. Aggregation
+---------------------------------------------------------------------------------
+A component AvgRating incorporates an aggregation that provides an average, grouped by trailId, of the rateTrail value in the comments collection. 
+
+a.  Code for inside the mongoDB aggregation ui:
+
+        [{
+            $match: {
+                rateTrail: {
+                    $exists: 1,
+                    $ne: ''
+                }
+            }
+        }, {
+            $group: {
+                _id: '$trailId',
+                avgTrailRating: {
+                    $avg: '$rateTrail'
+                }
+            }
+        }]
+
+b. Exported Code for React:
+
+        [
+        {
+            '$match': {
+            'rateTrail': {
+                '$exists': 1, 
+                '$ne': ''
+            }
+            }
+        }, {
+            '$group': {
+            '_id': '$trailId', 
+            'avgTrailRating': {
+                '$avg': '$rateTrail'
+            }
+            }
+        }
+        ]
+
+ 
+
+---------------------------------------------------------------------------------
+4. Instructions on use of the API
 ---------------------------------------------------------------------------------
  
 An API has been created using Express to access data in the mongodb hiking-trails database.  The API is free and does not require the use of a private or public API Key
@@ -183,7 +233,7 @@ The following endpoints are available when using the API:
         a. Dataset Returned
             [
                 {
-)                    "name": "parking lot 2",
+                    "name": "parking lot 2",
                     "trailId": "630e32a920214d9fcc411d74",
                     "emptiestDayTime": "Monday 12:00pm",
                     "fullest_day_time": "Saturday 2:00pm",
@@ -236,7 +286,7 @@ The following endpoints are available when using the API:
 
 
 ---------------------------------------------------------------------------------
-4. Front End
+5. Front End
 ---------------------------------------------------------------------------------
 The site was written using using React.  Dependencies include:
     - bcrypt
@@ -257,12 +307,35 @@ Note:  While under development, a nav bar has been added to the site so develope
     f.  Add a comment = provides a page for users to add a comment for the trail (in process)
 
 ---------------------------------------------------------------------------------
-5. Deployment
+6. Deployment
 ---------------------------------------------------------------------------------
-Deployment is pending
+THe application has been deployed using Heroku for the backend and Netlify for the front end:
+
+Huroku:  https://hiking-trail-app.herokuapp.com/
+Netlify: https://splendorous-salamander-3740b4.netlify.app/ 
 
 
 ---------------------------------------------------------------------------------
-6. Instructions for running the app and testing
+7. Instructions for running the app and testing
 ---------------------------------------------------------------------------------
-pending
+To run the backend:
+
+a.  from the root directory (hiking-trail-app)
+
+b.  run:  npm install  
+
+c.  run: npm start to serve the backend at https://localhost:8000
+
+To run the app:
+
+a.  change to the following directory from the root:  /hiking-trail=app/src/resource/hiking-trail
+
+b.  run:  npm install 
+
+c.  run: npm start to serve the frontend at https://localhost:3000
+
+To test the app:
+
+a.  from the root directory (hiking-trail-app)
+
+b.  run npm test

@@ -32,6 +32,7 @@ router.get("/", async (req, res, next) => {
 
 
 router.get("/:id", async (req, res, next) => {
+  let resultStatus;
   const result = await trailsData.getTrailById(req.params.id)
   if (result.error) {
     resultStatus = 404;
@@ -132,7 +133,7 @@ router.get("/:id/comments", async (req, res) => {
   } else {
     resultStatus = 404;
   }
-  res.status(resultStatus).send(comment);
+ 
 })
 
 // GET COMMENTS FOR A SPECIFIC TRAIL ID
