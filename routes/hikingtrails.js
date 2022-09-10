@@ -107,6 +107,7 @@ let resultStatus;
 // DELETE A TRAIL 
 // curl -sS -X DELETE http://localhost:8000/hikingtrails/631a3277fd2a43ad17018786
 router.delete("/:id", async (req, res, next) => {
+  let resultStatus;
   const result = await trailsData.deleteTrailById(req.params.id);
 
   if (result.error) {
