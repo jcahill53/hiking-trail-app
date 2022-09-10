@@ -321,16 +321,21 @@ Netlify: https://splendorous-salamander-3740b4.netlify.app/
 To run the backend:
 
 a.  from the root directory (hiking-trail-app)
+
 b.  run:  npm install  
+
 c.  run: npm start to serve the backend at https://localhost:8000
 
 To run the app:
 
 a.  change to the following directory from the root:  /hiking-trail=app/src/resource/hiking-trail
-b.  run:  npm install  
+
+b.  run:  npm install 
+
 c.  run: npm start to serve the frontend at https://localhost:3000
 
 To test the app:
 
 a.  from the root directory (hiking-trail-app)
+
 b.  run npm test
