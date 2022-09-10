@@ -18,6 +18,7 @@ function CreateMessage() {
     let loggedUser = JSON.parse(newObj);
  
     const userId = loggedUser.userId;
+    console.log(userId);
  
 
     // Handle the login on submit
