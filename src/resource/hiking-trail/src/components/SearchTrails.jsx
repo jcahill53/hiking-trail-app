@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { Navigate } from "react-router-dom";
 import '../App.css';
 import TrailResults from "./TrailResults"
+
 function SearchTrails() {
+
   // use state for form submission of trail name
   const [trailsInput, setTrailsInput] = useState('');
-   //const [authenticated, setAuthenticated] = useState(null);
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -13,19 +14,7 @@ function SearchTrails() {
    
   };
 
-  console.log(trailsInput);
-
   const loggedInUser = localStorage.getItem("authenticated");
-  //console.log(`LoggedInUser: ${loggedInUser}`);
-
-  useEffect(() => {
-    // const loggedInUser = localStorage.getItem("authenticated");
-    // if (loggedInUser) {
-    //   setAuthenticated(loggedInUser);
-    // }
-  }, []);
-
-  // console.log(`Authenticated: ${authenticated}`);
 
   if (!loggedInUser || loggedInUser == null) {
 

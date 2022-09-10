@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
@@ -55,7 +54,6 @@ function CreateMessage() {
                 <div>
                     <h2>Post a message about this trail</h2>
                 </div>
-
 
                 <form>
                     {/* Labels and inputs for form data */}

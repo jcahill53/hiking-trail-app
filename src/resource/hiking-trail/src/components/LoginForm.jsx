@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-// import SearchTrails from "./SearchTrails";
-
 
 function LoginForm() {
+
   const navigate = useNavigate();
+
   // States for login
   const [email, setUserEmail] = useState('');
   const [password, setUserPassword] = useState('');
-  
-
-  console.log(`Email ${email}`);
-  console.log(`Password ${password}`);
 
   // Handle the login on submit
   const handleLogin = async (event) => {
