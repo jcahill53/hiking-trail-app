@@ -131,6 +131,7 @@ An API has been created using Express to access data in the mongodb hiking-trail
 The following endpoints are available when using the API:
 
     1.  trail collection
+    
         a. Dataset Returned
 
             The API returns the following dataset:
@@ -157,37 +158,45 @@ The following endpoints are available when using the API:
                     "descr":"Lorem ipsum dolor sit amet, consectetur adipiscing elit,"
                     }
                 ]
+
         b. Available endpoints:
 
             -  Get all trails http://localhost:8000/hikingtrails 
                 - returns all trails in the collection
                 - no variables are needed
                 - returns an array of all trails in the collection
+
             -  Get a trail by ID: http://localhost:8000/hikingtrails/{trailId} 
                 - returns a specific trail based on the _id for the trail provided
                 - the _id for the trail must be provided
                 - returns a trail object
+
             -  Get trails by trail name http://localhost:8000/hikingtrails/name/{trailName} 
                 - returns all trails that have a name including the characters specified. 
                 - name of the trail must be included in the path
                 - Trail name must be provided
                 - returns an array of trails
+
             -  Create a trail http://localhost:8000/hikingtrails
                 - creates a new trail object based on the key:values provided in the submit statement
                 - at least the name must be submitted as part of the request
                 - returns the ObjectId value created for the new trail object (e.g. "newObjectId":"631a3277fd2a43ad17018786","message":"Item created! ID: 631a3277fd2a43ad17018786")
+
             -Update a trail http://localhost:8000/hikingtrails/{trailId} 
                 -  updates the name and/or description of the trail 
                 -  the _id of the trail must be included in the path
                 -  either the name and/or the description must be submitted as part of the request
                 -  returns an object with the updated data
+
             -Delete a trail http://localhost:8000/hikingtrails/{trailId}
                 - deletes the specified trail object from the collection
                 -  the _id of the trail must be included in the path
                 -  returns confirmation of the deletion (e.g."message":"Deleted 1 trail." )
 
-     2.  comments collection 
+     2.  comments collection
+
         a. Dataset Returned
+
                 [
                     {
                         "_id": "630e38064123aad9416bd843",
@@ -202,27 +211,33 @@ The following endpoints are available when using the API:
                 ]
 
         b. Available endpoints:
+
         -  Get all comments http://localhost:8000/comments
             - returns all comments in the collection
             - no variable are required
             - returns an array of comments 
+
         -  Get all comments for a trail http://localhost:8000/hikingtrails/{trailId}/comments
             - returns all comments for the trail specified
             - trail _id must be provided in the path
             - returns an array of comments 
+
         -  Get a specific comment for a trail http://localhost:8000/hikingtrails/{trailId}/comments/{commentId}
             - returns a single comment for the comment _id specified
             - the trail _id and comment _id must be provided in the path
             - returns an object for the trail and comment specified
+
         -  Create a new comment for a trail  http://localhost:8000/hikingtrails/{trailId}/comments
             - creates a new comment object for the trail id specified
             - trail _id must be provided in the path
             - _id for the user submitting the comment and messageBody should be provided at a minimum
             - returns the objectId for the object created in the comments collection (e.g.{"newObjectId":"631a391faf9bf95b66a434e5","message":"Comment created! ID: 631a391faf9bf95b66a434e5"})
+
         -  Update comment for a trail http://localhost:8000/hikingtrails/{trailId}/comments/{commentId}
             - updates values in the comment _id specified
             - the trail _id and comment _id must be provided in the path
             - returns an object for the trail and comment specified that shows the changes
+
         -  Delete a comment for a trail http://localhost:8000/hikingtrails/{trailId}/comments/{commentId}
             - deletes the specified comment _id object from the comments collection
             - the trail _id and comment _id must be provided in the path
@@ -230,7 +245,9 @@ The following endpoints are available when using the API:
   
 
     3.  parking
+
         a. Dataset Returned
+        
             [
                 {
                     "name": "parking lot 2",
@@ -245,24 +262,29 @@ The following endpoints are available when using the API:
             ]
 
         b. Available endpoints
+
             -  Get all parking http://localhost:8000/parking
                 - returns all parking objects in the collection
                 - no variable are required
                 - returns an array of parking objects 
+
             -  Get all parking for a trail http://localhost:8000/hikingtrails/{trailId}/parking
                 - returns all parking objects in the collection for the trail specified
                 - the trail _id must be included in the path
                 - returns an array of parking objects 
+
             -  Create parking for a trail  http://localhost:8000/hikingtrails{trailId}/parking
                 - creates a new parking object for the trail id specified
                 - trail _id must be provided in the path
                 - should include at least the parking name as a parameter
                 - returns the objectId for the object created in the comments collection (e.g. {"newObjectId":"631a5ae3676adae575ecf765","message":"Parking created! ID: 631a5ae3676adae575ecf765"}
+
             -  Update parking for a trail  http://localhost:8000/hikingtrails/630e32a920214d9fcc411d74/parking/63144e31a56fc298c0841af6
                 - updates the parking status for the trail specified
                 - the trail _id and parking _id must be included in the path
                 - the ParkingStatus should be included as a parameter
                 - returns an object which includes the updated values
+
             -  Delete parking for a trail http://localhost:8000/hikingtrails/{trailId}/parking/{parkingId}
                 - deletes the parking object for the specified trail and parking id
                 - the trail _id and parking _id must be provided in the path
@@ -270,15 +292,20 @@ The following endpoints are available when using the API:
 
     4.  users
         a. Dataset Returned
+
         b. Available endpoints
+
         -  Get all users http://localhost:8000/users/
+
             - returns all users in the users collection
             - no variable are required
             - returns an array of users
+
         -  Get user by credentials (login) http://localhost:8000/users/login
             - confirms that the user email and password is valid in the users collection and passes back a token for authentication
             - User email and password must be submitted as parameters
             - returns confirmation of a successful login, the token, user name and user _id (e.g.{"message":"User logged in","username":"Sylvia Smith","userId":"630e6f5376fee74a15fbb7fe","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoic3NtaXRoNDFAZ21haWwuY29tIiwiaWF0IjoxNjYyNjYwNTI2fQ.eUsCWJA_Y8bnAF7vxo2Lz_OEoxOKmLFscO2Gq-YmISE"} )
+
         -  Create a user (register) http://localhost:8000/users/register 
             - registers an individual as a user by creating a user object in the users collection
             - User Name, User Email and User Password must be submitted as parameters

@@ -12,6 +12,7 @@ describe("/hikingtrail routes", () => {
 
   });
 
+  // TEST GET ALL TRAILS
   describe("GET /", () =>{
     it("should return an array on success", async () => {
       hikingData.getAll.mockResolvedValue([
@@ -34,6 +35,7 @@ describe("/hikingtrail routes", () => {
     });
   });
 
+  // TEST GET TRAILS BY ID
   describe("GET /:id", () =>{
     it("should return a single trail on success.", async () => {
         hikingData.getTrailById.mockResolvedValue({_id:"890", name:"Hiking Loop" });
@@ -60,6 +62,7 @@ describe("/hikingtrail routes", () => {
     });
   });
 
+  // TEST GET TRAILS BY NAME
   describe("GET /name/:name", () =>{
     it("should return a multiple trails with term 'LOOP' on success.", async () => {
         hikingData.getTrailsByName.mockResolvedValue([{_id:"890", name:"Hiking Loop" }]);
@@ -77,6 +80,7 @@ describe("/hikingtrail routes", () => {
     });
   });
 
+  // TEST CREATE A TRAIL
   describe("POST /", () =>{
     it("should return the new trail on success.", async () => {
         hikingData.create.mockResolvedValue({
@@ -119,52 +123,55 @@ describe("/hikingtrail routes", () => {
     });
   });
 
+
+  // TEST UPDATE A TRAIL
   describe("PUT /:id", () =>{
     it("should return the updated trail on success", async () => {
-        hikingData.updateTrailById.mockResolvedValue();
-        
+        hikingData.updateTrailById.mockResolvedValue(
+          { _id:"890", 
+          "name":"Update the name",
+          "descr":"Update the description."
+        });
+        const res = await request(server)
+            .put('/hikingtrails/890')
+            .send({"descr":"Update the description."},
+            );
         expect(res.statusCode).toEqual(200);
+        expect(res.body.error).not.toBeDefined();
     });
     it("should return an error message if trail fails to be updated", async () => {
-        
-        expect(res.statusCode).toEqual(200);
+      hikingData.updateTrailById.mockResolvedValue({
+        error: "Something went wrong. Please try again!",
+      });
+      const res = await request(server)
+        .put("/hikingtrails/comments/880")
+        .send();
+        expect(res.statusCode).toEqual(404);
+        expect(res.body.error).not.toBeDefined();
+
     });
   });
 
-  describe("DELETE /:id", () =>{
-    it("should return a message on success", async () => {
-      expect(false).toEqual(true);
+  // TEST DELETE A TRAIL
+  it("should return a message on success", async () => {
+    hikingData.deleteTrailById.mockResolvedValue({
+      message: "Deleted 1 trail.",
     });
-    it("should return a error message if trail fails to be deleted", async () => {
-      expect(false).toEqual(true);
+    const res = await request(server)
+      .delete("/hikingtrails/880")
+      .send();
+    expect(res.statusCode).toEqual(200);
+  });
+  it("should return a error message if a the delete fails", async () => {
+    hikingData.deleteTrailById.mockResolvedValue({
+      Error: "Something went wrong. Please try again",
     });
+    const res = await request(server).delete("/hikingtrails").send();
+    expect(res.statusCode).toEqual(404);
   });
 
-    describe("GET /trails/genres/:genreName", () =>{
-    it("should return an array of trails on success", async () => {
-      // TODO: Mock the correct data interface method
-      const res = await request(server).get("/trails/genres/Short");
-
-      expect(res.statusCode).toEqual(200);
-      expect(Array.isArray(res.body)).toEqual(true);
-      expect(res.body.error).not.toBeDefined();
-    });
-    it("should return an empty array if no trails match genre", async () => {
-      // TODO: Mock the correct data interface method
-      const res = await request(server).get("/trails/genres/UEOA921DI");
-
-      expect(res.statusCode).toEqual(200);
-      expect(res.body.length).toEqual(0);
-      expect(res.body.error).not.toBeDefined();
-    });
-    it("should return an error message on error", async () => {
-      // TODO: Mock the correct data interface method
-
-      const res = await request(server).get("/trails/genres/Short");
-
-      expect(res.statusCode).toEqual(500);
-      expect(res.body.error).toBeDefined();
-    });
-  });
 
 });
+
+
+ 
