@@ -374,4 +374,4 @@ To test the app:
 
 a.  from the root directory (hiking-trail-app)
 
-b.  run npm test
+b.  npx jest [routes] to run all test suites
