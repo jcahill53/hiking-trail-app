@@ -131,11 +131,12 @@ router.get("/:id/comments", async (req, res) => {
   } else {
     resultStatus = 404;
   }
-  res.status(resultStatus).send(result);
+  res.status(resultStatus).send(comment);
 })
 
 // GET COMMENTS FOR A SPECIFIC TRAIL ID
 //curl -sS http://localhost:8000/hikingtrails/630e32a920214d9fcc411d74/comments/630e38064123aad9416bd843
+//curl -sS https://hiking-trail-app.herokuapp.com/hikingtrails/630e32a920214d9fcc411d74/comments/630e38064123aad9416bd843
 router.get("/:id/comments/:commentId", async (req, res, next) => {
   let resultStatus;
   const result = await trailsData.getCommentbyCommentId(req.params.commentId)
