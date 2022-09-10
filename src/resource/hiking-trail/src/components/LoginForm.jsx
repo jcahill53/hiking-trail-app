@@ -22,6 +22,7 @@ function LoginForm() {
       "email": email,
       "password": password
     }
+    //http://localhost:5001/users/login
  
     // process the login
     fetch(`https://hiking-trail-app.herokuapp.com/users/login`, {
@@ -33,10 +34,11 @@ function LoginForm() {
     })
       .then((response) => response.json())
       .then((data) => {
-
-        console.log('Success:', data);
-        if (data.token !== '' || data.token !== null) {
-
+        if(data.error){
+          navigate("/faillogin");
+          return;
+        }
+        if (data != null && (data.token !== '' || data.token !== null)) {
           // define a new object for the reponse data
           const loginData = data
 
