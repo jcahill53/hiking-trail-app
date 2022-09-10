@@ -100,6 +100,7 @@ a.  Code for inside the mongoDB aggregation ui:
         }]
 
 b. Exported Code for React:
+
         [
         {
             '$match': {
@@ -231,7 +232,7 @@ The following endpoints are available when using the API:
         a. Dataset Returned
             [
                 {
-)                    "name": "parking lot 2",
+                    "name": "parking lot 2",
                     "trailId": "630e32a920214d9fcc411d74",
                     "emptiestDayTime": "Monday 12:00pm",
                     "fullest_day_time": "Saturday 2:00pm",
