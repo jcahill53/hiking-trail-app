@@ -302,9 +302,9 @@ Note:  While under development, a nav bar has been added to the site so develope
     a.  Home Page - Welcomes the user to the site and provides access to a Register page for new users and a login page for returning users
     b.  Register Page - allows a user to set up a new user account by submitting their name, email and password (connection to database in process)
     c.  Login Page -  allows a user to login to the site by entering their email and password (connection to database in process)
-    d.  Trails Search - if login is successful, the user will be brought to the Trails Search page.  They may enter any part of a  trail name.  When submit is clicked a list of trails with names containing the search parameter is displayed.  A user can then click on the Details for a trail to learn more info about the trail.
-    e.  Trail Details -  When the details for a trail are selected on the Trails Search page, a page displays that contains the trail name, information about parking for the trail and comments submitted by users.  Users can select to add a new comment or update the parking lot status (e.g. overflowing, full, partially full, empty) (in process)
-    f.  Add a comment = provides a page for users to add a comment for the trail (in process)
+    d.  Trails Search - if login is successful, the user will be brought to the Trails Search page. (If login is not successful they are redirected to the login page) They may enter any part of a  trail name.  When submit is clicked a list of trails with names containing the search parameter is displayed.  A user can then click on the Details for a trail to learn more info about the trail.
+    e.  Trail Details -  When the details for a trail are selected on the Trails Search page, a page displays that contains the trail name, information about parking for the trail and comments submitted by users.  Users can select to add a new comment or update the parking lot status (e.g. overflowing, full, partially full, empty) 
+    f.  Add a comment = provides a page for users to add a comment for the trail  
 
 ---------------------------------------------------------------------------------
 6. Deployment
@@ -312,7 +312,16 @@ Note:  While under development, a nav bar has been added to the site so develope
 THe application has been deployed using Heroku for the backend and Netlify for the front end:
 
 Huroku:  https://hiking-trail-app.herokuapp.com/
+
+        add hikingtrails, users, comments or parkin to the path to view data in each collection
+
 Netlify: https://splendorous-salamander-3740b4.netlify.app/ 
+
+        testuser:  slee@gmail.com
+
+        password:  PW123
+
+        suggested searches:  Loop, Hike or Sister
 
 
 ---------------------------------------------------------------------------------
