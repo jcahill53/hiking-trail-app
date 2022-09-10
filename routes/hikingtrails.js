@@ -1,6 +1,5 @@
 const {Router, response} = require("express");
 const router = Router();
-const corsOptions = {origin: "http://localhost:3000"};
 
 const bodyParser = require('body-parser');
 
@@ -131,18 +130,21 @@ router.get("/:id/comments", async (req, res) => {
   if (comment) {
     res.status(200).send(comment);
   } else {
-    resultStatus = 404;
+     // If trailsList is empty/null, something serious is wrong with the MongoDB connection.
+     res.status(500).send({
+      error: "Something went wrong. Please try again."
+    })
   }
  
 })
 
-// GET COMMENTS FOR A SPECIFIC TRAIL ID
+// GET A SPECIFIC COMMENTS FOR A SPECIFIC TRAIL ID
 //curl -sS http://localhost:8000/hikingtrails/630e32a920214d9fcc411d74/comments/630e38064123aad9416bd843
 //curl -sS https://hiking-trail-app.herokuapp.com/hikingtrails/630e32a920214d9fcc411d74/comments/630e38064123aad9416bd843
 router.get("/:id/comments/:commentId", async (req, res, next) => {
   let resultStatus;
   const result = await trailsData.getCommentbyCommentId(req.params.commentId)
-  // console.log(result);
+ 
   if(result.error){
     resultStatus = 500;
   } else {
