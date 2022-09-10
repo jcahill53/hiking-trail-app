@@ -5,7 +5,7 @@ import TrailResults from "./TrailResults"
 function SearchTrails() {
   // use state for form submission of trail name
   const [trailsInput, setTrailsInput] = useState('');
-  // const [authenticated, setAuthenticated] = useState(null);
+   //const [authenticated, setAuthenticated] = useState(null);
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -27,7 +27,7 @@ function SearchTrails() {
 
   // console.log(`Authenticated: ${authenticated}`);
 
-  if (!(loggedInUser) || loggedInUser == null) {
+  if (!loggedInUser || loggedInUser == null) {
 
   // Redirect to login page
   return <Navigate replace to="/login" />;
