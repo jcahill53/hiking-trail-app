@@ -16,9 +16,9 @@ function CreateMessage() {
     // get userId from local storage -- we need something to handle if there is no user logged in
     let newObj = window.localStorage.getItem("loginData",);
     let loggedUser = JSON.parse(newObj);
-    console.log(loggedUser);
+ 
     const userId = loggedUser.userId;
-    console.log(userId);
+ 
 
     // Handle the login on submit
     const handleSubmit = async (event) => {
