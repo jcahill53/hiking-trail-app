@@ -11,6 +11,7 @@ A public github repository has been established for this project at:  https://gi
 2. Database
 ---------------------------------------------------------------------------------
 A mongo database was created with three collections:
+
     1.  hiking-trails: information on Oregon trails
         indexes: _id; name
 
