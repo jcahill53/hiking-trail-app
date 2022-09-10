@@ -1,16 +1,13 @@
 const express = require("express");
 const routes = require("./routes");
 const cors = require("cors");
+// cors updated to allow all origins
+const corsOptions = {origin:'*', methods: ["GET", "POST", "PUT", "DELETE"]};
 
 const server = express();
 server.use(express.json());
-
-server.use(cors());
-const corsOptions = {
-    origin: "http://localhost:3000"
-}
-
+server.use(cors(corsOptions));
+ 
 server.use(routes);
 
-module.exports = serve
-
+module.exports = server;
