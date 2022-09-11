@@ -156,6 +156,7 @@ describe("/hikingtrail routes", () => {
   });
 
   // TEST DELETE A TRAIL
+  describe("DELETE /:id", () =>{
   it("should return a message on success", async () => {
     hikingData.deleteTrailById.mockResolvedValue({
       message: "Deleted 1 trail.",
@@ -172,6 +173,7 @@ describe("/hikingtrail routes", () => {
     const res = await request(server).delete("/hikingtrails").send();
     expect(res.statusCode).toEqual(404);
   });
+});
 
   // TEST COMMENTS FOR A TRAIL ROUTES
   // TEST GET ALL COMMENTS FOR A TRAIL
@@ -185,15 +187,15 @@ describe("/hikingtrail routes", () => {
           "updatedDayTime": "07/12/2022",
           "trailId": "63002e1b9ed6cb63e334474a",
           "date": "2022-08-21T05:21:05.185Z"
-      },
-      {
+        },
+        {
           "_id": "6301c0c15da14ea19ee0caab",
           "messageBody": "I enjoyed this trail.  Parking was great.",
           "createDayTime": "07/12/2022",
           "updatedDayTime": "07/12/2022",
           "trailId": "63002e1b9ed6cb63e334474a",
           "date": "2022-08-21T05:21:05.185Z"
-      }
+        }
       ]);
       const res = await request(server).get("/hikingtrails/63002e1b9ed6cb63e334474a/comments");
       expect(res.statusCode).toEqual(200);
@@ -205,46 +207,46 @@ describe("/hikingtrail routes", () => {
       hikingData.getCommentsByTrailId.mockResolvedValue([]);
       const res = await request(server).get("/hikingtrails/63002e1b9ed6cb63e444474a/comments");
       expect(res.statusCode).toEqual(200);
-   
+
     });
   });
 
-// TEST GET COMMENTS FOR A SPECIFIC TRAIL AND COMMENT ID
-describe("GET /hikingtrails/:id/comments/:commentId", () => {
-  it("should return a single comment for a given comment id on success", async () => {
-    hikingData.getCommentbyCommentId.mockResolvedValue([
-      {
-        "_id": "6301bd4862a5d14a1a780e35",
-        "messageBody": "I had a good time.  Parking was great.",
-        "createDayTime": "07/12/2022",
-        "updatedDayTime": "07/12/2022",
-        "trailId": "63002e1b9ed6cb63e334474a",
-        "date": "2022-08-21T05:21:05.185Z"
-    },
-    {
-        "_id": "6301c0c15da14ea19ee0caab",
-        "messageBody": "I enjoyed this trail.  Parking was great.",
-        "createDayTime": "07/12/2022",
-        "updatedDayTime": "07/12/2022",
-        "trailId": "63002e1b9ed6cb63e334474a",
-        "date": "2022-08-21T05:21:05.185Z"
-    }
-    ]);
-    const res = await request(server).get(
-      "/hikingtrails/63002e1b9ed6cb63e334474a/comments/6301c0c15da14ea19ee0caab"
-    );
-    expect(res.statusCode).toEqual(200);
-    expect(Array.isArray(res.body)).toEqual(true);
-    expect(res.body.error).not.toBeDefined();
+  // TEST GET COMMENTS FOR A SPECIFIC TRAIL AND COMMENT ID
+  describe("GET /hikingtrails/:id/comments/:commentId", () => {
+    it("should return a single comment for a given comment id on success", async () => {
+      hikingData.getCommentbyCommentId.mockResolvedValue([
+        {
+          "_id": "6301bd4862a5d14a1a780e35",
+          "messageBody": "I had a good time.  Parking was great.",
+          "createDayTime": "07/12/2022",
+          "updatedDayTime": "07/12/2022",
+          "trailId": "63002e1b9ed6cb63e334474a",
+          "date": "2022-08-21T05:21:05.185Z"
+        },
+        {
+          "_id": "6301c0c15da14ea19ee0caab",
+          "messageBody": "I enjoyed this trail.  Parking was great.",
+          "createDayTime": "07/12/2022",
+          "updatedDayTime": "07/12/2022",
+          "trailId": "63002e1b9ed6cb63e334474a",
+          "date": "2022-08-21T05:21:05.185Z"
+        }
+      ]);
+      const res = await request(server).get(
+        "/hikingtrails/63002e1b9ed6cb63e334474a/comments/6301c0c15da14ea19ee0caab"
+      );
+      expect(res.statusCode).toEqual(200);
+      expect(Array.isArray(res.body)).toEqual(true);
+      expect(res.body.error).not.toBeDefined();
+    });
+    it("should return a status code of 404 if comment not found", async () => {
+      hikingData.getCommentbyCommentId.mockResolvedValue([]);
+      const res = await request(server).get(
+        "/hikingtrails/63002e1b9ed6cb63e334474a/comments/6301c0c15da14ea19e0caab"
+      );
+      expect(res.statusCode).toEqual(200);
+    });
   });
-  it("should return a status code of 404 if comment not found", async () => {
-    hikingData.getCommentbyCommentId.mockResolvedValue([]);
-    const res = await request(server).get(
-      "/hikingtrails/63002e1b9ed6cb63e334474a/comments/6301c0c15da14ea19e0caab"
-    );
-    expect(res.statusCode).toEqual(200);
-  });
-});
 
 
 });
@@ -252,24 +254,172 @@ describe("GET /hikingtrails/:id/comments/:commentId", () => {
 // TEST CREATE A COMMENT FOR A TRAIL
 describe("POST /hikingtrails/:id/comments", () => {
   it("should return the new comment ObjectId on success.", async () => {
-    hikingData.createComment.mockResolvedValue( {
+    hikingData.createComment.mockResolvedValue({
       "messageBody": "Trail was great.  Parking was great.",
       "createDayTime": "07/12/2022",
       "updatedDayTime": "07/12/2022",
       "trailId": "63002e1b9ed6cb63e334474a",
       "date": "2022-08-21T05:21:05.185Z"
+    });
+    const res = await request(server).post('/hikingtrails/63002e1b9ed6cb63e334474a/comments');
+    expect(res.statusCode).toEqual(200);
+    expect(res.body.messageBody).toEqual("Trail was great.  Parking was great.");
+    expect(res.body.error).not.toBeDefined();
   });
-  const res = await request(server).post('/hikingtrails/63002e1b9ed6cb63e334474a/comments');
-  expect(res.statusCode).toEqual(200);
-  expect(res.body.messageBody).toEqual("Trail was great.  Parking was great.");
-  expect(res.body.error).not.toBeDefined();
+
+  it("should return an error message if trail fails to be created.", async () => {
+    hikingData.createComment.mockResolvedValue({ error: "Something went wrong. Please try again." });
+
+    const res = await request(server).post('/hikingtrails//comments');
+    expect(res.statusCode).toEqual(404);
+
+  });
+
+
+  // TEST UPDATE A COMMENT FOR A TRAIL
+
+  describe("PUT /:id/comments/:commentId", () => {
+    it("should return the updated comment of specific trail on success", async () => {
+      hikingData.updateCommentById.mockResolvedValue([{
+        _id: "6301bd4862a5d14a1a780e35",
+        "messageBody": "Update the description.",
+        "trailId": "630e32a920214d9fcc411d74"
+      }]);
+      const res = await request(server)
+        .put('/hikingtrails/630e32a920214d9fcc411d74/comments/6301bd4862a5d14a1a780e35')
+        .send({
+          "messageBody": "Update the description.",
+        },
+        );
+      expect(res.statusCode).toEqual(200);
+      expect(res.body.error).not.toBeDefined();
+    });
+    it("should return an error message if trail fails to be updated", async () => {
+      hikingData.updateCommentById.mockResolvedValue({
+        error: "Something went wrong. Please try again!"
+      });
+      const res = await request(server)
+        .put("/hikingtrails/comments/880")
+        .send();
+      expect(res.statusCode).toEqual(404);
+      expect(res.body.error).not.toBeDefined();
+    });
+  });
+
+  // DELETE A COMMENT FOR A TRAIL
+
+ // TEST DELETE A TRAIL
+ describe("DELETE /:trailId/comments/:commentId", () =>{
+  it("should return a message on success", async () => {
+    hikingData.deleteCommentById.mockResolvedValue({
+      message: "Deleted 1 comment.",
+    });
+    const res = await request(server)
+      .delete("/hikingtrails/630e32a920214d9fcc411d74/comments/6301bd4862a5d14a1a780e35")
+      .send();
+    expect(res.statusCode).toEqual(200);
+  });
+  it("should return a error message if a the delete fails", async () => {
+    hikingData.deleteCommentById.mockResolvedValue({
+      Error: "Something went wrong. Please try again",
+    });
+    const res = await request(server).delete("/hikingtrails/880/comment").send();
+    expect(res.statusCode).toEqual(404);
+  });
 });
 
-it("should return an error message if trail fails to be created.", async () => {
-  hikingData.createComment.mockResolvedValue({ error: "Something went wrong. Please try again."  });
 
-  const res = await request(server).post('/hikingtrails//comments');
-  expect(res.statusCode).toEqual(404);  
- 
+  // TEST PARKING FOR A TRAIL ROUTES
+
+  // TEST CREATE A PARKING OBJECT FOR A TRAIL
+  describe("POST /hikingtrails/:id/parking", () => {
+    it("should return the new parking ObjectId on success.", async () => {
+      hikingData.createParking.mockResolvedValue({
+        "name": "Parking lot 2",
+        "trailId": ["63002e1b9ed6cb63e334474a"],
+        "emptiestDayTime": "Monday 10:00am",
+        "fullest_day_time": "Sunday 12:00pm",
+        "parkingLotStatus": "Partially Full",
+        "type": "Permit Required",
+        "usersThere": 23
+      });
+      const res = await request(server).post('/hikingtrails/63002e1b9ed6cb63e334474a/parking');
+      expect(res.statusCode).toEqual(200);
+      expect(res.body.name).toEqual("Parking lot 2");
+      expect(res.body.error).not.toBeDefined();
+    });
+
+    it("should return an error message if trail fails to be created.", async () => {
+      hikingData.createParking.mockResolvedValue({ error: "Something went wrong. Please try again." });
+
+      const res = await request(server).post('/hikingtrails//parking');
+      expect(res.statusCode).toEqual(404);
+
+    });
+
+
+
+  });
+
+  // TEST UPDATE A PARKING ON A TRAIL
+  describe("PUT /:id/parking/:parkingId", () => {
+    it("should return the updated parking of specific trail on success", async () => {
+      hikingData.updateParkingById.mockResolvedValue([{
+        _id: "6301bd4862a5d14a1a780e35",
+        "name": "Parking lot 2",
+        "trailId": ["63002e1b9ed6cb63e334474a"],
+        "emptiestDayTime": "Monday 10:00am",
+        "fullest_day_time": "Sunday 12:00pm",
+        "parkingLotStatus": "Partially Full",
+        "type": "Permit Required",
+        "usersThere": 23
+      }]);
+
+      const res = await request(server)
+        .put('/hikingtrails/63002e1b9ed6cb63e334474a/parking/6301bd4862a5d14a1a780e35')
+        .send({
+          "parkingLotStatus": "Partially Full",
+        },
+        );
+
+      expect(res.statusCode).toEqual(200);
+      expect(res.body.error).not.toBeDefined();
+    });
+
+    it("should return an error message if parking fails to be updated", async () => {
+      hikingData.updateParkingById.mockResolvedValue({
+        error: "Something went wrong. Please try again!"
+      });
+      const res = await request(server)
+        .put("/hikingtrails/parking/880")
+        .send();
+
+      expect(res.statusCode).toEqual(404);
+      expect(res.body.error).not.toBeDefined();
+
+    });
+  });
+
+
+// TEST DELETE PARKING FOR A TRAIL ROUTE
+
+describe("DELETE /:trailId/parking/:parkingId", () =>{
+  it("should return a message on success", async () => {
+    hikingData.deleteParkingById.mockResolvedValue({
+      message: "Deleted 1 parking object.",
+    });
+    const res = await request(server)
+      .delete("/hikingtrails/630e32a920214d9fcc411d74/parking/6301bd4862a5d14a1a780e35")
+      .send();
+    expect(res.statusCode).toEqual(200);
+  });
+  it("should return a error message if a the delete fails", async () => {
+    hikingData.deleteParkingById.mockResolvedValue({
+      Error: "Something went wrong. Please try again",
+    });
+    const res = await request(server).delete("/hikingtrails/880/parking").send();
+    expect(res.statusCode).toEqual(404);
+  });
 });
+
 });
